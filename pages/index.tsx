@@ -4,14 +4,16 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { MyComponent } from "./mycomponent";
 import { Box, Button } from "@chakra-ui/react";
-import { SideBarContent } from "./left_side_bar/SideBarContent";
-import { RightSideBar } from "./right_side_bar/RightSideBar";
+import { SideBarContent } from "../components/left_side_bar/SideBarContent";
+import { RightSideBar } from "../components/right_side_bar/RightSideBar";
 import { ShowCount } from "./ShowCount";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { languageContext } from "./_app";
 
 const Home: NextPage = () => {
   const hello=()=>console.log("hello")
   let [count,setCount]=useState(0)
+  const {selectedLanguage}=useContext(languageContext)
 
   return (
     <div className={styles.container}>
@@ -24,13 +26,16 @@ const Home: NextPage = () => {
         <MyComponent name={"shoma"}>inside</MyComponent>
         <Button onClick={()=>setCount(count+1)}>count up{count}</Button>
         <ShowCount count={count} setCount={setCount}></ShowCount>
-        <h1 className={styles.title}>
+        {selectedLanguage==="en"?<h1  className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        </h1>:<h1 className={styles.title}>
+          ようこそ <a href="https://nextjs.org">Next.jsへ!</a>
+        </h1>}
         <Box
             position="fixed"
             left={0}
-            p={5}
+            px={"8"}
+            py={"5"}
             w="290px"
             top={0}
             h="100%"

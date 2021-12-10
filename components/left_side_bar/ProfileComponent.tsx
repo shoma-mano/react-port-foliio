@@ -9,7 +9,7 @@ export const ProfileComponent=({profileObj,title}:{profileObj:any,title:string})
                 <Box fontFamily={"theme"} mt={"15px"} key={key} display={"flex"}
                      justifyContent={"space-between"}>
                     <Text fontFamily={"theme"} p={"5px 8px"} bg={"theme"}>{key}:</Text>
-                    <Text lineHeight={"29px"}>{profileObj[key]}</Text>
+                    <Text opacity={"0.5"} lineHeight={"29px"}>{profileObj[key]}</Text>
                 </Box>)
         })}
         <Box mt={"25px"} opacity="0.7" height={"2px"} bg={"#e5e5e5"}></Box>

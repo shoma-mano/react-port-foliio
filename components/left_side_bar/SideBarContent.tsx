@@ -6,14 +6,7 @@ import { SkillSetComponent } from "./SkillSetComponent";
 
 export const SideBarContent = ({onClick}: { onClick: () => void }) => {
 
-    interface Profile {
-        [key: string]: string | number | undefined;
-
-        name?: string;
-        age?: number;
-    }
-
-    const profile:Profile = {
+    const profile = {
         年齢: "25歳",
         会社: "R-UNIT",
         性別: "男",
@@ -36,6 +29,7 @@ export const SideBarContent = ({onClick}: { onClick: () => void }) => {
                 <Image borderRadius="full"
                        boxSize="150px"
                        margin="auto"
+                       mt={"10px"}
                        bg={"rgb(250, 250, 250)"}
                        src="/selfie.png">
                 </Image>
@@ -44,21 +38,21 @@ export const SideBarContent = ({onClick}: { onClick: () => void }) => {
                       opacity={"0.5"}>フロントエンドエンジニア</Text>
                 <Box
                     display={"flex"}
-                    width={"60%"}
+                    width={"50%"}
                     justifyContent={"space-between"}
                     margin={"auto"}
                     mt={"10px"}
                     color={"gray500"}
                 >
-                    <Image border={"none"} padding={"7px"} bg={"theme"} borderRadius={"20px"} src="/twitter.svg"
+                    <Image border={"none"} padding={"6px"} bg={"theme"} borderRadius={"20px"} src="/twitter.svg"
                            alt="Vercel Logo"
-                           width={7} height={7}/>
-                    <Image border={"none"} bg={"theme"} padding={"7px"} borderRadius={"20px"} src="/github.svg"
+                           width={6} height={6}/>
+                    <Image border={"none"} bg={"theme"} padding={"6px"} borderRadius={"20px"} src="/github.svg"
                            alt="Vercel Logo"
-                           width={7} height={7}/>
+                           width={6} height={6}/>
                     <Image border={"none"} padding={"2px"} bg={""} borderRadius={"20px"} src="/qiita.png"
                            alt="Vercel Logo"
-                           width={7} height={7}/>
+                           width={6} height={6}/>
                 </Box>
                 <Box mt={"25px"} opacity="0.7" height={"5px"} bg={"#e5e5e5"}></Box>
                 <Box overflowY={"scroll"} height={"100%"}>
