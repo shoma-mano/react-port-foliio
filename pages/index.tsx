@@ -24,55 +24,48 @@ const Home: NextPage = () => {
             </Head>
             <main className={styles.main}>
                 {selectedLanguage === "ja" ? (
-                    <>
-                        <Box borderRadius={"6px"} marginTop={"20px"} boxShadow={"lg"} w={"90%"} h={"380px"} bg={"#9e9e9e29"}
-                             display={"flex"} justifyContent={"space-between"}>
-                            <Box width={"430px"} height={"100%"} flexShrink={"0"} flexGrow={"1"}>
-                                <Box display={"flex"} height={"45%"} flexDirection={"column"} justifyContent={"end"}>
-                                    <Text color={"#000000a3"} mb={"10px"} fontWeight={"700"} marginLeft={"20px"}
-                                          fontSize={"60px"}><Box as={"span"}
-                                                                 color={"#107dcb"}>Web</Box> Developer</Text>
-                                </Box>
-                                <Box display={"flex"} height={"25%"} flexDirection={"column"} justifyContent={"start"}>
-                                    <Text color={"#000000a3"} fontSize={"35px"} fontWeight={"700"} textAlign={"end"}>Shoma
-                                        Mano</Text>
-                                </Box>
-                                <Box display={"flex"} height={"30%"} flexDirection={"column"} justifyContent={"start"}>
-                                    <Text textShadow={"1px 1px 2px black"} color={"#2c393e"} fontSize={"35px"}
-                                          fontWeight={"700"} textAlign={"center"}>Welcome To My Portfolio!!</Text>
+                    <Box transition={"all 400ms"} borderRadius={"2px"} marginTop={"20px"} boxShadow={"lg"} w={"60%"} h={"380px"} bg={"#dddbdb"}
+                         display={"flex"} justifyContent={"space-between"}>
+                        <Box width={"290px"} height={"100%"} flexShrink={"0"} flexGrow={"1"}>
+                            <Box display={"flex"} mt={"10px"} height={"100%"} flexDirection={"column"}
+                                 justifyContent={"center"}>
+                                <Box>
+                                    <Text color={"black"} mb={"10px"} fontWeight={"700"}
+                                          fontSize={"20px"}>Webエンジニア</Text>
+                                    <Text fontWeight={"700"} fontSize={"40px"}>真野 笑馬</Text>
+                                    <Text>Shoma Mano</Text>
                                 </Box>
                             </Box>
-                            <Box marginRight={"10px"} height={"380px"} display={"flex"} justifyContent={"end"}
-                                 flexDirection={"column"}>
-                                <img width={"320px"} style={{height: "380px"}} src={"/selfie_home.png"}></img>
-                            </Box>
+
                         </Box>
-                    </>
+                        <Box marginRight={"10px"} height={"380px"} display={"flex"} justifyContent={"end"}
+                             flexDirection={"column"}>
+                            <img width={"320px"} style={{height: "380px"}} src={"/selfie_home.png"}></img>
+                        </Box>
+                    </Box>
                 ) : (
-                    <>
-                        <Box borderRadius={"6px"} marginTop={"20px"} boxShadow={"lg"} w={"90%"} h={"380px"} bg={"white"}
-                             display={"flex"} justifyContent={"space-between"}>
-                            <Box width={"430px"} height={"100%"} flexShrink={"0"} flexGrow={"1"}>
-                                <Box display={"flex"} height={"45%"} flexDirection={"column"} justifyContent={"end"}>
-                                    <Text color={"#000000a3"} mb={"10px"} fontWeight={"700"} marginLeft={"20px"}
-                                          fontSize={"60px"}><Box as={"span"}
-                                                                 color={"#107dcb"}>Web</Box> Developer</Text>
-                                </Box>
-                                <Box display={"flex"} height={"25%"} flexDirection={"column"} justifyContent={"start"}>
-                                    <Text color={"#000000a3"} fontSize={"35px"} fontWeight={"700"} textAlign={"end"}>Shoma
-                                        Mano</Text>
-                                </Box>
-                                <Box display={"flex"} height={"30%"} flexDirection={"column"} justifyContent={"start"}>
-                                    <Text textShadow={"1px 1px 2px black"} color={"#2c393e"} fontSize={"35px"}
-                                          fontWeight={"700"} textAlign={"center"}>Welcome To My Portfolio!!</Text>
-                                </Box>
+                    <Box transition={"all 400ms"} opacity={selectedLanguage ==="ja"? 0:1} borderRadius={"6px"} marginTop={"20px"} boxShadow={"lg"} w={"90%"} h={"380px"} bg={"white"}
+                         display={"flex"} justifyContent={"space-between"}>
+                        <Box width={"430px"} height={"100%"} flexShrink={"0"} flexGrow={"1"}>
+                            <Box display={"flex"} height={"45%"} flexDirection={"column"} justifyContent={"end"}>
+                                <Text color={"#000000a3"} mb={"10px"} fontWeight={"700"} marginLeft={"20px"}
+                                      fontSize={"60px"}><Box as={"span"}
+                                                             color={"#107dcb"}>Web</Box> Developer</Text>
                             </Box>
-                            <Box marginRight={"10px"} height={"380px"} display={"flex"} justifyContent={"end"}
-                                 flexDirection={"column"}>
-                                <img width={"320px"} style={{height: "380px"}} src={"/selfie_home.png"}></img>
+                            <Box display={"flex"} height={"25%"} flexDirection={"column"} justifyContent={"start"}>
+                                <Text color={"#000000a3"} fontSize={"35px"} fontWeight={"700"} textAlign={"end"}>Shoma
+                                    Mano</Text>
+                            </Box>
+                            <Box display={"flex"} height={"30%"} flexDirection={"column"} justifyContent={"start"}>
+                                <Text textShadow={"1px 1px 2px black"} color={"#2c393e"} fontSize={"35px"}
+                                      fontWeight={"700"} textAlign={"center"}>Welcome To My Portfolio!!</Text>
                             </Box>
                         </Box>
-                    </>
+                        <Box marginRight={"10px"} height={"380px"} display={"flex"} justifyContent={"end"}
+                             flexDirection={"column"}>
+                            <img width={"320px"} style={{height: "380px"}} src={"/selfie_home.png"}></img>
+                        </Box>
+                    </Box>
                 )}
                 <MyComponent name={'shoma'}>inside</MyComponent>
                 {selectedLanguage === 'en' ? (
@@ -85,7 +78,7 @@ const Home: NextPage = () => {
                     </h1>
                 )}
                 <Link href={'/works'}>
-                    <a>works</a>
+                    works
                 </Link>
                 <p className={styles.description}>
                     Get started by editing <code className={styles.code}>pages/index.tsx</code>
