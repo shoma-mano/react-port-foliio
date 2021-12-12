@@ -1,6 +1,6 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import { Dispatch, SetStateAction, useContext, useEffect, useRef } from 'react';
-import { languageContext } from '../../pages/_app';
+import { languageContext } from '../../../pages/_app';
 import { useRouter } from 'next/router';
 
 export const RightSideBarButton = ({

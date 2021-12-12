@@ -1,19 +1,24 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { MyComponent } from './mycomponent';
-import { Box, Button, Link, Text } from '@chakra-ui/react';
-import { SideBarContent } from '../components/left_side_bar/SideBarContent';
-import { RightSideBar } from '../components/right_side_bar/RightSideBar';
+import { Box, Button, Link, Text, Image } from '@chakra-ui/react';
+import { SideBarContent } from '../components/organisms/left_side_bar/SideBarContent';
+import { RightSideBar } from '../components/organisms/right_side_bar/RightSideBar';
 import { ShowCount } from './ShowCount';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { languageContext } from './_app';
+import { JapaneseIntroduceCard } from "../components/organisms/home/JapaneseIntroduceCard";
+import { RoundIcon } from "../components/atoms/RoundIcon";
 
 const Home: NextPage = () => {
-    const hello = () => console.log('hello');
-    let [count, setCount] = useState(0);
     const {selectedLanguage} = useContext(languageContext);
+    const Icons = [
+        {imgSrc: "/aws.png", padding: 5},
+        {imgSrc: "/react.png", padding: 15},
+        {imgSrc: "/angular.png", padding: 15},
+        {imgSrc: "/vue.png", padding: 15},
+    ]
 
     return (
         <div className={styles.container}>
@@ -24,26 +29,14 @@ const Home: NextPage = () => {
             </Head>
             <main className={styles.main}>
                 {selectedLanguage === "ja" ? (
-                    <Box transition={"all 20ms"} borderRadius={"8px"} marginTop={"20px"} boxShadow={"lg"} w={"530px"} h={"380px"} bg={"white"}
-                         display={"flex"} justifyContent={"space-between"}>
-                        <Box width={"280px"} height={"100%"} flexShrink={"0"} flexGrow={"1"}>
-                            <Box display={"flex"} mt={"10px"} height={"100%"} flexDirection={"column"}
-                                 justifyContent={"center"}>
-                                <Box mb={"10px"} ml={"65px"}>
-                                    <Text color={"black"} mb={"10px"} fontWeight={"700"}
-                                          fontSize={"20px"}>Webエンジニア</Text>
-                                    <Text fontWeight={"700"} fontSize={"40px"}>真野 笑馬</Text>
-                                    <Text>Shoma Mano</Text>
-                                </Box>
-                            </Box>
-                        </Box>
-                        <Box marginRight={"10px"} height={"380px"} display={"flex"} justifyContent={"end"}
-                             flexDirection={"column"}>
-                            <img width={"320px"} style={{height: "380px"}} src={"/selfie_home.png"}></img>
-                        </Box>
-                    </Box>
+                    <JapaneseIntroduceCard
+                        position={"Webエンジニア"}
+                        name={"真野 笑馬"}
+                        englishName={"Shoma Mano"}
+                    ></JapaneseIntroduceCard>
                 ) : (
-                    <Box transition={"all 20ms"} borderRadius={"6px"} marginTop={"20px"} boxShadow={"lg"} w={"90%"} h={"380px"} bg={"white"}
+                    <Box transition={"all 20ms"} borderRadius={"6px"} marginTop={"5px"} boxShadow={"lg"} w={"90%"}
+                         h={"380px"} bg={"white"}
                          display={"flex"} justifyContent={"space-between"}>
                         <Box width={"430px"} height={"100%"} flexShrink={"0"} flexGrow={"1"}>
                             <Box display={"flex"} height={"45%"} flexDirection={"column"} justifyContent={"end"}>
@@ -66,22 +59,20 @@ const Home: NextPage = () => {
                         </Box>
                     </Box>
                 )}
+                <Text mt={"40px"} fontSize={"30px"} fontWeight={"700"}>スキル</Text>
+                <Text mt={"10px"}>フロントからバックエンド、インフラまで経験あり</Text>
+                <Box mt={"20px"} justifyItems={"center"} width={"70%"} gridGap={"30px"} display={"grid"}
+                     gridTemplateColumns={"repeat(auto-fit,minmax(150px,1fr))"}>
+                    {Icons.map(v => (
+                        <Box key={v.imgSrc} display={"flex"} flexDirection={"column"} alignItems={"center"}>
+                            <RoundIcon imgSrc={v.imgSrc} padding={v.padding}></RoundIcon>
+                            <Text mt={"15px"} fontWeight={"600"} color={"#121212b8"} fontSize={"14px"}>AWSソリューションアーキテクト</Text>
+                        </Box>)
+                    )}
+                </Box>
             </main>
-            <footer className={styles.footer}>
-                <a
-                    href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                >
-                    Powered by{' '}
-                    <span className={styles.logo}>
-                        <Image src='/vercel.svg' alt='Vercel Logo' width={72} height={16}/>
-                    </span>
-                </a>
-            </footer>
         </div>
-    )
-        ;
+    );
 };
 
 export default Home;

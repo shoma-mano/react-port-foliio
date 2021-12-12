@@ -16,7 +16,7 @@ export const ProfileComponent = ({ profileObj, title }: { profileObj: any; title
                         display={'flex'}
                         justifyContent={'space-between'}
                     >
-                        <Text fontFamily={'theme'} p={'5px 8px'} bg={'theme'}>
+                        <Text fontFamily={'theme'} p={'5px 8px'} >
                             {key}:
                         </Text>
                         <Text opacity={'0.5'} lineHeight={'29px'}>

@@ -1,13 +1,11 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import { Dispatch, SetStateAction, useContext, useEffect, useRef } from 'react';
-import { languageContext } from '../../pages/_app';
+import { languageContext } from '../../../pages/_app';
 
 export const RightSideBarTranslateButton = ({
-    imgSrc,
-    title,
+    imgSrc
 }: {
     imgSrc: string;
-    title: string;
 }) => {
     const pop_up = useRef<HTMLDivElement>(null);
     const right_bar_button = useRef<HTMLDivElement>(null);

@@ -25,10 +25,9 @@ export const RightSideBar = () => {
 
     return (
         <>
-            <Box height={"100%"} display={"flex"} flexDirection={"column"} alignItems={"center"} >
-                <Box marginTop={"15px"}  flexBasis={"auto"} >
-                    <RightSideBarTranslateButton imgSrc={"/translate.png"}
-                                                 title={'translate'}></RightSideBarTranslateButton>
+            <Box height={"100%"} display={"flex"} flexDirection={"column"} alignItems={"center"}>
+                <Box marginTop={"15px"} flexBasis={"auto"}>
+                    <RightSideBarTranslateButton imgSrc={"/translate.png"}></RightSideBarTranslateButton>
                 </Box>
                 <Box marginTop={"55px"}>
                     {buttonObjArray.map((v, i) => {
