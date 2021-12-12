@@ -1,41 +1,43 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
 
-import { ChakraProvider } from "@chakra-ui/react"
-import { extendTheme } from "@chakra-ui/react"
-import { createContext, useState } from "react";
+import { ChakraProvider } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
+import { createContext, useState } from 'react';
+import { Layout } from '../components/Layout';
 
 const theme = extendTheme({
     colors: {
-        theme: "#0095ff8c"
+        theme: '#0095ff8c',
     },
     fonts: {
-        theme: "monospace"
-    }
-})
+        theme: 'monospace',
+    },
+});
 
-export const languageContext = createContext({} as {selectedLanguage: string,toggleLanguage: ()=>void})
+export const languageContext = createContext(
+    {} as { selectedLanguage: "ja"|"en"; toggleLanguage: () => void }
+);
 
-function MyApp({Component, pageProps}: AppProps) {
-
-    const [selectedLanguage, setLanguage] = useState("ja")
+function MyApp({ Component, pageProps }: AppProps) {
+    const [selectedLanguage, setLanguage] = useState<'ja'|'en'>('ja');
     const toggleLanguage = () => {
-        if (selectedLanguage === "ja") setLanguage("en")
-        else {
-            setLanguage("ja")
-        }
-    }
+        selectedLanguage === 'ja'? setLanguage('en'): setLanguage('ja');
+    };
     const languageContextValue = {
-        selectedLanguage, toggleLanguage
-    }
+        selectedLanguage,
+        toggleLanguage,
+    };
 
     return (
         <ChakraProvider theme={theme}>
             <languageContext.Provider value={languageContextValue}>
-                <Component {...pageProps} />
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
             </languageContext.Provider>
         </ChakraProvider>
-    )
+    );
 }
 
-export default MyApp
+export default MyApp;
