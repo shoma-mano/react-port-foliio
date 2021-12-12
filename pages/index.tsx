@@ -24,19 +24,18 @@ const Home: NextPage = () => {
             </Head>
             <main className={styles.main}>
                 {selectedLanguage === "ja" ? (
-                    <Box transition={"all 400ms"} borderRadius={"2px"} marginTop={"20px"} boxShadow={"lg"} w={"60%"} h={"380px"} bg={"#dddbdb"}
+                    <Box transition={"all 20ms"} borderRadius={"8px"} marginTop={"20px"} boxShadow={"lg"} w={"530px"} h={"380px"} bg={"white"}
                          display={"flex"} justifyContent={"space-between"}>
-                        <Box width={"290px"} height={"100%"} flexShrink={"0"} flexGrow={"1"}>
+                        <Box width={"280px"} height={"100%"} flexShrink={"0"} flexGrow={"1"}>
                             <Box display={"flex"} mt={"10px"} height={"100%"} flexDirection={"column"}
                                  justifyContent={"center"}>
-                                <Box>
+                                <Box mb={"10px"} ml={"65px"}>
                                     <Text color={"black"} mb={"10px"} fontWeight={"700"}
                                           fontSize={"20px"}>Webエンジニア</Text>
                                     <Text fontWeight={"700"} fontSize={"40px"}>真野 笑馬</Text>
                                     <Text>Shoma Mano</Text>
                                 </Box>
                             </Box>
-
                         </Box>
                         <Box marginRight={"10px"} height={"380px"} display={"flex"} justifyContent={"end"}
                              flexDirection={"column"}>
@@ -44,7 +43,7 @@ const Home: NextPage = () => {
                         </Box>
                     </Box>
                 ) : (
-                    <Box transition={"all 400ms"} opacity={selectedLanguage ==="ja"? 0:1} borderRadius={"6px"} marginTop={"20px"} boxShadow={"lg"} w={"90%"} h={"380px"} bg={"white"}
+                    <Box transition={"all 20ms"} borderRadius={"6px"} marginTop={"20px"} boxShadow={"lg"} w={"90%"} h={"380px"} bg={"white"}
                          display={"flex"} justifyContent={"space-between"}>
                         <Box width={"430px"} height={"100%"} flexShrink={"0"} flexGrow={"1"}>
                             <Box display={"flex"} height={"45%"} flexDirection={"column"} justifyContent={"end"}>
@@ -57,8 +56,8 @@ const Home: NextPage = () => {
                                     Mano</Text>
                             </Box>
                             <Box display={"flex"} height={"30%"} flexDirection={"column"} justifyContent={"start"}>
-                                <Text textShadow={"1px 1px 2px black"} color={"#2c393e"} fontSize={"35px"}
-                                      fontWeight={"700"} textAlign={"center"}>Welcome To My Portfolio!!</Text>
+                                {/*<Text textShadow={"1px 1px 2px black"} color={"#2c393e"} fontSize={"35px"}*/}
+                                {/*      fontWeight={"700"} textAlign={"center"}>Welcome To My Portfolio!!</Text>*/}
                             </Box>
                         </Box>
                         <Box marginRight={"10px"} height={"380px"} display={"flex"} justifyContent={"end"}
@@ -67,50 +66,6 @@ const Home: NextPage = () => {
                         </Box>
                     </Box>
                 )}
-                <MyComponent name={'shoma'}>inside</MyComponent>
-                {selectedLanguage === 'en' ? (
-                    <h1 className={styles.title}>
-                        Welcome to <a href='https://nextjs.org'>Next.js!</a>
-                    </h1>
-                ) : (
-                    <h1 className={styles.title}>
-                        ようこそ <a href='https://nextjs.org'>Next.jsへ!</a>
-                    </h1>
-                )}
-                <Link href={'/works'}>
-                    works
-                </Link>
-                <p className={styles.description}>
-                    Get started by editing <code className={styles.code}>pages/index.tsx</code>
-                </p>
-
-                <div className={styles.grid}>
-                    <a href='https://nextjs.org/docs' className={styles.card}>
-                        <h2>Documentation &rarr;</h2>
-                        <p>Find in-depth information about Next.js features and API.</p>
-                    </a>
-
-                    <a href='https://nextjs.org/learn' className={styles.card}>
-                        <h2>Learn &rarr;</h2>
-                        <p>Learn about Next.js in an interactive course with quizzes!</p>
-                    </a>
-
-                    <a
-                        href='https://github.com/vercel/next.js/tree/master/examples'
-                        className={styles.card}
-                    >
-                        <h2>Examples &rarr;</h2>
-                        <p>Discover and deploy boilerplate example Next.js projects.</p>
-                    </a>
-
-                    <a
-                        href='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-                        className={styles.card}
-                    >
-                        <h2>Deploy &rarr;</h2>
-                        <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-                    </a>
-                </div>
             </main>
             <footer className={styles.footer}>
                 <a

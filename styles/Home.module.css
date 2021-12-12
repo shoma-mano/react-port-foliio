@@ -9,7 +9,7 @@
     margin-left: 290px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     background: rgb(240, 240, 246);
 }
