@@ -1,31 +1,30 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import React from 'react';
+import { KeyValueCard } from '../../atoms/KeyValueCard';
+import { LabelWithUnderLine } from '../../atoms/LavelWithUnderLine';
 
-export const ProfileComponent = ({ profileObj, title }: { profileObj: any; title: string }) => {
+export const ProfileComponent = ({ profileArray }: { profileArray: Array<any> }) => {
     return (
         <>
-            <Text mt={'15px'} fontWeight={'700'}>
-                {title}
-            </Text>
-            {Object.keys(profileObj).map((key, index) => {
-                return (
-                    <Box
-                        fontFamily={'theme'}
-                        mt={'15px'}
-                        key={key}
-                        display={'flex'}
-                        justifyContent={'space-between'}
-                    >
-                        <Text fontFamily={'theme'} p={'5px 8px'} >
-                            {key}:
-                        </Text>
-                        <Text opacity={'0.5'} lineHeight={'29px'}>
-                            {profileObj[key]}
-                        </Text>
-                    </Box>
-                );
-            })}
-            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={'#e5e5e5'}></Box>
+            <LabelWithUnderLine label={'プロフィール'}></LabelWithUnderLine>
+            <Box
+                mt={'10px'}
+                sx={{ rowGap: '10px' }}
+                width={'100%'}
+                display={'flex'}
+                flexWrap={'wrap'}
+                justifyContent={'space-between'}
+            >
+                {profileArray.map((v) => (
+                    <KeyValueCard
+                        key={v.label}
+                        label={v.label}
+                        value={v.value}
+                        fontSize={v.fontSize}
+                        unit={v.unit}
+                    ></KeyValueCard>
+                ))}
+            </Box>
         </>
     );
 };

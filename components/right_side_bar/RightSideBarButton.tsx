@@ -1,6 +1,6 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import { Dispatch, SetStateAction, useContext, useEffect, useRef } from 'react';
-import { languageContext } from '../../../pages/_app';
+import { languageContext } from '../../pages/_app';
 import { useRouter } from 'next/router';
 
 export const RightSideBarButton = ({
@@ -10,7 +10,7 @@ export const RightSideBarButton = ({
     imgSrc,
     title,
     link,
-    marginTop
+    marginTop,
 }: {
     selectedIndex: number;
     myIndex: number;
@@ -22,6 +22,7 @@ export const RightSideBarButton = ({
 }) => {
     const pop_up = useRef<HTMLDivElement>(null);
     const right_bar_button = useRef<HTMLDivElement>(null);
+    const { selectedLanguage } = useContext(languageContext);
 
     const onMouseEnter = () => {
         pop_up.current!.style.visibility = 'visible';
@@ -49,7 +50,12 @@ export const RightSideBarButton = ({
 
     return (
         <>
-            <Box marginTop={marginTop} display={'flex'} flexDirection={'column'} alignItems={'center'}>
+            <Box
+                marginTop={marginTop}
+                display={'flex'}
+                flexDirection={'column'}
+                alignItems={'center'}
+            >
                 <Box
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
@@ -71,7 +77,7 @@ export const RightSideBarButton = ({
                     onMouseLeave={onMouseLeave}
                     borderRadius={'3px'}
                     width={'80px'}
-                    height={"20px"}
+                    height={'20px'}
                     ref={pop_up}
                     bg={'black'}
                     transition={'all 400ms'}
@@ -79,7 +85,12 @@ export const RightSideBarButton = ({
                     opacity={myIndex === 0 ? 1 : 0}
                     transform={myIndex === 0 ? 'translateY(-80px)' : 'translateY(-40px)'}
                 >
-                    <Text fontSize={'11px'} lineHeight={"20px"} color={'white'} textAlign={'center'}>
+                    <Text
+                        fontSize={'11px'}
+                        lineHeight={'20px'}
+                        color={'white'}
+                        textAlign={'center'}
+                    >
                         {title}
                     </Text>
                 </Box>

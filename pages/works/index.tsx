@@ -1,10 +1,10 @@
-import styles from '../styles/Home.module.css';
+import styles from '../../styles/Home.module.css';
 import Head from 'next/head';
-import { MyComponent } from './mycomponent';
+import { MyComponent } from '../mycomponent';
 import { Link } from '@chakra-ui/react';
 import Image from 'next/image';
 
-export const Works = () => {
+export const Index = () => {
     return (
         <>
             <main className={styles.main}>
@@ -56,4 +56,4 @@ export const Works = () => {
     );
 };
 
-export default Works;
+export default Index;

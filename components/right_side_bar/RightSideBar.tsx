@@ -1,7 +1,7 @@
 import { Box, Button, Image, Text } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 import { RightSideBarButton } from './RightSideBarButton';
-import { RightSideBarTranslateButton } from "./RightSideBarTranslateButton";
+import { RightSideBarTranslateButton } from './RightSideBarTranslateButton';
 
 export const RightSideBar = () => {
     let [selectedIndex, setSelectedIndex] = useState(0);
@@ -25,11 +25,13 @@ export const RightSideBar = () => {
 
     return (
         <>
-            <Box height={"100%"} display={"flex"} flexDirection={"column"} alignItems={"center"}>
-                <Box marginTop={"15px"} flexBasis={"auto"}>
-                    <RightSideBarTranslateButton imgSrc={"/translate.png"}></RightSideBarTranslateButton>
+            <Box height={'100%'} display={'flex'} flexDirection={'column'} alignItems={'center'}>
+                <Box marginTop={'15px'} flexBasis={'auto'}>
+                    <RightSideBarTranslateButton
+                        imgSrc={'/translate.png'}
+                    ></RightSideBarTranslateButton>
                 </Box>
-                <Box marginTop={"55px"}>
+                <Box marginTop={'55px'}>
                     {buttonObjArray.map((v, i) => {
                         return (
                             <>
@@ -41,7 +43,7 @@ export const RightSideBar = () => {
                                     myIndex={i}
                                     setSelectedIndex={setSelectedIndex}
                                     link={v.link}
-                                    marginTop={"20px"}
+                                    marginTop={'20px'}
                                 ></RightSideBarButton>
                             </>
                         );

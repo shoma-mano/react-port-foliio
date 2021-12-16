@@ -2,14 +2,29 @@ import { Box, Button, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 import { ProfileComponent } from './ProfileComponent';
 import { SkillSetComponent } from './SkillSetComponent';
+import { SpanWrapper } from '../../atoms/SpanWrapper';
 
 export const SideBarContent = ({ onClick }: { onClick: () => void }) => {
-    const profile = {
-        年齢: '25歳',
-        会社: 'R-UNIT',
-        性別: '男',
-        住所: '東京都江戸川区',
-    };
+    const profileArray = [
+        {
+            label: '年齢',
+            value: '25',
+            unit: '歳',
+        },
+        {
+            label: '会社',
+            value: 'R-UNIT',
+        },
+        {
+            label: '性別',
+            value: '男',
+        },
+        {
+            label: '住所',
+            value: '東京都江戸川区',
+            fontSize: 13,
+        },
+    ];
 
     const skillSet = {
         react: 70,
@@ -32,7 +47,6 @@ export const SideBarContent = ({ onClick }: { onClick: () => void }) => {
                     bg={'rgb(205 205 205)'}
                     src='/selfie.png'
                     filter={'brightness(1.2)'}
-
                 ></Image>
                 <Text textAlign={'center'} fontSize={'20px'} fontWeight={'700'} mt={'32px'}>
                     真野 笑馬
@@ -85,12 +99,10 @@ export const SideBarContent = ({ onClick }: { onClick: () => void }) => {
                         height={6}
                     />
                 </Box>
-                <Box mt={'25px'} opacity='0.7' height={'5px'} bg={'#e5e5e5'}></Box>
                 <Box overflowY={'scroll'} height={'100%'}>
-                    <ProfileComponent
-                        profileObj={profile}
-                        title={'プロフィール'}
-                    ></ProfileComponent>
+                    <Box mt={'25px'}>
+                        <ProfileComponent profileArray={profileArray}></ProfileComponent>
+                    </Box>
                     <SkillSetComponent
                         skillSetObj={skillSet}
                         title={'スキルセット'}

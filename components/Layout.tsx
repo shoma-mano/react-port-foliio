@@ -1,7 +1,7 @@
 import { ReactChildren, ReactElement } from 'react';
 import { Box } from '@chakra-ui/react';
 import { SideBarContent } from './organisms/left_side_bar/SideBarContent';
-import { RightSideBar } from './organisms/right_side_bar/RightSideBar';
+import { RightSideBar } from './right_side_bar/RightSideBar';
 
 export const Layout = ({ children }: { children: ReactElement }) => {
     return (
@@ -9,7 +9,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
             <Box
                 position='fixed'
                 left={0}
-                px={'8'}
+                px={'7'}
                 py={'5'}
                 w='290px'
                 top={0}
