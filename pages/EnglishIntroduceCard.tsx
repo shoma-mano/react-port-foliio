@@ -21,7 +21,8 @@ export const EnglishIntroduceCard=()=>{
                         height={'45%'}
                         flexDirection={'column'}
                         justifyContent={'end'}
-                        width={"200px"}
+                        width={"350px"}
+                        mt={"30px"}
                     >
                         <Text
                             color={'#000000a3'}

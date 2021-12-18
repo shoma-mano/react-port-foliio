@@ -7,6 +7,7 @@ import { languageContext } from './_app';
 import { JapaneseIntroduceCard } from './JapaneseIntroduceCard';
 import { RoundIcon } from '../components/ui_parts/RoundIcon';
 import { EnglishIntroduceCard } from "./EnglishIntroduceCard";
+import { WaveText } from "./WaveText";
 
 const Home: NextPage = () => {
     const {selectedLanguage} = useContext(languageContext);
@@ -56,7 +57,6 @@ const Home: NextPage = () => {
                 <link rel='icon' href='/favicon.ico'/>
             </Head>
             <main className={styles.main}>
-
                 {selectedLanguage === 'ja' ? (
                     <JapaneseIntroduceCard
                         position={'Webエンジニア'}
@@ -64,6 +64,7 @@ const Home: NextPage = () => {
                         englishName={'Shoma Mano'}
                     ></JapaneseIntroduceCard>
                 ) : <EnglishIntroduceCard></EnglishIntroduceCard>}
+                <WaveText text={"Welcome To My Portforio"}></WaveText>
                 <Text mt={'40px'} fontSize={'30px'} fontWeight={'700'}>
                     スキル
                 </Text>
