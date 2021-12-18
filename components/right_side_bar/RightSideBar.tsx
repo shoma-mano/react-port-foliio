@@ -7,17 +7,17 @@ export const RightSideBar = () => {
     let [selectedIndex, setSelectedIndex] = useState(0);
     const buttonObjArray = [
         {
-            imgSrc: '/home.png',
+            imgSrc: '/right_side_bar/home.png',
             title: 'HOME',
             link: '/',
         },
         {
-            imgSrc: '/education.png',
+            imgSrc: '/right_side_bar/education.png',
             title: 'EDUCATION',
             link: '/education',
         },
         {
-            imgSrc: '/works.png',
+            imgSrc: '/right_side_bar/works.png',
             title: 'WORKS',
             link: '/works',
         },

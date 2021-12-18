@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { KeyValueCard } from '../../atoms/KeyValueCard';
-import { LabelWithUnderLine } from '../../atoms/LavelWithUnderLine';
+import { KeyValueCard } from '../ui_parts/KeyValueCard';
+import { LabelWithUnderLine } from '../ui_parts/LavelWithUnderLine';
 
 export const ProfileComponent = ({ profileArray }: { profileArray: Array<any> }) => {
     return (

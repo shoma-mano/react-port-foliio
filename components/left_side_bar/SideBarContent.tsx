@@ -1,10 +1,14 @@
 import { Box, Button, Image, Text } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { ProfileComponent } from './ProfileComponent';
 import { SkillSetComponent } from './SkillSetComponent';
-import { SpanWrapper } from '../../atoms/SpanWrapper';
+import { SpanWrapper } from '../ui_parts/SpanWrapper';
+import { languageContext } from "../../pages/_app";
 
-export const SideBarContent = ({ onClick }: { onClick: () => void }) => {
+export const SideBarContent = ({onClick}: { onClick: () => void }) => {
+
+    const {selectedLanguage} = useContext(languageContext);
+
     const profileArray = [
         {
             label: '年齢',
@@ -26,14 +30,33 @@ export const SideBarContent = ({ onClick }: { onClick: () => void }) => {
         },
     ];
 
+    const IconList = [
+        {
+            padding: "6px",
+            src: "/sns_icon/twitter.svg",
+            bg: "theme"
+        },
+        {
+            padding: "6px",
+            src: "/sns_icon/github.svg",
+            bg: "theme"
+        },
+        {
+            padding: "2px",
+            src: "/sns_icon/qiita.png",
+            bg: ""
+        }
+    ]
+
     const skillSet = {
-        react: 70,
-        vue: 80,
-        rails: 60,
-        Nestjs: 60,
-        graphQL: 60,
-        AWS: 70,
-        terraform: 70,
+        React: 90,
+        TypeScript:90,
+        Nestjs: 80,
+        Docker:80,
+        AWS: 75,
+        Terraform: 75,
+        Vue: 70,
+        GraphQL: 70,
     };
 
     return (
@@ -68,45 +91,22 @@ export const SideBarContent = ({ onClick }: { onClick: () => void }) => {
                     mt={'10px'}
                     color={'gray500'}
                 >
-                    <Image
-                        border={'none'}
-                        padding={'6px'}
-                        bg={'theme'}
-                        borderRadius={'20px'}
-                        src='/twitter.svg'
-                        alt='Vercel Logo'
-                        width={6}
-                        height={6}
-                    />
-                    <Image
-                        border={'none'}
-                        bg={'theme'}
-                        padding={'6px'}
-                        borderRadius={'20px'}
-                        src='/github.svg'
-                        alt='Vercel Logo'
-                        width={6}
-                        height={6}
-                    />
-                    <Image
-                        border={'none'}
-                        padding={'2px'}
-                        bg={''}
-                        borderRadius={'20px'}
-                        src='/qiita.png'
-                        alt='Vercel Logo'
-                        width={6}
-                        height={6}
-                    />
+                    {IconList.map(v => (
+                        <Image key={v.src} border={"none"} padding={v.padding} bg={v.bg} borderRadius={"20px"}
+                               src={v.src} width={6} height={6}>
+                        </Image>))
+                    }
                 </Box>
                 <Box overflowY={'scroll'} height={'100%'}>
                     <Box mt={'25px'}>
                         <ProfileComponent profileArray={profileArray}></ProfileComponent>
                     </Box>
-                    <SkillSetComponent
-                        skillSetObj={skillSet}
-                        title={'スキルセット'}
-                    ></SkillSetComponent>
+                    <Box mt={"25px"}>
+                        <SkillSetComponent
+                            skillSetObj={skillSet}
+                            title={'関心のある技術'}
+                        ></SkillSetComponent>
+                    </Box>
                 </Box>
             </Box>
             <Box mt={'25px'} opacity='0.7' height={'2px'} bg={'#e5e5e5'}></Box>

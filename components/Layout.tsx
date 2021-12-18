@@ -1,6 +1,6 @@
 import { ReactChildren, ReactElement } from 'react';
 import { Box } from '@chakra-ui/react';
-import { SideBarContent } from './organisms/left_side_bar/SideBarContent';
+import { SideBarContent } from './left_side_bar/SideBarContent';
 import { RightSideBar } from './right_side_bar/RightSideBar';
 
 export const Layout = ({ children }: { children: ReactElement }) => {
