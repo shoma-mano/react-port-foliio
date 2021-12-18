@@ -7,9 +7,9 @@ export const EnglishIntroduceCard=()=>{
             <Box
                 transition={'all 20ms'}
                 borderRadius={'6px'}
-                marginTop={'5px'}
+                marginTop={'20px'}
                 boxShadow={'lg'}
-                w={'90%'}
+                w={'80%'}
                 h={'380px'}
                 bg={'white'}
                 display={'flex'}
@@ -21,18 +21,15 @@ export const EnglishIntroduceCard=()=>{
                         height={'45%'}
                         flexDirection={'column'}
                         justifyContent={'end'}
+                        width={"200px"}
                     >
                         <Text
                             color={'#000000a3'}
-                            mb={'10px'}
                             fontWeight={'700'}
                             marginLeft={'20px'}
-                            fontSize={'60px'}
+                            fontSize={'30px'}
                         >
-                            <Box as={'span'} color={'#107dcb'}>
-                                Web
-                            </Box>{' '}
-                            Developer
+                                I'm Shoma Mano Software Engineer
                         </Text>
                     </Box>
                     <Box

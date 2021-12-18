@@ -5,7 +5,8 @@ import { LabelWithUnderLine } from "../ui_parts/LavelWithUnderLine";
 export const SkillSetComponent = ({ skillSetObj, title }: { skillSetObj: any; title: string }) => {
     return (
         <>
-            <LabelWithUnderLine label={title}></LabelWithUnderLine>
+            <Text fontWeight={'700'}>{title}</Text>
+            <Box mt={'3px'} opacity='0.7' height={'2px'} bg={'#e5e5e5'}></Box>
             {Object.keys(skillSetObj).map((key, index) => {
                 return (
                     <Box key={key}>
