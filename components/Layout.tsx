@@ -1,6 +1,6 @@
 import { ReactChildren, ReactElement } from 'react';
 import { Box } from '@chakra-ui/react';
-import { SideBarContent } from './left_side_bar/SideBarContent';
+import { LeftSideBar } from './left_side_bar/LeftSideBar';
 import { RightSideBar } from './right_side_bar/RightSideBar';
 
 export const Layout = ({ children }: { children: ReactElement }) => {
@@ -17,7 +17,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 bg='white'
                 boxShadow='xl'
             >
-                <SideBarContent onClick={() => console.log('ok')}></SideBarContent>
+                <LeftSideBar onClick={() => console.log('ok')}></LeftSideBar>
             </Box>
             <Box
                 position='fixed'

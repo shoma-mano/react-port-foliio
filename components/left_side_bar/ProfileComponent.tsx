@@ -1,15 +1,17 @@
 import { Box } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { KeyValueCard } from '../ui_parts/KeyValueCard';
 import { LabelWithUnderLine } from '../ui_parts/LavelWithUnderLine';
+import { languageContext } from "../../pages/_app";
 
-export const ProfileComponent = ({ profileArray }: { profileArray: Array<any> }) => {
+export const ProfileComponent = ({profileArray}: { profileArray: Array<any> }) => {
+    const {selectedLanguage} = useContext(languageContext)
     return (
         <>
-            <LabelWithUnderLine label={'プロフィール'}></LabelWithUnderLine>
+            <LabelWithUnderLine label={selectedLanguage === 'ja' ? 'プロフィール':'Profile'}></LabelWithUnderLine>
             <Box
                 mt={'10px'}
-                sx={{ rowGap: '10px' }}
+                sx={{rowGap: '10px'}}
                 width={'100%'}
                 display={'flex'}
                 flexWrap={'wrap'}

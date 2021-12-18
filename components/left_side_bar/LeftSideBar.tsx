@@ -5,28 +5,54 @@ import { SkillSetComponent } from './SkillSetComponent';
 import { SpanWrapper } from '../ui_parts/SpanWrapper';
 import { languageContext } from "../../pages/_app";
 
-export const SideBarContent = ({onClick}: { onClick: () => void }) => {
+export const LeftSideBar = ({onClick}: { onClick: () => void }) => {
 
     const {selectedLanguage} = useContext(languageContext);
 
     const profileArray = [
         {
-            label: '年齢',
-            value: '25',
-            unit: '歳',
+            ja: {
+                label: '年齢',
+                value: '25',
+                unit: '歳',
+            },
+            en: {
+                label: 'age',
+                value: '25',
+                unit: 'Years old',
+            }
         },
         {
-            label: '会社',
-            value: 'R-UNIT',
+            ja: {
+                label: '会社',
+                value: 'R-UNIT',
+            },
+            en: {
+                label: 'Company',
+                value:'R-UNIT',
+            }
         },
         {
-            label: '性別',
-            value: '男',
+            ja: {
+                label: '性別',
+                value: '男',
+            },
+            en: {
+                label: 'Gender',
+                value: 'Man',
+            }
         },
         {
-            label: '住所',
-            value: '東京都江戸川区',
-            fontSize: 13,
+            ja: {
+                label: '住所',
+                value: '東京都江戸川区',
+                fontSize: 13,
+            },
+            en: {
+                label: 'Address',
+                value: 'Tokyo',
+                fontSize: 23,
+            }
         },
     ];
 
@@ -50,9 +76,9 @@ export const SideBarContent = ({onClick}: { onClick: () => void }) => {
 
     const skillSet = {
         React: 90,
-        TypeScript:90,
+        TypeScript: 90,
         Nestjs: 80,
-        Docker:80,
+        Docker: 80,
         AWS: 75,
         Terraform: 75,
         Vue: 70,
@@ -72,16 +98,15 @@ export const SideBarContent = ({onClick}: { onClick: () => void }) => {
                     filter={'brightness(1.2)'}
                 ></Image>
                 <Text textAlign={'center'} fontSize={'20px'} fontWeight={'700'} mt={'32px'}>
-                    真野 笑馬
+                    {selectedLanguage==='ja'?'真野 笑馬':'Shoma Mano'}
                 </Text>
                 <Text
                     textAlign={'center'}
                     mt={'10px'}
                     fontSize={'13px'}
-                    fontWeight={'100'}
-                    opacity={'0.5'}
+                    fontWeight={'200'}
                 >
-                    フロントエンドエンジニア
+                    { selectedLanguage==='ja'?(<Text>Web<Box as={"span"}opacity={"0.5"}>エンジニア</Box></Text> ) :(<Text>Software Engineer</Text>)}
                 </Text>
                 <Box
                     display={'flex'}
@@ -99,12 +124,12 @@ export const SideBarContent = ({onClick}: { onClick: () => void }) => {
                 </Box>
                 <Box overflowY={'scroll'} height={'100%'}>
                     <Box mt={'25px'}>
-                        <ProfileComponent profileArray={profileArray}></ProfileComponent>
+                        <ProfileComponent profileArray={profileArray.map(v=>v[selectedLanguage])}></ProfileComponent>
                     </Box>
                     <Box mt={"25px"}>
                         <SkillSetComponent
                             skillSetObj={skillSet}
-                            title={'関心のある技術'}
+                            title={selectedLanguage==='ja'?'関心のある技術':'My Favorite Stack'}
                         ></SkillSetComponent>
                     </Box>
                 </Box>
