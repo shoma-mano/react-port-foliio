@@ -65,7 +65,6 @@ const Home: NextPage = () => {
                         englishName={'Shoma Mano'}
                     ></JapaneseIntroduceCard>
                 ) : <EnglishIntroduceCard></EnglishIntroduceCard>}
-                <WaveText text={"Welcome To My Portforio"}></WaveText>
                 <Text mt={'40px'} fontSize={'30px'} fontWeight={'700'}>
                     スキル
                 </Text>

@@ -1,4 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
+import { WaveText } from "./WaveText";
 
 export const EnglishIntroduceCard=()=>{
 
@@ -32,6 +33,7 @@ export const EnglishIntroduceCard=()=>{
                         >
                                 I'm Shoma Mano Software Engineer
                         </Text>
+                        <WaveText text={"Welcome To My Portforio"} color={"black"}></WaveText>
                     </Box>
                     <Box
                         display={'flex'}
