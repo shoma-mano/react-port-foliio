@@ -1,54 +1,54 @@
 import { Box, Text } from "@chakra-ui/react";
 import { WaveText } from "./WaveText";
 
-export const EnglishIntroduceCard=()=>{
+export const EnglishIntroduceCard = () => {
 
-    return(
+    return (
         <>
             <Box
                 transition={'all 20ms'}
                 borderRadius={'6px'}
                 marginTop={'20px'}
                 boxShadow={'lg'}
-                w={'80%'}
+                w={'630px'}
                 h={'380px'}
                 bg={'white'}
                 display={'flex'}
                 justifyContent={'space-between'}
             >
-                <Box width={'430px'} height={'100%'} flexShrink={'0'} flexGrow={'1'}>
+                <Box width={'280px'} height={'100%'} flexShrink={'0'} flexGrow={'1'}>
                     <Box
                         display={'flex'}
-                        height={'45%'}
+                        height={'60%'}
                         flexDirection={'column'}
-                        justifyContent={'end'}
                         width={"350px"}
-                        mt={"30px"}
+                        marginLeft={'40px'}
+                        mt={"100px"}
                     >
                         <Text
                             color={'#000000a3'}
                             fontWeight={'700'}
-                            marginLeft={'20px'}
-                            fontSize={'30px'}
-                        >
-                                I'm Shoma Mano Software Engineer
-                        </Text>
-                        <WaveText text={"Welcome To My Portforio"} color={"black"}></WaveText>
-                    </Box>
-                    <Box
-                        display={'flex'}
-                        height={'25%'}
-                        flexDirection={'column'}
-                        justifyContent={'start'}
-                    >
-                        <Text
-                            color={'#000000a3'}
                             fontSize={'35px'}
-                            fontWeight={'700'}
-                            textAlign={'end'}
                         >
-                            Shoma Mano
+                            I'm Shoma Mano,
                         </Text>
+                        <Text
+                            color={'#0095ffeb'}
+                            fontWeight={'700'}
+                            fontSize={'35px'}
+                        >
+                            Software
+                        </Text>
+                        <Text
+                            color={'#000000a3'}
+                            fontWeight={'700'}
+                            fontSize={'35px'}
+                        >
+                            Engineer
+                        </Text>
+                        <Box display={"flex"} mt={"60px"}>
+                            <WaveText text={"Welcome To My Portforio"} color={"#262f62"}></WaveText>
+                        </Box>
                     </Box>
                     <Box
                         display={'flex'}
@@ -72,7 +72,6 @@ export const EnglishIntroduceCard=()=>{
                     ></img>
                 </Box>
             </Box>
-
         </>
     )
 }
