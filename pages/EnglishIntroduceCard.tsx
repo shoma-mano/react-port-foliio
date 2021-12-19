@@ -23,7 +23,7 @@ export const EnglishIntroduceCard = () => {
                         flexDirection={'column'}
                         width={"350px"}
                         marginLeft={'40px'}
-                        mt={"100px"}
+                        mt={"90px"}
                     >
                         <Text
                             color={'#000000a3'}

@@ -12,16 +12,28 @@ import { WaveText } from "./WaveText";
 const Home: NextPage = () => {
     const {selectedLanguage} = useContext(languageContext);
 
-    const reactContent = () => (<Text
+    const reactContent = () => selectedLanguage==='ja'?(<Text
             width={'150px'}
             mt={'15px'}
             fontWeight={'600'}
             color={'#121212b8'}
             fontSize={'14px'}
         >
-            実務経験あり。ポートフォリオのソースコードは
+            ポートフォリオのソースコードは
             <Link fontWeight={'900'} color={'black'}>
                 こちら。
+            </Link>
+        </Text>
+    ):(<Text
+            width={'150px'}
+            mt={'15px'}
+            fontWeight={'600'}
+            color={'#121212b8'}
+            fontSize={'14px'}
+        >
+            Portforio's source code is
+            <Link fontWeight={'900'} color={'black'}>
+                &nbsp;here.
             </Link>
         </Text>
     )
@@ -33,17 +45,16 @@ const Home: NextPage = () => {
             padding: 15,
             content: reactContent(),
         },
-        {title: 'Vue3', imgSrc: '/skill/vue.png', padding: 15, sentence: "TypeScript,CompositionAPI,Piniaを用いての実務経験あり。"},
-        {title: 'Angular', imgSrc: '/skill/angular.png', padding: 15, sentence: "実務経験あり。JSフレームワークの基礎はAngularで学びました。"},
-        {title: 'NestJS', imgSrc: '/skill/nest.svg', padding: 15, sentence: "個人開発でのTypeORM,GraphQL実装経験あり。"},
-        {title: 'Rails',imgSrc:'skill/rails.png',padding:15, sentence:"Rails6の実務経験あり。"},
-        {title:'Terraform',imgSrc:'skill/Terraform.png',padding:15,sentence:"実務でのECSコード化経験あり"},
+        {title: 'Vue3', imgSrc: '/skill/vue.png', padding: 15, sentence: selectedLanguage==='ja'?"TypeScript,CompositionAPI,Piniaを用いての実務経験あり。":"I used Vue3 with TypeScript, CompositionAPI, and Pinia."},
+        {title: 'Angular', imgSrc: '/skill/angular.png', padding: 15, sentence:selectedLanguage==='ja'? "実務経験あり。JSフレームワークの基礎はAngularで学びました。":'I learned basic of JS framework by Angular.'},
+        {title: 'NestJS', imgSrc: '/skill/nest.svg', padding: 15, sentence:selectedLanguage==='ja'? "個人開発でのTypeORM,GraphQL実装経験あり。":'I have used TypeORM and GraphQL in NestJS.'},
+        {title: 'Rails',imgSrc:'skill/rails.png',padding:15, sentence:selectedLanguage==='ja'?"Rails6の実務経験あり。":'I have used Rails6.'},
+        {title:'Terraform',imgSrc:'skill/Terraform.png',padding:15,sentence:selectedLanguage==='ja'?"実務でのECSコード化経験あり":'I have deployed ECS using Terraform.'},
         {
             title: "AWS",
             imgSrc: '/skill/aws.png',
             padding: 5,
-            sentence:
-                'AWSソリューションアーキテクト保有(ECS,EC2,Lambda,Route53,CodeBuild,CloudFront,S3等の経験あり)',
+            sentence:selectedLanguage==='ja'?'AWSソリューションアーキテクト保有(ECS,EC2,Lambda,Route53,CodeBuild,CloudFront,S3等の経験あり)':'I am AWS Certified Solutions Architect',
         },
     ];
 
@@ -66,9 +77,11 @@ const Home: NextPage = () => {
                     ></JapaneseIntroduceCard>
                 ) : <EnglishIntroduceCard></EnglishIntroduceCard>}
                 <Text mt={'40px'} fontSize={'30px'} fontWeight={'700'}>
-                    スキル
+                    {selectedLanguage==='ja'?'スキル':'Skill'}
                 </Text>
-                <Text mt={'10px'}>フロントからバックエンド、インフラまで経験あり</Text>
+                <Text mt={'10px'}>{selectedLanguage==='ja'?
+                    'フロントからバックエンド、インフラまで経験あり':
+                    'I have experience in Frontend,Backend, and Infrastructure'}</Text>
                 <Box
                     mt={'20px'}
                     justifyItems={'center'}
@@ -93,6 +106,7 @@ const Home: NextPage = () => {
                                     fontWeight={'600'}
                                     color={'#121212b8'}
                                     fontSize={'14px'}
+                                    wordBreak={'break-all'}
                                 >
                                     {v.sentence}
                                 </Text>
