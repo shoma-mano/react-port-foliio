@@ -13,7 +13,7 @@ export const Index = () => {
         <>
             <main className={styles.main}>
                 <Box>
-                    <Text>{selectedLanguage==='ja'?'経歴':'History'}</Text>
+                    <Text mt={"20px"} fontSize={"30px"}>{selectedLanguage==='ja'?'経歴':'History'}</Text>
                 </Box>
                 <p className={styles.description}>
                     Get started by editing <code className={styles.code}>pages/index.tsx</code>
