@@ -60,17 +60,17 @@ export const RightSideBarButton = ({
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                     onClick={onClick}
-                    h={'50px'}
-                    w={'50px'}
+                    h={'40px'}
+                    w={'40px'}
                     ref={right_bar_button}
                     _hover={{ bg: 'theme' }}
                     transition={'all 300ms'}
                     cursor={'pointer'}
-                    p={'15px'}
+                    p={'10px'}
                     bg={myIndex === selectedIndex ? 'theme' : 'rgb(227 224 224)'}
                     borderRadius={'30px'}
                 >
-                    <Image alt={'not found'} h={'20px'} w={'20px'} src={imgSrc}></Image>
+                    <Image margin={'auto'} alt={'not found'} h={'20px'} w={'20px'} src={imgSrc}></Image>
                 </Box>
                 <Box
                     onMouseEnter={onMouseEnter}

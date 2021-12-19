@@ -37,7 +37,7 @@ export const JapaneseIntroduceCard = ({
                             <Text fontWeight={'700'} fontSize={'48px'}>
                                 {name}
                             </Text>
-                            <Text fontSize={'24px'}>{englishName}</Text>
+                            <Text mt={'8px'} fontSize={'26px'}>{englishName}</Text>
                         </Box>
                     </Box>
                 </Box>

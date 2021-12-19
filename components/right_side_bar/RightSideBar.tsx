@@ -43,7 +43,7 @@ export const RightSideBar = () => {
                                     myIndex={i}
                                     setSelectedIndex={setSelectedIndex}
                                     link={v.link}
-                                    marginTop={'20px'}
+                                    marginTop={'40px'}
                                 ></RightSideBarButton>
                             </>
                         );

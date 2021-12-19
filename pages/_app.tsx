@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, ThemeConfig } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
 import { createContext, useState } from 'react';
 import { Layout } from '../components/Layout';
@@ -13,6 +13,10 @@ const theme = extendTheme({
     fonts: {
         theme: 'monospace',
     },
+    config:{
+        initialColorMode:'light',
+        useSystemColorMode: false,
+    } as ThemeConfig
 });
 
 export const languageContext = createContext(

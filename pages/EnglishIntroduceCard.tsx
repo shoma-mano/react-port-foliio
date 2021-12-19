@@ -24,9 +24,10 @@ export const EnglishIntroduceCard = () => {
                         width={"350px"}
                         marginLeft={'40px'}
                         mt={"90px"}
+                        fontFamily={"'Rubik', sans-serif;"}
                     >
                         <Text
-                            color={'#000000a3'}
+                            color={'#000000d1'}
                             fontWeight={'700'}
                             fontSize={'35px'}
                         >
@@ -40,7 +41,7 @@ export const EnglishIntroduceCard = () => {
                             Software
                         </Text>
                         <Text
-                            color={'#000000a3'}
+                            color={'#000000d1'}
                             fontWeight={'700'}
                             fontSize={'35px'}
                         >
