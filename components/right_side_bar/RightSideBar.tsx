@@ -13,8 +13,8 @@ export const RightSideBar = () => {
         },
         {
             imgSrc: '/right_side_bar/education.png',
-            title: 'EDUCATION',
-            link: '/education',
+            title: 'HISTORY',
+            link: '/history',
         },
         {
             imgSrc: '/right_side_bar/works.png',
