@@ -16,6 +16,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 h='100%'
                 bg='white'
                 boxShadow='xl'
+                zIndex={"1"}
             >
                 <LeftSideBar onClick={() => console.log('ok')}></LeftSideBar>
             </Box>
@@ -28,6 +29,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 h='100%'
                 bg='white'
                 boxShadow='md'
+                zIndex={"10"}
             >
                 <RightSideBar></RightSideBar>
             </Box>

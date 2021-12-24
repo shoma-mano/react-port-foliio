@@ -79,6 +79,8 @@ export const LeftSideBar = ({onClick}: { onClick: () => void }) => {
         TypeScript: 90,
         Nestjs: 80,
         Docker: 80,
+        Hasura:75,
+        FireBase:75,
         AWS: 75,
         Terraform: 75,
         Vue: 70,

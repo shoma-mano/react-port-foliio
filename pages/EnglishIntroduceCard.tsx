@@ -68,7 +68,7 @@ export const EnglishIntroduceCard = () => {
                 >
                     <img
                         width={'320px'}
-                        style={{height: '380px'}}
+                        style={{height: '380px',filter: 'brightness(1.2)'}}
                         src={'/selfie_home.png'}
                     ></img>
                 </Box>

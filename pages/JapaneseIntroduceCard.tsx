@@ -49,7 +49,7 @@ export const JapaneseIntroduceCard = ({
                         justifyContent={'end'}
                         flexDirection={'column'}
                     >
-                        <img width={'320px'} style={{height: '380px'}} src={'/selfie_home.png'}></img>
+                        <img width={'320px'} style={{height: '380px',zIndex:6,filter: 'brightness(1.2)'}} src={'/selfie_home.png'}></img>
                     </Box>
                 </Box>
             </CherryBlossom>

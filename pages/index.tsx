@@ -11,6 +11,7 @@ import { WaveText } from "./WaveText";
 import { CherryBlossom } from "../components/animation/CherryBlossom";
 
 const Home: NextPage = () => {
+
     const {selectedLanguage} = useContext(languageContext);
 
     const reactContent = () => selectedLanguage === 'ja' ? (<Text
