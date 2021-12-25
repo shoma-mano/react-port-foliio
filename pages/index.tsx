@@ -4,10 +4,10 @@ import styles from '../styles/Home.module.css';
 import { Box, Button, Link, Text, Image, Input } from '@chakra-ui/react';
 import { useContext, useEffect, useState } from 'react';
 import { languageContext } from './_app';
-import { JapaneseIntroduceCard } from './JapaneseIntroduceCard';
+import { JapaneseIntroduceCard } from '../components/home/JapaneseIntroduceCard';
 import { RoundIcon } from '../components/ui_parts/RoundIcon';
-import { EnglishIntroduceCard } from "./EnglishIntroduceCard";
-import { WaveText } from "./WaveText";
+import { EnglishIntroduceCard } from "../components/home/EnglishIntroduceCard";
+import { WaveText } from "../components/animation/WaveText";
 import { CherryBlossom } from "../components/animation/CherryBlossom";
 
 const Home: NextPage = () => {

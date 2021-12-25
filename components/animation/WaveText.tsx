@@ -1,5 +1,5 @@
 //https://codepen.io/ziyovuddin/pen/JjNvVYW
-import styles from '../styles/Home.module.css';
+import styles from '../../styles/Home.module.css';
 export const WaveText=({text,color}:{text:string;color:string})=>{
 return (<>
         {text.split("").map((val,index)=>

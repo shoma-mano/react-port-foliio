@@ -1,5 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
-import { WaveText } from "./WaveText";
+import { WaveText } from "../animation/WaveText";
 
 export const EnglishIntroduceCard = () => {
 
@@ -31,7 +31,7 @@ export const EnglishIntroduceCard = () => {
                             fontWeight={'700'}
                             fontSize={'35px'}
                         >
-                            I`&aposm Shoma Mano,
+                            I&apos;m Shoma Mano,
                         </Text>
                         <Text
                             color={'#0095ffeb'}

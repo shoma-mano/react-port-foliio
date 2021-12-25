@@ -1,5 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
-import { CherryBlossom } from "../components/animation/CherryBlossom";
+import { CherryBlossom } from "../animation/CherryBlossom";
 
 export const JapaneseIntroduceCard = ({
                                           position,

@@ -1,6 +1,5 @@
 import styles from '../../styles/Home.module.css';
 import Head from 'next/head';
-import { MyComponent } from '../mycomponent';
 import { Box, Link,Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useContext } from "react";
