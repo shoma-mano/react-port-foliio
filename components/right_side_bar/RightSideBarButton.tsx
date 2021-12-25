@@ -14,7 +14,7 @@ export const RightSideBarButton = ({
 }: {
     selectedIndex: number;
     myIndex: number;
-    setSelectedIndex: Dispatch<SetStateAction<number>>;
+    setSelectedIndex: Dispatch<SetStateAction<number|undefined>>;
     imgSrc: string;
     title: string;
     link: string;
@@ -44,7 +44,10 @@ export const RightSideBarButton = ({
     };
 
     useEffect(() => {
-        if (selectedIndex === myIndex) return;
+        if (selectedIndex === myIndex){
+            onMouseEnter();
+            return;
+        }
         onMouseLeave();
     });
 
@@ -81,9 +84,9 @@ export const RightSideBarButton = ({
                     ref={pop_up}
                     bg={'black'}
                     transition={'all 400ms'}
-                    visibility={myIndex === 0 ? 'visible' : 'hidden'}
-                    opacity={myIndex === 0 ? 1 : 0}
-                    transform={myIndex === 0 ? 'translateY(-80px)' : 'translateY(-40px)'}
+                    visibility={myIndex === selectedIndex ? 'visible' : 'hidden'}
+                    opacity={myIndex === selectedIndex ? 1 : 0}
+                    transform={myIndex === selectedIndex ? 'translateY(-78px)' : 'translateY(-40px)'}
                 >
                     <Text
                         fontSize={'11px'}

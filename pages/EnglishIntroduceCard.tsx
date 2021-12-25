@@ -31,7 +31,7 @@ export const EnglishIntroduceCard = () => {
                             fontWeight={'700'}
                             fontSize={'35px'}
                         >
-                            I'm Shoma Mano,
+                            I`&aposm Shoma Mano,
                         </Text>
                         <Text
                             color={'#0095ffeb'}

@@ -35,7 +35,7 @@ const Home: NextPage = () => {
             wordBreak={'normal'}
             textAlign={'center'}
         >
-            Portforio's source code is
+            Portforio`&aposs source code is
             <Link fontWeight={'900'} color={'black'}>
                 &nbsp;here.
             </Link>

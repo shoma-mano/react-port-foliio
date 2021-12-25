@@ -1,10 +1,11 @@
 import { Box, Button, Image, Text } from '@chakra-ui/react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { RightSideBarButton } from './RightSideBarButton';
 import { RightSideBarTranslateButton } from './RightSideBarTranslateButton';
+import { useRouter } from "next/router";
 
 export const RightSideBar = () => {
-    let [selectedIndex, setSelectedIndex] = useState(0);
+    let [selectedIndex, setSelectedIndex] = useState<number|undefined>(undefined);
     const buttonObjArray = [
         {
             imgSrc: '/right_side_bar/home.png',
@@ -23,6 +24,19 @@ export const RightSideBar = () => {
         },
     ];
 
+    const router=useRouter();
+    const pathname=router.pathname;
+
+    useEffect(()=>{
+        buttonObjArray.some((v,i)=>{
+            if(pathname===v.link){
+                setSelectedIndex(i);
+
+                return true;
+            }
+        })
+    })
+
     return (
         <>
             <Box height={'100%'} display={'flex'} flexDirection={'column'} alignItems={'center'}>
@@ -32,14 +46,14 @@ export const RightSideBar = () => {
                     ></RightSideBarTranslateButton>
                 </Box>
                 <Box marginTop={'55px'}>
-                    {buttonObjArray.map((v, i) => {
+                    {selectedIndex!==undefined && buttonObjArray.map((v, i) => {
                         return (
                             <>
                                 <RightSideBarButton
                                     key={v.title}
                                     imgSrc={v.imgSrc}
                                     title={v.title}
-                                    selectedIndex={selectedIndex}
+                                    selectedIndex={selectedIndex!}
                                     myIndex={i}
                                     setSelectedIndex={setSelectedIndex}
                                     link={v.link}
@@ -47,7 +61,8 @@ export const RightSideBar = () => {
                                 ></RightSideBarButton>
                             </>
                         );
-                    })}
+                    })
+                    }
                 </Box>
             </Box>
         </>
