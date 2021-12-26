@@ -3,11 +3,10 @@ import React, { useContext } from 'react';
 import { ProfileComponent } from './ProfileComponent';
 import { SkillSetComponent } from './SkillSetComponent';
 import { SpanWrapper } from '../ui_parts/SpanWrapper';
-import { languageContext } from "../../pages/_app";
+import { languageContext } from '../../pages/_app';
 
-export const LeftSideBar = ({onClick}: { onClick: () => void }) => {
-
-    const {selectedLanguage} = useContext(languageContext);
+export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
+    const { selectedLanguage } = useContext(languageContext);
 
     const profileArray = [
         {
@@ -20,7 +19,7 @@ export const LeftSideBar = ({onClick}: { onClick: () => void }) => {
                 label: 'age',
                 value: '25',
                 unit: 'Years old',
-            }
+            },
         },
         {
             ja: {
@@ -29,8 +28,8 @@ export const LeftSideBar = ({onClick}: { onClick: () => void }) => {
             },
             en: {
                 label: 'Company',
-                value:'R-UNIT',
-            }
+                value: 'R-UNIT',
+            },
         },
         {
             ja: {
@@ -40,7 +39,7 @@ export const LeftSideBar = ({onClick}: { onClick: () => void }) => {
             en: {
                 label: 'Gender',
                 value: 'Man',
-            }
+            },
         },
         {
             ja: {
@@ -52,35 +51,35 @@ export const LeftSideBar = ({onClick}: { onClick: () => void }) => {
                 label: 'Address',
                 value: 'Tokyo',
                 fontSize: 23,
-            }
+            },
         },
     ];
 
     const IconList = [
         {
-            padding: "6px",
-            src: "/sns_icon/twitter.svg",
-            bg: "theme"
+            padding: '6px',
+            src: '/sns_icon/twitter.svg',
+            bg: 'theme',
         },
         {
-            padding: "6px",
-            src: "/sns_icon/github.svg",
-            bg: "theme"
+            padding: '6px',
+            src: '/sns_icon/github.svg',
+            bg: 'theme',
         },
         {
-            padding: "2px",
-            src: "/sns_icon/qiita.png",
-            bg: ""
-        }
-    ]
+            padding: '2px',
+            src: '/sns_icon/qiita.png',
+            bg: '',
+        },
+    ];
 
     const skillSet = {
         React: 90,
         TypeScript: 90,
         Nestjs: 80,
         Docker: 80,
-        Hasura:75,
-        FireBase:75,
+        Hasura: 75,
+        FireBase: 75,
         AWS: 75,
         Terraform: 75,
         Vue: 70,
@@ -100,15 +99,19 @@ export const LeftSideBar = ({onClick}: { onClick: () => void }) => {
                     filter={'brightness(1.2)'}
                 ></Image>
                 <Text textAlign={'center'} fontSize={'20px'} fontWeight={'700'} mt={'32px'}>
-                    {selectedLanguage==='ja'?'真野 笑馬':'Shoma Mano'}
+                    {selectedLanguage === 'ja' ? '真野 笑馬' : 'Shoma Mano'}
                 </Text>
-                <Text
-                    textAlign={'center'}
-                    mt={'10px'}
-                    fontSize={'13px'}
-                    fontWeight={'200'}
-                >
-                    { selectedLanguage==='ja'?(<Text>Web<Box as={"span"}opacity={"0.5"}>エンジニア</Box></Text> ) :(<Text>Software Engineer</Text>)}
+                <Text textAlign={'center'} mt={'10px'} fontSize={'13px'} fontWeight={'200'}>
+                    {selectedLanguage === 'ja' ? (
+                        <Text>
+                            Web
+                            <Box as={'span'} opacity={'0.5'}>
+                                エンジニア
+                            </Box>
+                        </Text>
+                    ) : (
+                        <Text>Software Engineer</Text>
+                    )}
                 </Text>
                 <Box
                     display={'flex'}
@@ -118,20 +121,31 @@ export const LeftSideBar = ({onClick}: { onClick: () => void }) => {
                     mt={'10px'}
                     color={'gray500'}
                 >
-                    {IconList.map(v => (
-                        <Image key={v.src} border={"none"} padding={v.padding} bg={v.bg} borderRadius={"20px"}
-                               src={v.src} width={6} height={6}>
-                        </Image>))
-                    }
+                    {IconList.map((v) => (
+                        <Image
+                            key={v.src}
+                            border={'none'}
+                            padding={v.padding}
+                            bg={v.bg}
+                            borderRadius={'20px'}
+                            src={v.src}
+                            width={6}
+                            height={6}
+                        ></Image>
+                    ))}
                 </Box>
                 <Box overflowY={'scroll'} height={'100%'}>
                     <Box mt={'25px'}>
-                        <ProfileComponent profileArray={profileArray.map(v=>v[selectedLanguage])}></ProfileComponent>
+                        <ProfileComponent
+                            profileArray={profileArray.map((v) => v[selectedLanguage])}
+                        ></ProfileComponent>
                     </Box>
-                    <Box mt={"25px"}>
+                    <Box mt={'25px'}>
                         <SkillSetComponent
                             skillSetObj={skillSet}
-                            title={selectedLanguage==='ja'?'関心のある技術':'My Favorite Stack'}
+                            title={
+                                selectedLanguage === 'ja' ? '関心のある技術' : 'My Favorite Stack'
+                            }
                         ></SkillSetComponent>
                     </Box>
                 </Box>

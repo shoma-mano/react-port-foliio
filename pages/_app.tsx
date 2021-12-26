@@ -13,10 +13,10 @@ const theme = extendTheme({
     fonts: {
         theme: 'monospace',
     },
-    config:{
-        initialColorMode:'light',
+    config: {
+        initialColorMode: 'light',
         useSystemColorMode: false,
-    } as ThemeConfig
+    } as ThemeConfig,
 });
 
 export const languageContext = createContext(

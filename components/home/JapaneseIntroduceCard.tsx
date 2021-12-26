@@ -1,11 +1,11 @@
 import { Box, Text } from '@chakra-ui/react';
-import { CherryBlossom } from "../animation/CherryBlossom";
+import { CherryBlossom } from '../animation/CherryBlossom';
 
 export const JapaneseIntroduceCard = ({
-                                          position,
-                                          name,
-                                          englishName,
-                                      }: {
+    position,
+    name,
+    englishName,
+}: {
     position: string;
     name: string;
     englishName: string;
@@ -32,13 +32,20 @@ export const JapaneseIntroduceCard = ({
                             justifyContent={'center'}
                         >
                             <Box mb={'10px'} ml={'60px'}>
-                                <Text color={'black'} mb={'10px'} fontWeight={'700'} fontSize={'24px'}>
+                                <Text
+                                    color={'black'}
+                                    mb={'10px'}
+                                    fontWeight={'700'}
+                                    fontSize={'24px'}
+                                >
                                     {position}
                                 </Text>
                                 <Text fontWeight={'700'} fontSize={'48px'}>
                                     {name}
                                 </Text>
-                                <Text mt={'8px'} fontSize={'26px'}>{englishName}</Text>
+                                <Text mt={'8px'} fontSize={'26px'}>
+                                    {englishName}
+                                </Text>
                             </Box>
                         </Box>
                     </Box>
@@ -49,7 +56,11 @@ export const JapaneseIntroduceCard = ({
                         justifyContent={'end'}
                         flexDirection={'column'}
                     >
-                        <img width={'320px'} style={{height: '380px',zIndex:6,filter: 'brightness(1.2)'}} src={'/selfie_home.png'}></img>
+                        <img
+                            width={'320px'}
+                            style={{ height: '380px', zIndex: 6, filter: 'brightness(1.2)' }}
+                            src={'/selfie_home.png'}
+                        ></img>
                     </Box>
                 </Box>
             </CherryBlossom>

@@ -14,7 +14,7 @@ export const RightSideBarButton = ({
 }: {
     selectedIndex: number;
     myIndex: number;
-    setSelectedIndex: Dispatch<SetStateAction<number|undefined>>;
+    setSelectedIndex: Dispatch<SetStateAction<number | undefined>>;
     imgSrc: string;
     title: string;
     link: string;
@@ -44,7 +44,7 @@ export const RightSideBarButton = ({
     };
 
     useEffect(() => {
-        if (selectedIndex === myIndex){
+        if (selectedIndex === myIndex) {
             onMouseEnter();
             return;
         }
@@ -73,7 +73,13 @@ export const RightSideBarButton = ({
                     bg={myIndex === selectedIndex ? 'theme' : 'rgb(227 224 224)'}
                     borderRadius={'30px'}
                 >
-                    <Image margin={'auto'} alt={'not found'} h={'20px'} w={'20px'} src={imgSrc}></Image>
+                    <Image
+                        margin={'auto'}
+                        alt={'not found'}
+                        h={'20px'}
+                        w={'20px'}
+                        src={imgSrc}
+                    ></Image>
                 </Box>
                 <Box
                     onMouseEnter={onMouseEnter}
@@ -86,7 +92,9 @@ export const RightSideBarButton = ({
                     transition={'all 400ms'}
                     visibility={myIndex === selectedIndex ? 'visible' : 'hidden'}
                     opacity={myIndex === selectedIndex ? 1 : 0}
-                    transform={myIndex === selectedIndex ? 'translateY(-78px)' : 'translateY(-40px)'}
+                    transform={
+                        myIndex === selectedIndex ? 'translateY(-78px)' : 'translateY(-40px)'
+                    }
                 >
                     <Text
                         fontSize={'11px'}

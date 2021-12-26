@@ -2,10 +2,10 @@ import { Box, Button, Image, Text } from '@chakra-ui/react';
 import { useEffect, useRef, useState } from 'react';
 import { RightSideBarButton } from './RightSideBarButton';
 import { RightSideBarTranslateButton } from './RightSideBarTranslateButton';
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
 export const RightSideBar = () => {
-    let [selectedIndex, setSelectedIndex] = useState<number|undefined>(undefined);
+    let [selectedIndex, setSelectedIndex] = useState<number | undefined>(undefined);
     const buttonObjArray = [
         {
             imgSrc: '/right_side_bar/home.png',
@@ -24,18 +24,18 @@ export const RightSideBar = () => {
         },
     ];
 
-    const router=useRouter();
-    const pathname=router.pathname;
+    const router = useRouter();
+    const pathname = router.pathname;
 
-    useEffect(()=>{
-        buttonObjArray.some((v,i)=>{
-            if(pathname===v.link){
+    useEffect(() => {
+        buttonObjArray.some((v, i) => {
+            if (pathname === v.link) {
                 setSelectedIndex(i);
 
                 return true;
             }
-        })
-    })
+        });
+    });
 
     return (
         <>
@@ -46,23 +46,23 @@ export const RightSideBar = () => {
                     ></RightSideBarTranslateButton>
                 </Box>
                 <Box marginTop={'55px'}>
-                    {selectedIndex!==undefined && buttonObjArray.map((v, i) => {
-                        return (
-                            <>
-                                <RightSideBarButton
-                                    key={v.title}
-                                    imgSrc={v.imgSrc}
-                                    title={v.title}
-                                    selectedIndex={selectedIndex!}
-                                    myIndex={i}
-                                    setSelectedIndex={setSelectedIndex}
-                                    link={v.link}
-                                    marginTop={'40px'}
-                                ></RightSideBarButton>
-                            </>
-                        );
-                    })
-                    }
+                    {selectedIndex !== undefined &&
+                        buttonObjArray.map((v, i) => {
+                            return (
+                                <>
+                                    <RightSideBarButton
+                                        key={v.title}
+                                        imgSrc={v.imgSrc}
+                                        title={v.title}
+                                        selectedIndex={selectedIndex!}
+                                        myIndex={i}
+                                        setSelectedIndex={setSelectedIndex}
+                                        link={v.link}
+                                        marginTop={'40px'}
+                                    ></RightSideBarButton>
+                                </>
+                            );
+                        })}
                 </Box>
             </Box>
         </>

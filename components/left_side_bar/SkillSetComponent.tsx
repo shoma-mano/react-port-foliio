@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
-import { LabelWithUnderLine } from "../ui_parts/LavelWithUnderLine";
+import { LabelWithUnderLine } from '../ui_parts/LavelWithUnderLine';
 
 export const SkillSetComponent = ({ skillSetObj, title }: { skillSetObj: any; title: string }) => {
     return (
@@ -16,10 +16,12 @@ export const SkillSetComponent = ({ skillSetObj, title }: { skillSetObj: any; ti
                             display={'flex'}
                             justifyContent={'space-between'}
                         >
-                            <Text opacity={"0.7"} fontFamily={'theme'} p={'5px 8px'}>
+                            <Text opacity={'0.7'} fontFamily={'theme'} p={'5px 8px'}>
                                 {key}
                             </Text>
-                            <Text opacity={"0.7"} lineHeight={'29px'}>{skillSetObj[key]}%</Text>
+                            <Text opacity={'0.7'} lineHeight={'29px'}>
+                                {skillSetObj[key]}%
+                            </Text>
                         </Box>
                         <Box
                             p={'1px 1px'}

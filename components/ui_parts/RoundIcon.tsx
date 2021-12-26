@@ -1,4 +1,5 @@
-import { Image } from '@chakra-ui/react';
+import { Box, Image } from '@chakra-ui/react';
+import { MouseEvent, useRef, useState } from 'react';
 
 export const RoundIcon = ({
     imgSrc,
@@ -9,15 +10,27 @@ export const RoundIcon = ({
     padding: number;
     color?: string;
 }) => {
+    const icon=useRef<HTMLImageElement>(null)
+    const onMouseEnter = (e: MouseEvent<HTMLImageElement>) => {
+            icon.current!.style.transform = 'rotateY(360deg)';
+    };
+
+    const onMouseLeave = (e: MouseEvent<HTMLImageElement>) => {
+            icon.current!.style.transform = 'rotateY(0deg)';
+    };
     return (
         <>
-            <Image
-                bg={color ? color : 'white'}
-                src={imgSrc}
-                borderRadius={'full'}
-                boxSize={'150px'}
-                p={padding + 'px'}
-            ></Image>
+            <Box as={"div"} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} boxSize={'150px'}>
+                <Image
+                    transition={'all 0.5s'}
+                    bg={color ? color : 'white'}
+                    src={imgSrc}
+                    borderRadius={'full'}
+                    boxSize={'150px'}
+                    p={padding + 'px'}
+                    ref={icon}
+                ></Image>
+            </Box>
         </>
     );
 };

@@ -4,7 +4,7 @@
 }
 
 /* 桜の花びらのスタイル */
-.cherry_blossom_container span{
+.cherry_blossom_container span {
     position: absolute;
     background-color: #ffc0cb; /* 花びらの色 */
     border-radius: 150% 0 150% 0;
@@ -13,7 +13,7 @@
 }
 
 .cherry_blossom_container span::after {
-    content: "";
+    content: '';
     position: absolute;
     top: -14%;
     left: -10%;

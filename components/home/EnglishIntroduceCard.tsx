@@ -1,8 +1,7 @@
-import { Box, Text } from "@chakra-ui/react";
-import { WaveText } from "../animation/WaveText";
+import { Box, Text } from '@chakra-ui/react';
+import { WaveText } from '../animation/WaveText';
 
 export const EnglishIntroduceCard = () => {
-
     return (
         <>
             <Box
@@ -21,34 +20,22 @@ export const EnglishIntroduceCard = () => {
                         display={'flex'}
                         height={'60%'}
                         flexDirection={'column'}
-                        width={"350px"}
+                        width={'350px'}
                         marginLeft={'40px'}
-                        mt={"90px"}
+                        mt={'90px'}
                         fontFamily={"'Rubik', sans-serif;"}
                     >
-                        <Text
-                            color={'#000000d1'}
-                            fontWeight={'700'}
-                            fontSize={'35px'}
-                        >
+                        <Text color={'#000000d1'} fontWeight={'700'} fontSize={'35px'}>
                             I&apos;m Shoma Mano,
                         </Text>
-                        <Text
-                            color={'#0095ffeb'}
-                            fontWeight={'700'}
-                            fontSize={'35px'}
-                        >
+                        <Text color={'#0095ffeb'} fontWeight={'700'} fontSize={'35px'}>
                             Software
                         </Text>
-                        <Text
-                            color={'#000000d1'}
-                            fontWeight={'700'}
-                            fontSize={'35px'}
-                        >
+                        <Text color={'#000000d1'} fontWeight={'700'} fontSize={'35px'}>
                             Engineer
                         </Text>
-                        <Box display={"flex"} mt={"60px"}>
-                            <WaveText text={"Welcome To My Portforio"} color={"#262f62"}></WaveText>
+                        <Box display={'flex'} mt={'60px'}>
+                            <WaveText text={'Welcome To My Portforio'} color={'#262f62'}></WaveText>
                         </Box>
                     </Box>
                     <Box
@@ -56,8 +43,7 @@ export const EnglishIntroduceCard = () => {
                         height={'30%'}
                         flexDirection={'column'}
                         justifyContent={'start'}
-                    >
-                    </Box>
+                    ></Box>
                 </Box>
                 <Box
                     marginRight={'10px'}
@@ -68,11 +54,11 @@ export const EnglishIntroduceCard = () => {
                 >
                     <img
                         width={'320px'}
-                        style={{height: '380px',filter: 'brightness(1.2)'}}
+                        style={{ height: '380px', filter: 'brightness(1.2)' }}
                         src={'/selfie_home.png'}
                     ></img>
                 </Box>
             </Box>
         </>
-    )
-}
+    );
+};

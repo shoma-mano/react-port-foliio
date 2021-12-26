@@ -1,9 +1,8 @@
-import { Box } from "@chakra-ui/react";
-import styles from "/styles/Animation.module.css"
-import { useEffect } from "react";
+import { Box } from '@chakra-ui/react';
+import styles from '/styles/Animation.module.css';
+import { useEffect } from 'react';
 
-export const CherryBlossom =({children}:{children:React.ReactNode})=>{
-
+export const CherryBlossom = ({ children }: { children: React.ReactNode }) => {
     useEffect(() => {
         const section = document.getElementById('cherry_container');
 
@@ -23,17 +22,17 @@ export const CherryBlossom =({children}:{children:React.ReactNode})=>{
             setTimeout(() => {
                 petalEl.remove();
             }, 10000);
-        }
+        };
 
         // 花びらを生成する間隔をミリ秒で指定
         setInterval(createPetal, 300);
     });
 
-return(
-    <>
-        <Box id={"cherry_container"} className={styles.cherry_blossom_container}    bg={"white"}>
-            {children}
-        </Box>
-    </>
-)
-}
+    return (
+        <>
+            <Box id={'cherry_container'} className={styles.cherry_blossom_container} bg={'white'}>
+                {children}
+            </Box>
+        </>
+    );
+};
