@@ -123,25 +123,46 @@ const Home: NextPage = () => {
                 ) : (
                     <EnglishIntroduceCard></EnglishIntroduceCard>
                 )}
-                <Text
-                    fontFamily={"'Rubik', sans-serif;"}
-                    mt={'40px'}
-                    fontSize={'30px'}
-                    fontWeight={'700'}
-                >
-                    {selectedLanguage === 'ja' ? 'スキル' : 'Skill'}
-                </Text>
-                <Text
-                    fontSize={selectedLanguage === 'ja' ? '15px' : ''}
-                    fontFamily={selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"}
-                    mt={'10px'}
-                >
-                    {selectedLanguage === 'ja'
-                        ? 'フロント、バックエンド、インフラの経験あり'
-                        : 'I have experience in Frontend,Backend, and Infrastructure'}
-                </Text>
                 <Box
-                    mt={'20px'}
+                    mt={"50px"}
+                    fontFamily={'theme'}
+                    border={'solid 1px'}
+                    boxShadow={'sm'}
+                    borderColor={'rgba(0, 0, 0, 0.15)'}
+                    width={'320px'}
+                    height={'100px'}
+                    borderRadius={'10px'}
+                    position={'relative'}
+                    bg={'white'}
+                    ml={'20px'}
+                    mx={"auto"}
+                >
+                    <Text
+                        fontFamily={"'Rubik', sans-serif;"}
+                        textAlign={'center'}
+                        fontWeight={'600'}
+                        color={'#000000d4'}
+                        fontSize={'28px'}
+                        marginTop={"10px"}
+                    >
+                        {selectedLanguage === 'ja' ? 'スキル' : 'Skill'}
+                    </Text>
+                    <Text
+                        textAlign={'center'}
+                        fontWeight={'600'}
+                        color={'#000000a8'}
+                        marginTop={"10px"}
+                        fontSize={selectedLanguage === 'ja' ? '14px' : ''}
+                        fontFamily={selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"}
+                        mt={'10px'}
+                    >
+                        {selectedLanguage === 'ja'
+                            ? 'フロント、バックエンド、インフラの経験あり'
+                            : 'I have experience in Frontend,Backend, and Infrastructure'}
+                    </Text>
+                </Box>
+                <Box
+                    mt={'35px'}
                     justifyItems={'center'}
                     width={'70%'}
                     gridGap={'30px'}
