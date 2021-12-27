@@ -14,27 +14,17 @@ export const Index = () => {
         <>
             <main className={styles.main}>
                 <Box width={'100%'}>
-                    {/*title*/}
-                    {/*<Text*/}
-                    {/*    textAlign={'center'}*/}
-                    {/*    fontWeight={'700'}*/}
-                    {/*    fontFamily={"'Rubik', sans-serif;"}*/}
-                    {/*    mt={'20px'}*/}
-                    {/*    fontSize={'30px'}*/}
-                    {/*>*/}
-                    {/*    {selectedLanguage === 'ja' ? '経歴' : 'History'}*/}
-                    {/*</Text>*/}
-
                         <Box
                             mt={"20px"}
                             fontFamily={'theme'}
                             border={'solid 1px'}
                             boxShadow={'md'}
                             borderColor={'rgba(0, 0, 0, 0.15)'}
-                            width={'240px'}
-                            height={'60px'}
+                            width={'260px'}
+                            height={'100px'}
                             borderRadius={'10px'}
                             position={'relative'}
+                            px={"10px"}
                             bg={'white'}
                             ml={'20px'}
                             mx={"auto"}
@@ -43,13 +33,24 @@ export const Index = () => {
                                 textAlign={'center'}
                                 fontWeight={'600'}
                                 color={'#000000d4'}
-                                fontSize={'20px'}
-                                marginTop={"10px"}
+                                fontSize={'23px'}
+                                marginTop={"5px"}
                             >
                                 経歴
                             </Text>
+                            <Text
+                                textAlign={'center'}
+                                fontWeight={'600'}
+                                color={'#000000a8'}
+                                marginTop={"10px"}
+                                fontFamily={selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"}
+                                mt={'5px'}
+                            >
+                                {selectedLanguage === 'ja'
+                                    ? '1996年、東京都板橋区に生まれるが物心がついた時には何故か茨城の僻地に。'
+                                    : 'I have experience in Frontend,Backend, and Infrastructure'}
+                            </Text>
                         </Box>
-
                     {/*history_content*/}
                     <Box
                         width={'100%'}

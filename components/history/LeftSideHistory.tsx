@@ -1,7 +1,17 @@
 import { Box, Text } from "@chakra-ui/react";
+import { useContext } from "react";
+import { languageContext } from "../../pages/_app";
 
-export const LeftSideHistory = () =>
-    (
+export const LeftSideHistory = () =>{
+    const {selectedLanguage} = useContext(languageContext);
+    const histories=[
+        {
+            time:'2003-2009',
+            title:'茨城県常陸大宮市立'
+        }
+    ]
+
+    return (
         <Box>
             <Box
                 fontFamily={'theme'}
@@ -9,17 +19,18 @@ export const LeftSideHistory = () =>
                 boxShadow={'md'}
                 borderColor={'rgba(0, 0, 0, 0.15)'}
                 width={'240px'}
-                height={'120px'}
+                height={'90px'}
                 borderRadius={'10px'}
                 position={'relative'}
                 bg={'white'}
                 mr={'20px'}
             >
+                {/*dot on center line*/}
                 <Box
                     right={'-29px'}
                     position={'absolute'}
                     bg={'#9e9e9e'}
-                    mt={"54px"}
+                    mt={"39px"}
                     borderRadius={'50px'}
                     height={'12px'}
                     width={'12px'}
@@ -27,17 +38,53 @@ export const LeftSideHistory = () =>
                 <Text
                     textAlign={'center'}
                     fontWeight={'600'}
+                    color={'#525252'}
+                    fontSize={'22px'}
+                    marginTop={"3px"}
+                    position={"absolute"}
+                    left={"260px"}
+                    width={"180px"}
+                    top={"28px"}
+                >
+                    2003-2009
+                </Text>
+                {/*<Text*/}
+                {/*    textAlign={'center'}*/}
+                {/*    fontWeight={'600'}*/}
+                {/*    color={'#000000d4'}*/}
+                {/*    fontSize={'15px'}*/}
+                {/*    marginTop={"10px"}*/}
+                {/*>*/}
+                {/*    2003-2009*/}
+                {/*</Text>*/}
+                <Text
+                    textAlign={'center'}
+                    fontWeight={'600'}
                     color={'#000000d4'}
-                    fontSize={'20px'}
+                    fontSize={'18px'}
                     marginTop={"10px"}
                 >
-                    2012-2015
+                    小学校時代
                 </Text>
+                {/*<Text*/}
+                {/*    textAlign={'center'}*/}
+                {/*    fontWeight={'600'}*/}
+                {/*    color={'#000000d4'}*/}
+                {/*    fontSize={'12px'}*/}
+                {/*    marginTop={"3px"}*/}
+                {/*>*/}
+                {/*    2003-2009*/}
+                {/*</Text>*/}
                 <Text
-                    textAlign={"center"}
-                    height={'50%'}
-                >水城高等</Text>
+                    textAlign={'center'}
+                    fontWeight={'600'}
+                    color={'#000000a8'}
+                    marginTop={"10px"}
+                    fontFamily={selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"}
+                    mt={'5px'}
+                >全校生徒60人という学校で自然の中に囲まれてのびのびと育つ。</Text>
             </Box>
         </Box>
     )
+}
 

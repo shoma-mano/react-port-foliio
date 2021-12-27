@@ -3,7 +3,7 @@ import { Box, Text } from "@chakra-ui/react";
 export const RightSideHistory=()=>
     <Box>
         <Box
-            mt={"50px"}
+            mt={"350px"}
             fontFamily={'theme'}
             border={'solid 1px'}
             boxShadow={'md'}
