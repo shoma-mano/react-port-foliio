@@ -9,6 +9,7 @@ import { RoundIcon } from '../components/ui_parts/RoundIcon';
 import { EnglishIntroduceCard } from '../components/home/EnglishIntroduceCard';
 import { WaveText } from '../components/animation/WaveText';
 import { CherryBlossom } from '../components/animation/CherryBlossom';
+import { ScrollTransition } from "../components/history/ScrollTransition";
 
 const Home: NextPage = () => {
     const { selectedLanguage } = useContext(languageContext);

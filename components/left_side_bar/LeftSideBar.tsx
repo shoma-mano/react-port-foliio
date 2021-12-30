@@ -5,8 +5,8 @@ import { SkillSetComponent } from './SkillSetComponent';
 import { SpanWrapper } from '../ui_parts/SpanWrapper';
 import { languageContext } from '../../pages/_app';
 
-export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
-    const { selectedLanguage } = useContext(languageContext);
+export const LeftSideBar = ({onClick}: { onClick: () => void }) => {
+    const {selectedLanguage} = useContext(languageContext);
 
     const profileArray = [
         {
@@ -103,14 +103,14 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                 </Text>
                 <Text textAlign={'center'} mt={'10px'} fontSize={'13px'} fontWeight={'200'}>
                     {selectedLanguage === 'ja' ? (
-                        <Text>
+                        <span>
                             Web
                             <Box as={'span'} opacity={'0.5'}>
                                 エンジニア
                             </Box>
-                        </Text>
+                        </span>
                     ) : (
-                        <Text>Software Engineer</Text>
+                        "Software Engineer"
                     )}
                 </Text>
                 <Box

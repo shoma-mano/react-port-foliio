@@ -62,9 +62,9 @@ export const Index = () => {
                     >
                         <LeftSideHistory></LeftSideHistory>
                         <Box
-                            border={'solid #9e9e9e 2px'}
+                            border={'solid #9e9e9e 3px'}
                             borderRadius={'10px'}
-                            height={'700px'}
+                            height={'1700px'}
                         ></Box>
                         <RightSideHistory></RightSideHistory>
                     </Box>
