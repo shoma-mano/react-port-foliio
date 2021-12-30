@@ -10,17 +10,22 @@ export const RoundIcon = ({
     padding: number;
     color?: string;
 }) => {
-    const icon=useRef<HTMLImageElement>(null)
+    const icon = useRef<HTMLImageElement>(null);
     const onMouseEnter = (e: MouseEvent<HTMLImageElement>) => {
-            icon.current!.style.transform = 'rotateY(360deg)';
+        icon.current!.style.transform = 'rotateY(360deg)';
     };
 
     const onMouseLeave = (e: MouseEvent<HTMLImageElement>) => {
-            icon.current!.style.transform = 'rotateY(0deg)';
+        icon.current!.style.transform = 'rotateY(0deg)';
     };
     return (
         <>
-            <Box as={"div"} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} boxSize={'150px'}>
+            <Box
+                as={'div'}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+                boxSize={'150px'}
+            >
                 <Image
                     transition={'all 0.5s'}
                     bg={color ? color : 'white'}

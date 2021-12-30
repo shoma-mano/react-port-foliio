@@ -124,7 +124,7 @@ const Home: NextPage = () => {
                     <EnglishIntroduceCard></EnglishIntroduceCard>
                 )}
                 <Box
-                    mt={"50px"}
+                    mt={'50px'}
                     fontFamily={'theme'}
                     border={'solid 1px'}
                     boxShadow={'sm'}
@@ -135,7 +135,8 @@ const Home: NextPage = () => {
                     position={'relative'}
                     bg={'white'}
                     ml={'20px'}
-                    mx={"auto"}
+                    mx={'auto'}
+
                 >
                     <Text
                         fontFamily={"'Rubik', sans-serif;"}
@@ -143,7 +144,7 @@ const Home: NextPage = () => {
                         fontWeight={'600'}
                         color={'#000000d4'}
                         fontSize={'28px'}
-                        marginTop={"10px"}
+                        marginTop={'10px'}
                     >
                         {selectedLanguage === 'ja' ? 'スキル' : 'Skill'}
                     </Text>
@@ -151,9 +152,11 @@ const Home: NextPage = () => {
                         textAlign={'center'}
                         fontWeight={'600'}
                         color={'#000000a8'}
-                        marginTop={"10px"}
+                        marginTop={'10px'}
                         fontSize={selectedLanguage === 'ja' ? '14px' : ''}
-                        fontFamily={selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"}
+                        fontFamily={
+                            selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"
+                        }
                         mt={'10px'}
                     >
                         {selectedLanguage === 'ja'
