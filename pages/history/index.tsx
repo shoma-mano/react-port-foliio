@@ -1,7 +1,6 @@
 import styles from '../../styles/Home.module.css';
 import Head from 'next/head';
-import { Box, Link, Text } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Box, Link, Text, Image } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { languageContext } from '../_app';
 import { LeftSideHistory } from '../../components/history/LeftSideHistory';
@@ -13,7 +12,10 @@ export const Index = () => {
     return (
         <>
             <main className={styles.main}>
-                <Box width={'100%'}>
+                <Box
+                    width={'100%'}
+                    overflowX={"hidden"}
+                >
                     <Box
                         mt={'20px'}
                         fontFamily={'theme'}
@@ -21,7 +23,7 @@ export const Index = () => {
                         boxShadow={'md'}
                         borderColor={'rgba(0, 0, 0, 0.15)'}
                         width={'260px'}
-                        height={'100px'}
+                        height={'120px'}
                         borderRadius={'10px'}
                         position={'relative'}
                         px={'10px'}
@@ -43,15 +45,15 @@ export const Index = () => {
                             fontWeight={'600'}
                             color={'#000000a8'}
                             marginTop={'10px'}
-                            fontFamily={
-                                selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"
-                            }
+                            fontFamily={"'Rubik', sans-serif;"}
                             mt={'5px'}
+                            fontSize={'14px'}
                         >
                             {selectedLanguage === 'ja'
                                 ? '1996年、東京都板橋区に生まれるが物心がついた時には何故か茨城の僻地に。'
                                 : 'I have experience in Frontend,Backend, and Infrastructure'}
                         </Text>
+                        <Image></Image>
                     </Box>
                     {/*history_content*/}
                     <Box

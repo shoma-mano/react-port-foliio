@@ -9,7 +9,7 @@ import { RoundIcon } from '../components/ui_parts/RoundIcon';
 import { EnglishIntroduceCard } from '../components/home/EnglishIntroduceCard';
 import { WaveText } from '../components/animation/WaveText';
 import { CherryBlossom } from '../components/animation/CherryBlossom';
-import { ScrollTransition } from "../components/history/ScrollTransition";
+import { ScrollTransition } from '../components/animation/ScrollTransition';
 
 const Home: NextPage = () => {
     const { selectedLanguage } = useContext(languageContext);
@@ -137,7 +137,6 @@ const Home: NextPage = () => {
                     bg={'white'}
                     ml={'20px'}
                     mx={'auto'}
-
                 >
                     <Text
                         fontFamily={"'Rubik', sans-serif;"}
