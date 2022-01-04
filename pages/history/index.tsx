@@ -12,10 +12,7 @@ export const Index = () => {
     return (
         <>
             <main className={styles.main}>
-                <Box
-                    width={'100%'}
-                    overflowX={"hidden"}
-                >
+                <Box width={'100%'} overflow={'hidden'}>
                     <Box
                         mt={'20px'}
                         fontFamily={'theme'}
@@ -23,7 +20,7 @@ export const Index = () => {
                         boxShadow={'md'}
                         borderColor={'rgba(0, 0, 0, 0.15)'}
                         width={'260px'}
-                        height={'120px'}
+                        height={'140px'}
                         borderRadius={'10px'}
                         position={'relative'}
                         px={'10px'}
@@ -38,7 +35,7 @@ export const Index = () => {
                             fontSize={'23px'}
                             marginTop={'5px'}
                         >
-                            経歴
+                            {selectedLanguage === 'ja' ? '経歴' : 'History'}
                         </Text>
                         <Text
                             textAlign={'center'}
@@ -50,8 +47,8 @@ export const Index = () => {
                             fontSize={'14px'}
                         >
                             {selectedLanguage === 'ja'
-                                ? '1996年、東京都板橋区に生まれるが物心がついた時には何故か茨城の僻地に。'
-                                : 'I have experience in Frontend,Backend, and Infrastructure'}
+                                ? '1996年、東京都板橋区に生まれるが物心がついた時には何故か茨城の僻地にいて、高校時代までを過ごす事になる。'
+                                : 'Born in tokyo in 1996, but I was already in a remote village when I understood what was going on around myself.'}
                         </Text>
                         <Image></Image>
                     </Box>
@@ -66,7 +63,7 @@ export const Index = () => {
                         <Box
                             border={'solid #9e9e9e 3px'}
                             borderRadius={'10px'}
-                            height={'1700px'}
+                            height={'2850px'}
                         ></Box>
                         <RightSideHistory></RightSideHistory>
                     </Box>

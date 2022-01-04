@@ -1,9 +1,10 @@
 import { ReactChildren, ReactElement } from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 import { LeftSideBar } from './left_side_bar/LeftSideBar';
 import { RightSideBar } from './right_side_bar/RightSideBar';
 
 export const Layout = ({ children }: { children: ReactElement }) => {
+    const bg = useColorModeValue('rgb(205 205 205)', '#242526');
     return (
         <>
             <Box
@@ -14,7 +15,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 w='290px'
                 top={0}
                 h='100%'
-                bg='white'
+                bg={bg}
                 boxShadow='xl'
                 zIndex={'1'}
             >
@@ -27,7 +28,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 w='100px'
                 top={0}
                 h='100%'
-                bg='white'
+                bg={bg}
                 boxShadow='md'
                 zIndex={'10'}
             >

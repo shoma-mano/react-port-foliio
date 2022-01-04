@@ -9,16 +9,9 @@ export const ScrollTransition = ({
     isVisible?: boolean;
 }) => {
     const box = useRef<HTMLDivElement>(null);
-    let [count,setCount]=useState(0);
-    console.log("hello")
-
-
-
-
 
     useEffect(() => {
-        setCount((count)=>2);
-        if (isVisible) setTimeout(()=>box.current!.style.opacity = '1',400)
+        if (isVisible) setTimeout(() => (box.current!.style.opacity = '1'), 400);
         window.addEventListener('scroll', (e) => {
             let dist;
             if (box.current) {
@@ -28,10 +21,10 @@ export const ScrollTransition = ({
                 dist + box.current.clientHeight <=
                 window.scrollY + window.innerHeight + box.current.clientHeight * 0.5
             ) {
-                setTimeout(()=>box.current!.style.opacity = '1',400)
+                setTimeout(() => (box.current!.style.opacity = '1'), 400);
             }
         });
-    },[]);
+    }, []);
 
     return (
         <>

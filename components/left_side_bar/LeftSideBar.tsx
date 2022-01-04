@@ -1,4 +1,4 @@
-import { Box, Button, Image, Text } from '@chakra-ui/react';
+import { Box, Button, Image, Text, useColorModeValue } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import { ProfileComponent } from './ProfileComponent';
 import { SkillSetComponent } from './SkillSetComponent';
@@ -7,7 +7,8 @@ import { languageContext } from '../../pages/_app';
 
 export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
     const { selectedLanguage } = useContext(languageContext);
-
+    const profileBg = useColorModeValue('rgb(205 205 205)', '#3a3636');
+    const iconListBg = useColorModeValue('theme', '#0095ff');
     const profileArray = [
         {
             ja: {
@@ -126,7 +127,7 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                             key={v.src}
                             border={'none'}
                             padding={v.padding}
-                            bg={v.bg}
+                            bg={v.bg ? v.bg : iconListBg}
                             borderRadius={'20px'}
                             src={v.src}
                             width={6}

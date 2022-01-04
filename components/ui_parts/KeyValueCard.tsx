@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, useColorModeValue } from '@chakra-ui/react';
 import React, { CSSProperties } from 'react';
 
 export const KeyValueCard = ({
@@ -14,6 +14,7 @@ export const KeyValueCard = ({
     fontSize?: number;
     style?: CSSProperties;
 }) => {
+    const profileBg = useColorModeValue('rgb(205 205 205)', '#3a3636');
     return (
         <>
             <Box
@@ -25,6 +26,7 @@ export const KeyValueCard = ({
                 borderRadius={'20px'}
                 padding={'5px'}
                 width={'47%'}
+                bg={profileBg}
             >
                 <Text
                     lineHeight={'30px'}

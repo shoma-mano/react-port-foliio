@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useRef } from 'react';
 import { Box } from '@chakra-ui/react';
 
-export const ScrollRightSlideIn = ({
+export const ScrollLeftSlideIn = ({
     children,
     height,
     isVisible,
@@ -12,13 +12,13 @@ export const ScrollRightSlideIn = ({
 }) => {
     const box = useRef<HTMLDivElement>(null);
     useEffect(() => {
-        if (isVisible) box.current!.style.right = '-240px';
+        if (isVisible) box.current!.style.left = '-300px';
         window.addEventListener('scroll', (e) => {
             let dist;
             if (box.current) dist = window.scrollY + box.current.getBoundingClientRect().top;
             else return;
             if (dist + box.current.clientHeight <= window.scrollY + window.innerHeight) {
-                box.current.style.right = '-240px';
+                box.current.style.left = '-300px';
             }
         });
     });
@@ -28,8 +28,8 @@ export const ScrollRightSlideIn = ({
                 <Box
                     ref={box}
                     position={'absolute'}
-                    right={'-1000px'}
-                    bottom={`${height / 2 - 25}px`}
+                    left={'-1000px'}
+                    bottom={`${height / 2 + 25}px`}
                     transition={'all 0.8s'}
                 >
                     {children}

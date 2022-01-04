@@ -6,7 +6,7 @@ import { ScrollRightSlideIn } from '../animation/ScrollRightSlideIn';
 
 export const LeftSideHistory = () => {
     const { selectedLanguage } = useContext(languageContext);
-    const histories = [
+    const japaneseHistories = [
         {
             time: '2003-2009',
             title: '小学校時代',
@@ -23,17 +23,54 @@ export const LeftSideHistory = () => {
             height: 320,
             imgSrc: 'grand_mother.png',
         },
+        {
+            time: '2019-2020',
+            title: '公務員時代',
+            sentence:
+                '大学で学んだ事の延長を一生やっていく覚悟が無かった為、公務員となる。特別区公務員として主に清掃工場の設備の保守点検を担当。',
+            height: 350,
+            imgSrc: 'shinkoto.png',
+        },
     ];
 
-    // const historyRefs = useRef<HTMLDivElement[]>([]);
-    //
-    // useEffect(() => {
-    //     setTimeout(() => historyRefs.current![0].style.opacity = "1", 0)
-    // })
+    const englishHistories = [
+        {
+            time: '2003-2009',
+            title: 'Elementary school days',
+            sentence: 'I grew in a school whose number of all students are 60.',
+            height: 310,
+            imgSrc: 'gozenyama.png',
+            ref: 'elementary_school',
+        },
+        {
+            time: '2012-2015',
+            title: 'High school days',
+            sentence:
+                'I entered private preparatory school.It was forbidden to use cell phone in a school, but I forgot turning off my cell phone and My grandmother called me.So I was made to write apology essay.',
+            height: 320,
+            imgSrc: 'grand_mother.png',
+        },
+        {
+            time: '2019-2020',
+            title: '公務員時代',
+            sentence:
+                '大学で学んだ事の延長を一生やっていく覚悟が無かった為、公務員となる。特別区公務員として主に清掃工場の設備の保守点検を担当。',
+            height: 350,
+            imgSrc: 'shinkoto.png',
+        },
+    ];
+
+    const [histories, setHistories] = useState<Array<any>>([]);
+
+    useEffect(() => {
+        console.log('effect');
+        if (selectedLanguage === 'ja') setHistories(japaneseHistories);
+        else setHistories(englishHistories);
+    }, [selectedLanguage]);
 
     return (
         <Box mt={'120px'}>
-            <Stack spacing='580px'>
+            <Stack spacing='600px'>
                 {histories.map((v, i) => {
                     return (
                         <Box key={v.time}>
@@ -63,20 +100,6 @@ export const LeftSideHistory = () => {
                                         height={'18px'}
                                         width={'18px'}
                                     ></Box>
-                                    {/*<Text*/}
-                                    {/*    textAlign={'center'}*/}
-                                    {/*    fontWeight={'600'}*/}
-                                    {/*    color={'#525252'}*/}
-                                    {/*    fontSize={'39px'}*/}
-                                    {/*    position={'absolute'}*/}
-                                    {/*    left={'350px'}*/}
-                                    {/*    width={'270px'}*/}
-                                    {/*    fontStyle={'italic'}*/}
-                                    {/*    fontFamily={"'Rubik', sans-serif;"}*/}
-                                    {/*    top={v.height ? v.height / 2 - 28 + 'px' : '30px'}*/}
-                                    {/*>*/}
-                                    {/*    {v.time}*/}
-                                    {/*</Text>*/}
                                     <Text
                                         textAlign={'center'}
                                         fontWeight={'600'}
@@ -104,7 +127,7 @@ export const LeftSideHistory = () => {
                                     <Image src={v.imgSrc} mt={'10px'} borderRadius={'10px'}></Image>
                                 </Box>
                             </ScrollTransition>
-                            <ScrollRightSlideIn height={v.height} isVisible={i===0}>
+                            <ScrollRightSlideIn height={v.height} isVisible={i === 0}>
                                 <Text
                                     textAlign={'center'}
                                     fontWeight={'600'}

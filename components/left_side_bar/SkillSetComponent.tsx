@@ -1,8 +1,9 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, useColorModeValue } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
 import { LabelWithUnderLine } from '../ui_parts/LavelWithUnderLine';
 
 export const SkillSetComponent = ({ skillSetObj, title }: { skillSetObj: any; title: string }) => {
+    const bg = useColorModeValue('theme', '#0095ff');
     return (
         <>
             <Text fontWeight={'700'}>{title}</Text>
@@ -29,12 +30,12 @@ export const SkillSetComponent = ({ skillSetObj, title }: { skillSetObj: any; ti
                             height={'8px'}
                             borderColor={'theme'}
                         >
-                            <Box bg={'theme'} w={skillSetObj[key] + '%'} h={'100%'}></Box>
+                            <Box bg={bg} w={skillSetObj[key] + '%'} h={'100%'}></Box>
                         </Box>
                     </Box>
                 );
             })}
-            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={'#e5e5e5'}></Box>
+            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={bg}></Box>
         </>
     );
 };
