@@ -1,4 +1,4 @@
-import { Box, Image, Link, Stack, Text } from '@chakra-ui/react';
+import { Box, Image, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { languageContext } from '../../pages/_app';
 import { ScrollTransition } from '../animation/ScrollTransition';
@@ -6,6 +6,7 @@ import { ScrollLeftSlideIn } from '../animation/ScrollLeftSlideIn';
 
 export const RightSideHistory = () => {
     const { selectedLanguage } = useContext(languageContext);
+    const cardBg = useColorModeValue('white', '#242526');
 
     const japaneseHistories = [
         {
@@ -85,7 +86,7 @@ export const RightSideHistory = () => {
                                     height={v.height ? v.height : '90px'}
                                     borderRadius={'10px'}
                                     position={'relative'}
-                                    bg={'white'}
+                                    bg={cardBg}
                                     ml={'30px !important'}
                                     px={'15px'}
                                 >
@@ -102,7 +103,7 @@ export const RightSideHistory = () => {
                                     <Text
                                         textAlign={'center'}
                                         fontWeight={'600'}
-                                        color={'#000000d4'}
+                                        // color={'#000000d4'}
                                         fontSize={'18px'}
                                         marginTop={'10px'}
                                     >
@@ -111,7 +112,7 @@ export const RightSideHistory = () => {
                                     <Text
                                         textAlign={'center'}
                                         fontWeight={'600'}
-                                        color={'#000000a8'}
+                                        // color={'#000000a8'}
                                         marginTop={'10px'}
                                         fontSize={'15px'}
                                         fontFamily={
@@ -133,7 +134,7 @@ export const RightSideHistory = () => {
                                 <Text
                                     textAlign={'center'}
                                     fontWeight={'600'}
-                                    color={'#525252'}
+                                    // color={'#525252'}
                                     fontSize={'39px'}
                                     position={'absolute'}
                                     fontStyle={'italic'}

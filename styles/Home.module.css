@@ -4,14 +4,13 @@
 .main {
     min-height: 100vh;
     width: calc(100vw - 390px);
-    flex: 1;
+
     margin-left: 290px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     background: rgb(240, 240, 246);
-    padding-bottom: 15px;
 }
 
 .footer {

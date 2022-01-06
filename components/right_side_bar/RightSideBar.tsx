@@ -45,6 +45,11 @@ export const RightSideBar = () => {
                         imgSrc={'/translate.png'}
                     ></RightSideBarTranslateButton>
                 </Box>
+                <Box marginTop={'45px'} flexBasis={'auto'}>
+                    <RightSideBarTranslateButton
+                        imgSrc={'/translate.png'}
+                    ></RightSideBarTranslateButton>
+                </Box>
                 <Box marginTop={'55px'}>
                     {selectedIndex !== undefined &&
                         buttonObjArray.map((v, i) => {

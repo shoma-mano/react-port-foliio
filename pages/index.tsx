@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { Box, Button, Link, Text, Image, Input } from '@chakra-ui/react';
+import { Box, Button, Link, Text, Image, Input, useColorModeValue } from '@chakra-ui/react';
 import { useContext, useEffect, useState } from 'react';
 import { languageContext } from './_app';
 import { JapaneseIntroduceCard } from '../components/home/JapaneseIntroduceCard';
@@ -13,6 +13,8 @@ import { ScrollTransition } from '../components/animation/ScrollTransition';
 
 const Home: NextPage = () => {
     const { selectedLanguage } = useContext(languageContext);
+    const bg = useColorModeValue('white', '#18191A');
+
 
     const reactContent = () =>
         selectedLanguage === 'ja' ? (
@@ -113,97 +115,106 @@ const Home: NextPage = () => {
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <main className={styles.main}>
-                {selectedLanguage === 'ja' ? (
-                    <Box mt={'20px'}>
-                        <JapaneseIntroduceCard
-                            position={'Webエンジニア'}
-                            name={'真野 笑馬'}
-                            englishName={'Shoma Mano'}
-                        ></JapaneseIntroduceCard>
-                    </Box>
-                ) : (
-                    <EnglishIntroduceCard></EnglishIntroduceCard>
-                )}
                 <Box
-                    mt={'50px'}
-                    fontFamily={'theme'}
-                    border={'solid 1px'}
-                    boxShadow={'sm'}
-                    borderColor={'rgba(0, 0, 0, 0.15)'}
-                    width={'320px'}
-                    height={'100px'}
-                    borderRadius={'10px'}
-                    position={'relative'}
-                    bg={'white'}
-                    ml={'20px'}
-                    mx={'auto'}
+                    bg={bg}
+                    width={"100%"}
+                    pt={"20px"}
+                    display={"flex"}
+                    flexDirection={"column"}
+                    alignItems={"center"}
                 >
-                    <Text
-                        fontFamily={"'Rubik', sans-serif;"}
-                        textAlign={'center'}
-                        fontWeight={'600'}
-                        color={'#000000d4'}
-                        fontSize={'28px'}
-                        marginTop={'10px'}
+                    {selectedLanguage === 'ja' ? (
+                            <JapaneseIntroduceCard
+                                position={'Webエンジニア'}
+                                name={'真野 笑馬'}
+                                englishName={'Shoma Mano'}
+                            ></JapaneseIntroduceCard>
+                    ) : (
+                        <EnglishIntroduceCard></EnglishIntroduceCard>
+                    )}
+                    <Box
+                        mt={'50px'}
+                        fontFamily={'theme'}
+                        border={'solid 1px'}
+                        boxShadow={'sm'}
+                        borderColor={'rgba(0, 0, 0, 0.15)'}
+                        width={'320px'}
+                        height={'100px'}
+                        borderRadius={'10px'}
+                        position={'relative'}
+                        bg={'white'}
+                        ml={'20px'}
+                        mx={'auto'}
                     >
-                        {selectedLanguage === 'ja' ? 'スキル' : 'Skill'}
-                    </Text>
-                    <Text
-                        textAlign={'center'}
-                        fontWeight={'600'}
-                        color={'#000000a8'}
-                        marginTop={'10px'}
-                        fontSize={selectedLanguage === 'ja' ? '14px' : ''}
-                        fontFamily={
-                            selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"
-                        }
-                        mt={'10px'}
-                    >
-                        {selectedLanguage === 'ja'
-                            ? 'フロント、バックエンド、インフラの経験あり'
-                            : 'I have experience in Frontend,Backend, and Infrastructure'}
-                    </Text>
-                </Box>
-                <Box
-                    mt={'35px'}
-                    justifyItems={'center'}
-                    width={'70%'}
-                    gridGap={'30px'}
-                    display={'grid'}
-                    gridTemplateColumns={'repeat(auto-fit,minmax(150px,1fr))'}
-                >
-                    {Icons.map((v) => (
-                        <Box
-                            key={v.imgSrc}
-                            display={'flex'}
-                            flexDirection={'column'}
-                            alignItems={'center'}
+                        <Text
+                            fontFamily={"'Rubik', sans-serif;"}
+                            textAlign={'center'}
+                            fontWeight={'600'}
+                            color={'#000000d4'}
+                            fontSize={'28px'}
+                            marginTop={'10px'}
                         >
-                            <Text
-                                wordBreak={selectedLanguage === 'ja' ? 'break-all' : 'normal'}
-                                fontWeight={'700'}
-                                mb={'7px'}
-                                textAlign={'center'}
+                            {selectedLanguage === 'ja' ? 'スキル' : 'Skill'}
+                        </Text>
+                        <Text
+                            textAlign={'center'}
+                            fontWeight={'600'}
+                            color={'#000000a8'}
+                            marginTop={'10px'}
+                            fontSize={selectedLanguage === 'ja' ? '14px' : ''}
+                            fontFamily={
+                                selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"
+                            }
+                            mt={'10px'}
+                        >
+                            {selectedLanguage === 'ja'
+                                ? 'フロント、バックエンド、インフラの経験あり'
+                                : 'I have experience in Frontend,Backend, and Infrastructure'}
+                        </Text>
+                    </Box>
+                    <Box
+                        width={'70%'}
+                        gridGap={'30px'}
+                        display={'grid'}
+                        margin={"auto"}
+                        mt={'35px'}
+                        gridTemplateColumns={'repeat(auto-fit,minmax(150px,1fr))'}
+                    >
+                        {Icons.map((v) => (
+                            <Box
+                                key={v.imgSrc}
+                                display={'flex'}
+                                flexDirection={'column'}
+                                alignItems={'center'}
                             >
-                                {v.title}
-                            </Text>
-                            <RoundIcon imgSrc={v.imgSrc} padding={v.padding}></RoundIcon>
-                            <Box width={'100%'}>
                                 <Text
-                                    width={selectedLanguage === 'ja' ? '150px' : '200px'}
-                                    textAlign={'center'}
-                                    mt={'15px'}
-                                    fontWeight={'600'}
-                                    color={'#121212b8'}
-                                    fontSize={'14px'}
                                     wordBreak={selectedLanguage === 'ja' ? 'break-all' : 'normal'}
+                                    fontWeight={'700'}
+                                    mb={'7px'}
+                                    textAlign={'center'}
                                 >
-                                    {v.sentence}
+                                    {v.title}
                                 </Text>
-                                {v.content}
+                                <RoundIcon imgSrc={v.imgSrc} padding={v.padding}></RoundIcon>
+                                <Box width={'100%'}>
+                                    <Text
+                                        width={selectedLanguage === 'ja' ? '150px' : '200px'}
+                                        textAlign={'center'}
+                                        mt={'15px'}
+                                        fontWeight={'600'}
+                                        color={'#121212b8'}
+                                        fontSize={'14px'}
+                                        wordBreak={
+                                            selectedLanguage === 'ja' ? 'break-all' : 'normal'
+                                        }
+                                    >
+                                        {v.sentence}
+                                    </Text>
+                                    {v.content}
+                                </Box>
                             </Box>
-                        </Box>
-                    ))}
+                        ))}
+                    </Box>
                 </Box>
             </main>
         </div>

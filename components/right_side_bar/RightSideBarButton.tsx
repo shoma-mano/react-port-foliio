@@ -1,7 +1,8 @@
-import { Box, Image, Text } from '@chakra-ui/react';
+import { Box, Image, Text, useColorModeValue } from '@chakra-ui/react';
 import { Dispatch, SetStateAction, useContext, useEffect, useRef } from 'react';
 import { languageContext } from '../../pages/_app';
 import { useRouter } from 'next/router';
+import { options } from "colorette";
 
 export const RightSideBarButton = ({
     selectedIndex,
@@ -23,6 +24,7 @@ export const RightSideBarButton = ({
     const pop_up = useRef<HTMLDivElement>(null);
     const right_bar_button = useRef<HTMLDivElement>(null);
     const { selectedLanguage } = useContext(languageContext);
+    const bg = useColorModeValue('theme', '#0095ff');
 
     const onMouseEnter = () => {
         pop_up.current!.style.visibility = 'visible';
@@ -66,11 +68,11 @@ export const RightSideBarButton = ({
                     h={'40px'}
                     w={'40px'}
                     ref={right_bar_button}
-                    _hover={{ bg: 'theme' }}
+                    _hover={{ bg: bg }}
                     transition={'all 300ms'}
                     cursor={'pointer'}
                     p={'10px'}
-                    bg={myIndex === selectedIndex ? 'theme' : 'rgb(227 224 224)'}
+                    bg={myIndex === selectedIndex ? bg : 'rgb(227 224 224)'}
                     borderRadius={'30px'}
                 >
                     <Image

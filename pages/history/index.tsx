@@ -1,6 +1,6 @@
 import styles from '../../styles/Home.module.css';
 import Head from 'next/head';
-import { Box, Link, Text, Image } from '@chakra-ui/react';
+import { Box, Link, Text, Image, useColorModeValue } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { languageContext } from '../_app';
 import { LeftSideHistory } from '../../components/history/LeftSideHistory';
@@ -8,11 +8,13 @@ import { RightSideHistory } from '../../components/history/RightSideHistory';
 
 export const Index = () => {
     const { selectedLanguage } = useContext(languageContext);
+    const bg = useColorModeValue('white', '#18191A');
+    const cardBg = useColorModeValue('white', '#242526');
 
     return (
         <>
             <main className={styles.main}>
-                <Box width={'100%'} overflow={'hidden'}>
+                <Box width={'100%'} pb={'15px'} bg={bg} overflow={'hidden'}>
                     <Box
                         mt={'20px'}
                         fontFamily={'theme'}
@@ -24,14 +26,14 @@ export const Index = () => {
                         borderRadius={'10px'}
                         position={'relative'}
                         px={'10px'}
-                        bg={'white'}
+                        bg={cardBg}
                         ml={'20px'}
                         mx={'auto'}
                     >
                         <Text
                             textAlign={'center'}
                             fontWeight={'600'}
-                            color={'#000000d4'}
+                            // color={'#000000d4'}
                             fontSize={'23px'}
                             marginTop={'5px'}
                         >
@@ -40,7 +42,7 @@ export const Index = () => {
                         <Text
                             textAlign={'center'}
                             fontWeight={'600'}
-                            color={'#000000a8'}
+                            // color={'#000000a8'}
                             marginTop={'10px'}
                             fontFamily={"'Rubik', sans-serif;"}
                             mt={'5px'}

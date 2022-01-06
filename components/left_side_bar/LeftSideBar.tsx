@@ -7,7 +7,6 @@ import { languageContext } from '../../pages/_app';
 
 export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
     const { selectedLanguage } = useContext(languageContext);
-    const profileBg = useColorModeValue('rgb(205 205 205)', '#3a3636');
     const iconListBg = useColorModeValue('theme', '#0095ff');
     const profileArray = [
         {
@@ -60,17 +59,15 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
         {
             padding: '6px',
             src: '/sns_icon/twitter.svg',
-            bg: 'theme',
         },
         {
             padding: '6px',
             src: '/sns_icon/github.svg',
-            bg: 'theme',
         },
         {
             padding: '2px',
             src: '/sns_icon/qiita.png',
-            bg: '',
+            bg: 'none',
         },
     ];
 

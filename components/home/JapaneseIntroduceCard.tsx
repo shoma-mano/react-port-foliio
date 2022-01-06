@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text, useColorModeValue } from '@chakra-ui/react';
 import { CherryBlossom } from '../animation/CherryBlossom';
 
 export const JapaneseIntroduceCard = ({
@@ -10,16 +10,17 @@ export const JapaneseIntroduceCard = ({
     name: string;
     englishName: string;
 }) => {
+    const bg = useColorModeValue('white', '#242526');
+
     return (
         <>
             <CherryBlossom>
                 <Box
                     transition={'all 20ms'}
-                    borderRadius={'8px'}
                     boxShadow={'lg'}
                     w={'630px'}
                     h={'380px'}
-                    bg={'white'}
+                    bg={bg}
                     display={'flex'}
                     justifyContent={'space-between'}
                 >
@@ -32,12 +33,7 @@ export const JapaneseIntroduceCard = ({
                             justifyContent={'center'}
                         >
                             <Box mb={'10px'} ml={'60px'}>
-                                <Text
-                                    color={'black'}
-                                    mb={'10px'}
-                                    fontWeight={'700'}
-                                    fontSize={'24px'}
-                                >
+                                <Text mb={'10px'} fontWeight={'700'} fontSize={'24px'}>
                                     {position}
                                 </Text>
                                 <Text fontWeight={'700'} fontSize={'48px'}>
