@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { RightSideBarButton } from './RightSideBarButton';
 import { RightSideBarTranslateButton } from './RightSideBarTranslateButton';
 import { useRouter } from 'next/router';
+import { ColorModeButton } from "./ColorModeButton";
 
 export const RightSideBar = () => {
     let [selectedIndex, setSelectedIndex] = useState<number | undefined>(undefined);
@@ -46,11 +47,11 @@ export const RightSideBar = () => {
                     ></RightSideBarTranslateButton>
                 </Box>
                 <Box marginTop={'45px'} flexBasis={'auto'}>
-                    <RightSideBarTranslateButton
+                    <ColorModeButton
                         imgSrc={'/translate.png'}
-                    ></RightSideBarTranslateButton>
+                    ></ColorModeButton>
                 </Box>
-                <Box marginTop={'55px'}>
+                <Box marginTop={'65px'}>
                     {selectedIndex !== undefined &&
                         buttonObjArray.map((v, i) => {
                             return (

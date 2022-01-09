@@ -1,27 +1,19 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 
-import { ChakraProvider, ThemeConfig } from '@chakra-ui/react';
-import { extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme, ThemeConfig } from '@chakra-ui/react';
 import { createContext, useState } from 'react';
 import { Layout } from '../components/Layout';
 
-const theme = extendTheme({
-    colors: {
-        theme: '#0095ff8c',
-    },
-    fonts: {
-        theme: 'monospace',
-    },
-    config: {
-        initialColorMode: 'light',
-        useSystemColorMode: false,
-    } as ThemeConfig,
-});
+
+import  theme  from "../theme"
 
 export const languageContext = createContext(
     {} as { selectedLanguage: 'ja' | 'en'; toggleLanguage: () => void }
 );
+
+
+
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [selectedLanguage, setLanguage] = useState<'ja' | 'en'>('ja');

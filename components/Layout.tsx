@@ -4,12 +4,12 @@ import { LeftSideBar } from './left_side_bar/LeftSideBar';
 import { RightSideBar } from './right_side_bar/RightSideBar';
 
 export const Layout = ({ children }: { children: ReactElement }) => {
-    const bg = useColorModeValue('rgb(205 205 205)', '#242526');
+    const bg = useColorModeValue('white', '#242526');
     return (
         <>
             <Box
                 position='fixed'
-                left={0}
+                left={{base:"-290px",sm:"0px"}}
                 px={'7'}
                 py={'5'}
                 w='290px'

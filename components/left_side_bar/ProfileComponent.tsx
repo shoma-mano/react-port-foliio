@@ -6,7 +6,7 @@ import { languageContext } from '../../pages/_app';
 
 export const ProfileComponent = ({ profileArray }: { profileArray: Array<any> }) => {
     const { selectedLanguage } = useContext(languageContext);
-    const profileBg = useColorModeValue('rgb(205 205 205)', '#3a3636');
+    const profileBg = useColorModeValue('white', '#3a3636');
 
     return (
         <>

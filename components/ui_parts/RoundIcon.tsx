@@ -30,8 +30,10 @@ export const RoundIcon = ({
                     transition={'all 0.5s'}
                     bg={color ? color : 'white'}
                     src={imgSrc}
+                    border={"solid 1px #0000000a"}
                     borderRadius={'full'}
                     boxSize={'150px'}
+                    boxShadow={'md'}
                     p={padding + 'px'}
                     ref={icon}
                 ></Image>

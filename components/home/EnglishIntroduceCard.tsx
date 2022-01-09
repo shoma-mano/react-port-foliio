@@ -7,7 +7,6 @@ export const EnglishIntroduceCard = () => {
             <Box
                 transition={'all 20ms'}
                 borderRadius={'6px'}
-                marginTop={'20px'}
                 boxShadow={'lg'}
                 w={'630px'}
                 h={'380px'}

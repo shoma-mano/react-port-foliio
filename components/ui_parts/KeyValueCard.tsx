@@ -14,7 +14,7 @@ export const KeyValueCard = ({
     fontSize?: number;
     style?: CSSProperties;
 }) => {
-    const profileBg = useColorModeValue('rgb(205 205 205)', '#3a3636');
+    const profileBg = useColorModeValue('white', '#3a3636');
     return (
         <>
             <Box

@@ -8,6 +8,8 @@ import { languageContext } from '../../pages/_app';
 export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
     const { selectedLanguage } = useContext(languageContext);
     const iconListBg = useColorModeValue('theme', '#0095ff');
+
+
     const profileArray = [
         {
             ja: {
@@ -132,7 +134,12 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                         ></Image>
                     ))}
                 </Box>
-                <Box overflowY={'scroll'} height={'100%'}>
+                <Box css={
+                    {
+                    '&::-webkit-scrollbar': {width: '4px'},
+                        'ok':{background:"red"},
+                    }
+                } overflowY={'scroll'} height={'100%'}>
                     <Box mt={'25px'}>
                         <ProfileComponent
                             profileArray={profileArray.map((v) => v[selectedLanguage])}

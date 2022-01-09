@@ -10,32 +10,34 @@ import { EnglishIntroduceCard } from '../components/home/EnglishIntroduceCard';
 import { WaveText } from '../components/animation/WaveText';
 import { CherryBlossom } from '../components/animation/CherryBlossom';
 import { ScrollTransition } from '../components/animation/ScrollTransition';
+import {obj} from "../js/module"
+import * as React from "react";
 
 const Home: NextPage = () => {
     const { selectedLanguage } = useContext(languageContext);
-    const bg = useColorModeValue('white', '#18191A');
-
+    const bg = useColorModeValue('rgb(240 240 245)', '#18191A');
+    const cardBg = useColorModeValue('white', '#242526');
 
     const reactContent = () =>
         selectedLanguage === 'ja' ? (
             <Text
-                width={'150px'}
+                width={'180px'}
                 mt={'15px'}
+                mx={"auto"}
                 fontWeight={'600'}
-                color={'#121212b8'}
                 fontSize={'14px'}
             >
                 ポートフォリオのソースコードは
-                <Link fontWeight={'900'} color={'black'}>
+                <Link fontWeight={'900'} >
                     こちら。
                 </Link>
             </Text>
         ) : (
             <Text
-                width={'200px'}
+                width={'180px'}
                 mt={'15px'}
+                mx={"auto"}
                 fontWeight={'600'}
-                color={'#121212b8'}
                 fontSize={'14px'}
                 wordBreak={'normal'}
                 textAlign={'center'}
@@ -117,8 +119,9 @@ const Home: NextPage = () => {
             <main className={styles.main}>
                 <Box
                     bg={bg}
+                    ml={{base:"0px",sm:"0px"}}
                     width={"100%"}
-                    pt={"20px"}
+                    py={"20px"}
                     display={"flex"}
                     flexDirection={"column"}
                     alignItems={"center"}
@@ -135,40 +138,35 @@ const Home: NextPage = () => {
                     <Box
                         mt={'50px'}
                         fontFamily={'theme'}
-                        border={'solid 1px'}
-                        boxShadow={'sm'}
                         borderColor={'rgba(0, 0, 0, 0.15)'}
                         width={'320px'}
                         height={'100px'}
                         borderRadius={'10px'}
                         position={'relative'}
-                        bg={'white'}
+                        bg={cardBg}
                         ml={'20px'}
                         mx={'auto'}
+                        px={"10px"}
                     >
                         <Text
                             fontFamily={"'Rubik', sans-serif;"}
                             textAlign={'center'}
                             fontWeight={'600'}
-                            color={'#000000d4'}
                             fontSize={'28px'}
-                            marginTop={'10px'}
+                            marginTop={'2px'}
                         >
                             {selectedLanguage === 'ja' ? 'スキル' : 'Skill'}
                         </Text>
                         <Text
                             textAlign={'center'}
-                            fontWeight={'600'}
-                            color={'#000000a8'}
-                            marginTop={'10px'}
                             fontSize={selectedLanguage === 'ja' ? '14px' : ''}
                             fontFamily={
                                 selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"
                             }
-                            mt={'10px'}
+                            mt={'3px'}
                         >
                             {selectedLanguage === 'ja'
-                                ? 'フロント、バックエンド、インフラの経験あり'
+                                ? 'フロントからバックエンド、インフラまでの経験あり(現在はフロントが中心）'
                                 : 'I have experience in Frontend,Backend, and Infrastructure'}
                         </Text>
                     </Box>
@@ -178,14 +176,19 @@ const Home: NextPage = () => {
                         display={'grid'}
                         margin={"auto"}
                         mt={'35px'}
-                        gridTemplateColumns={'repeat(auto-fit,minmax(150px,1fr))'}
+                        gridTemplateColumns={'repeat(auto-fit,minmax(200px,1fr))'}
                     >
                         {Icons.map((v) => (
                             <Box
                                 key={v.imgSrc}
                                 display={'flex'}
                                 flexDirection={'column'}
+                                border={"solid 1px #0000001f"}
+                                borderRadius={"8px"}
+                                bg={cardBg}
                                 alignItems={'center'}
+                                py={"13px"}
+                                px={"10px"}
                             >
                                 <Text
                                     wordBreak={selectedLanguage === 'ja' ? 'break-all' : 'normal'}
@@ -196,13 +199,13 @@ const Home: NextPage = () => {
                                     {v.title}
                                 </Text>
                                 <RoundIcon imgSrc={v.imgSrc} padding={v.padding}></RoundIcon>
-                                <Box width={'100%'}>
+                                <Box m={"auto"} width={'100%'}>
                                     <Text
-                                        width={selectedLanguage === 'ja' ? '150px' : '200px'}
+                                        width={selectedLanguage === 'ja' ? '180px' : '200px'}
                                         textAlign={'center'}
                                         mt={'15px'}
+                                        mx={"auto"}
                                         fontWeight={'600'}
-                                        color={'#121212b8'}
                                         fontSize={'14px'}
                                         wordBreak={
                                             selectedLanguage === 'ja' ? 'break-all' : 'normal'

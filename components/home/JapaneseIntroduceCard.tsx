@@ -1,6 +1,8 @@
 import { Box, Text, useColorModeValue } from '@chakra-ui/react';
 import { CherryBlossom } from '../animation/CherryBlossom';
 
+
+
 export const JapaneseIntroduceCard = ({
     position,
     name,
@@ -11,6 +13,7 @@ export const JapaneseIntroduceCard = ({
     englishName: string;
 }) => {
     const bg = useColorModeValue('white', '#242526');
+
 
     return (
         <>

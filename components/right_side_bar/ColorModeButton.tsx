@@ -1,14 +1,14 @@
-import { Box, Image, Text } from '@chakra-ui/react';
+import { Box, Image, Text, useColorMode } from '@chakra-ui/react';
 import { Dispatch, SetStateAction, useContext, useEffect, useRef } from 'react';
 import { languageContext } from '../../pages/_app';
 
 export const ColorModeButton = ({ imgSrc }: { imgSrc: string }) => {
-    const pop_up = useRef<HTMLDivElement>(null);
     const right_bar_button = useRef<HTMLDivElement>(null);
-    const { selectedLanguage, toggleLanguage } = useContext(languageContext);
+
+    const {colorMode,toggleColorMode} =useColorMode()
 
     const onClick = () => {
-        toggleLanguage();
+        toggleColorMode()
     };
 
     return (
@@ -21,38 +21,17 @@ export const ColorModeButton = ({ imgSrc }: { imgSrc: string }) => {
                 alignItems={'center'}
             >
                 <Box
-                    borderRadius={'3px'}
-                    width={'80px'}
-                    ref={pop_up}
-                    bg={selectedLanguage === 'ja' ? '#b74b4bc7' : '#554db9'}
-                    transition={'all 400ms'}
-                    mb={'10px'}
-                >
-                    <Text
-                        height={'20px'}
-                        fontSize={'14px'}
-                        lineHeight={'20px'}
-                        color={'white'}
-                        textAlign={'center'}
-                    >
-                        {selectedLanguage === 'ja' ? '日本語' : 'English'}
-                    </Text>
-                </Box>
-                <Box
                     ref={right_bar_button}
                     transition={'all 200ms'}
                     cursor={'pointer'}
                     h={'50px'}
                     w={'50px'}
-                    p={'15px'}
-                    bg={
-                        selectedLanguage === 'ja'
-                            ? 'rgb(221 157 157 / 55%)'
-                            : 'rgb(69 69 197 / 49%)'
-                    }
+                    p={'13px'}
+                    bg={'rgb(227 224 224)'}
+                    _hover={{bg:"#e9e6e6e8"}}
                     borderRadius={'30px'}
                 >
-                    <Image src={imgSrc}></Image>
+                    <Image src={colorMode==="dark"?"/moon.svg":"/sun.png"}></Image>
                 </Box>
             </Box>
         </>

@@ -21,11 +21,13 @@ export const CherryBlossom = ({children}: { children: React.ReactNode }) => {
             // 一定時間が経てば花びらを消す
             setTimeout(() => {
                 petalEl.remove();
-            }, 10000);
+            }, 8000);
         };
 
         // 花びらを生成する間隔をミリ秒で指定
-        setInterval(createPetal, 450);
+        const id=setInterval(createPetal, 550);
+
+        return ()=>clearInterval(id)
     });
 
     return (
@@ -34,6 +36,7 @@ export const CherryBlossom = ({children}: { children: React.ReactNode }) => {
                  width={"630px"}
                  margin={"auto"}>
                 <Box
+                    boxShadow={'md'}
                     borderRadius={'10px'}
                     width={"630px"}
                     id={'cherry_container'} className={styles.cherry_blossom_container} bg={'white'}>
