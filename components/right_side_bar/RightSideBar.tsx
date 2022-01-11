@@ -46,8 +46,9 @@ export const RightSideBar = () => {
                         imgSrc={'/translate.png'}
                     ></RightSideBarTranslateButton>
                 </Box>
-                <Box marginTop={'45px'} flexBasis={'auto'}>
+                <Box marginTop={'55px'} flexBasis={'auto'}>
                     <ColorModeButton
+                        p={"13px"}
                         imgSrc={'/translate.png'}
                     ></ColorModeButton>
                 </Box>

@@ -1,14 +1,14 @@
-import { Box, Image, Text, useColorMode } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
 import { Dispatch, SetStateAction, useContext, useEffect, useRef } from 'react';
 import { languageContext } from '../../pages/_app';
 
-export const ColorModeButton = ({ imgSrc,h,w,p }: { imgSrc: string;h?:string;w?:string;p?:string}) => {
+export const TopBarTranslateButton = ({ imgSrc }: { imgSrc: string }) => {
+    const pop_up = useRef<HTMLDivElement>(null);
     const right_bar_button = useRef<HTMLDivElement>(null);
-
-    const {colorMode,toggleColorMode} =useColorMode()
+    const { selectedLanguage, toggleLanguage } = useContext(languageContext);
 
     const onClick = () => {
-        toggleColorMode()
+        toggleLanguage();
     };
 
     return (
@@ -23,14 +23,17 @@ export const ColorModeButton = ({ imgSrc,h,w,p }: { imgSrc: string;h?:string;w?:
                     ref={right_bar_button}
                     transition={'all 200ms'}
                     cursor={'pointer'}
-                    h={h? h:'50px'}
-                    w={w? w:'50px'}
-                    p={p}
-                    bg={'rgb(227 224 224)'}
-                    _hover={{bg:"#e9e6e6e8"}}
+                    h={'35px'}
+                    w={'35px'}
+                    p={'10px'}
+                    bg={
+                        selectedLanguage === 'ja'
+                            ? 'rgb(221 157 157 / 55%)'
+                            : 'rgb(69 69 197 / 49%)'
+                    }
                     borderRadius={'30px'}
                 >
-                    <Image src={colorMode==="dark"?"/moon.svg":"/sun.png"}></Image>
+                    <Image src={imgSrc}></Image>
                 </Box>
             </Box>
         </>

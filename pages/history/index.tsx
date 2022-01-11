@@ -1,6 +1,6 @@
 import styles from '../../styles/Home.module.css';
 import Head from 'next/head';
-import { Box, Link, Text, Image, useColorModeValue } from '@chakra-ui/react';
+import { Box, Link, Text, Image, useColorModeValue, Input } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { languageContext } from '../_app';
 import { LeftSideHistory } from '../../components/history/LeftSideHistory';
@@ -13,7 +13,14 @@ export const Index = () => {
 
     return (
         <>
-            <main className={styles.main}>
+            <Box
+                minHeight={"100vh"}
+                width={{base:"100vw",sm:"calc(100vw - 100px)",md:"calc(100vw - 390px)"}}
+                display={"flex"}
+                justifyContent={"start"}
+                marginLeft={{base:"0px",sm:"0px",md:"290px"}}
+                marginTop={{base:"100px",sm:"0px",md:"0px"}}
+            >
                 <Box width={'100%'} pb={'15px'} bg={bg} overflow={'hidden'}>
                     <Box
                         mt={'20px'}
@@ -70,7 +77,7 @@ export const Index = () => {
                         <RightSideHistory></RightSideHistory>
                     </Box>
                 </Box>
-            </main>
+            </Box>
         </>
     );
 };
