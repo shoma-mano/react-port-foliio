@@ -1,19 +1,26 @@
-import { ReactChildren, ReactElement } from 'react';
-import { Box, useColorModeValue,Text } from '@chakra-ui/react';
+import { ReactChildren, ReactElement, useContext } from 'react';
+import { Box, useColorModeValue, Text } from '@chakra-ui/react';
 import { LeftSideBar } from './left_side_bar/LeftSideBar';
 import { RightSideBar } from './right_side_bar/RightSideBar';
-import { TopBar } from "./top_bar/TopBar";
+import { TopBar } from './top_bar/TopBar';
+import { AppContext } from '../pages/_app';
 
 export const Layout = ({ children }: { children: ReactElement }) => {
     const bg = useColorModeValue('white', '#242526');
+    const { isRightSideBarOpen, isLeftSideBarOpen } = useContext(AppContext);
+
     return (
         <>
             <Box
-                position={"fixed"}
-                top={{base:"0px",sm:"-100px",md:"-100px"}}
-                height={"60px"}
-                boxShadow={"sm"}
-                width={"100vw"}
+                position={'fixed'}
+                top={{
+                    base: '0px',
+                    sm: '-100px',
+                    md: '-100px',
+                }}
+                height={'60px'}
+                boxShadow={'sm'}
+                width={'100vw'}
                 bg={bg}
                 zIndex={10}
             >
@@ -21,7 +28,11 @@ export const Layout = ({ children }: { children: ReactElement }) => {
             </Box>
             <Box
                 position='fixed'
-                left={{base:"-290px",sm:"-290px",md:"0px"}}
+                left={{
+                    base: isLeftSideBarOpen ? '0px' : '-290px',
+                    sm: '-290px',
+                    md: '0px',
+                }}
                 px={'7'}
                 py={'5'}
                 w='290px'
@@ -29,13 +40,17 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 h='100%'
                 bg={bg}
                 boxShadow='xl'
-                zIndex={'1'}
+                zIndex={'10'}
             >
                 <LeftSideBar onClick={() => console.log('ok')}></LeftSideBar>
             </Box>
             <Box
                 position='fixed'
-                right={{base:"-100px",sm:"0px",md:"0px"}}
+                right={{
+                    base: isRightSideBarOpen ? '0px' : '-100px',
+                    sm: '0px',
+                    md: '0px',
+                }}
                 p={5}
                 top={0}
                 w='100px'
@@ -43,6 +58,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 bg={bg}
                 boxShadow='md'
                 zIndex={'10'}
+                // transition={'all 0.5s'}
             >
                 <RightSideBar></RightSideBar>
             </Box>

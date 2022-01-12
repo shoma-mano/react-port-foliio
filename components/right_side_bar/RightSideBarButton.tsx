@@ -1,8 +1,8 @@
 import { Box, Image, Text, useColorModeValue } from '@chakra-ui/react';
 import { Dispatch, SetStateAction, useContext, useEffect, useRef } from 'react';
-import { languageContext } from '../../pages/_app';
+import { AppContext } from '../../pages/_app';
 import { useRouter } from 'next/router';
-import { options } from "colorette";
+import { options } from 'colorette';
 
 export const RightSideBarButton = ({
     selectedIndex,
@@ -23,7 +23,7 @@ export const RightSideBarButton = ({
 }) => {
     const pop_up = useRef<HTMLDivElement>(null);
     const right_bar_button = useRef<HTMLDivElement>(null);
-    const { selectedLanguage } = useContext(languageContext);
+    const { selectedLanguage } = useContext(AppContext);
     const bg = useColorModeValue('theme', '#0095ff');
 
     const onMouseEnter = () => {

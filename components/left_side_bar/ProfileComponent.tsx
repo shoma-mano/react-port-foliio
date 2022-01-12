@@ -2,10 +2,10 @@ import { Box, useColorModeValue } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import { KeyValueCard } from '../ui_parts/KeyValueCard';
 import { LabelWithUnderLine } from '../ui_parts/LavelWithUnderLine';
-import { languageContext } from '../../pages/_app';
+import { AppContext } from '../../pages/_app';
 
 export const ProfileComponent = ({ profileArray }: { profileArray: Array<any> }) => {
-    const { selectedLanguage } = useContext(languageContext);
+    const { selectedLanguage } = useContext(AppContext);
     const profileBg = useColorModeValue('white', '#3a3636');
 
     return (

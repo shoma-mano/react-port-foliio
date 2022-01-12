@@ -1,14 +1,16 @@
-import { Box, Button, Image, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Image, Text, useBreakpointValue, useColorModeValue } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import { ProfileComponent } from './ProfileComponent';
 import { SkillSetComponent } from './SkillSetComponent';
 import { SpanWrapper } from '../ui_parts/SpanWrapper';
-import { languageContext } from '../../pages/_app';
+import { AppContext } from '../../pages/_app';
+import { CloseIcon } from '@chakra-ui/icons';
 
 export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
-    const { selectedLanguage } = useContext(languageContext);
+    const { selectedLanguage, toggleLeftSideBar } = useContext(AppContext);
     const iconListBg = useColorModeValue('theme', '#0095ff');
 
+    const isBase = useBreakpointValue({ base: true, sm: false, md: false, lg: false });
 
     const profileArray = [
         {
@@ -89,6 +91,15 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
     return (
         <>
             <Box display={'flex'} flexDirection={'column'} height={'100%'}>
+                {isBase && (
+                    <CloseIcon
+                        ml={'220px'}
+                        onClick={toggleLeftSideBar}
+                        cursor={'pointer'}
+                        color={'rgb(118, 118, 118)'}
+                        _hover={{ color: 'black' }}
+                    />
+                )}
                 <Image
                     borderRadius='full'
                     boxSize='150px'
@@ -134,12 +145,14 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                         ></Image>
                     ))}
                 </Box>
-                <Box css={
-                    {
-                    '&::-webkit-scrollbar': {width: '4px'},
-                        'ok':{background:"red"},
-                    }
-                } overflowY={'scroll'} height={'100%'}>
+                <Box
+                    css={{
+                        '&::-webkit-scrollbar': { width: '4px' },
+                        ok: { background: 'red' },
+                    }}
+                    overflowY={'scroll'}
+                    height={'100%'}
+                >
                     <Box mt={'25px'}>
                         <ProfileComponent
                             profileArray={profileArray.map((v) => v[selectedLanguage])}

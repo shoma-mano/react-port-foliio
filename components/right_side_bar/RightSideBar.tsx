@@ -1,12 +1,19 @@
-import { Box, Button, Image, Text } from '@chakra-ui/react';
-import { useEffect, useRef, useState } from 'react';
+import { Box, Button, Image, Text, useBreakpointValue } from '@chakra-ui/react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { RightSideBarButton } from './RightSideBarButton';
 import { RightSideBarTranslateButton } from './RightSideBarTranslateButton';
 import { useRouter } from 'next/router';
-import { ColorModeButton } from "./ColorModeButton";
+import { ColorModeButton } from './ColorModeButton';
+import { CloseIcon } from '@chakra-ui/icons';
+import { AppContext } from '../../pages/_app';
 
 export const RightSideBar = () => {
     let [selectedIndex, setSelectedIndex] = useState<number | undefined>(undefined);
+
+    const { toggleRightSideBar } = useContext(AppContext);
+
+    const isBase = useBreakpointValue({ base: true, sm: false, md: false, lg: false });
+
     const buttonObjArray = [
         {
             imgSrc: '/right_side_bar/home.png',
@@ -32,7 +39,6 @@ export const RightSideBar = () => {
         buttonObjArray.some((v, i) => {
             if (pathname === v.link) {
                 setSelectedIndex(i);
-
                 return true;
             }
         });
@@ -41,16 +47,21 @@ export const RightSideBar = () => {
     return (
         <>
             <Box height={'100%'} display={'flex'} flexDirection={'column'} alignItems={'center'}>
+                {isBase && (
+                    <CloseIcon
+                        onClick={toggleRightSideBar}
+                        cursor={'pointer'}
+                        color={'rgb(118, 118, 118)'}
+                        _hover={{ color: 'black' }}
+                    />
+                )}
                 <Box marginTop={'15px'} flexBasis={'auto'}>
                     <RightSideBarTranslateButton
                         imgSrc={'/translate.png'}
                     ></RightSideBarTranslateButton>
                 </Box>
                 <Box marginTop={'55px'} flexBasis={'auto'}>
-                    <ColorModeButton
-                        p={"13px"}
-                        imgSrc={'/translate.png'}
-                    ></ColorModeButton>
+                    <ColorModeButton p={'13px'} imgSrc={'/translate.png'}></ColorModeButton>
                 </Box>
                 <Box marginTop={'65px'}>
                     {selectedIndex !== undefined &&

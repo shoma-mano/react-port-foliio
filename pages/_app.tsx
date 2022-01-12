@@ -5,33 +5,51 @@ import { ChakraProvider, extendTheme, ThemeConfig } from '@chakra-ui/react';
 import { createContext, useState } from 'react';
 import { Layout } from '../components/Layout';
 
+import theme from '../theme';
 
-import  theme  from "../theme"
+interface AppState {
+    selectedLanguage: 'ja' | 'en';
+    toggleLanguage: () => void;
+    isRightSideBarOpen: boolean;
+    toggleRightSideBar: () => void;
+    isLeftSideBarOpen: boolean;
+    toggleLeftSideBar: () => void;
+}
 
-export const languageContext = createContext(
-    {} as { selectedLanguage: 'ja' | 'en'; toggleLanguage: () => void }
-);
-
-
-
+export const AppContext = createContext<AppState>({} as AppState);
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [selectedLanguage, setLanguage] = useState<'ja' | 'en'>('ja');
     const toggleLanguage = () => {
         selectedLanguage === 'ja' ? setLanguage('en') : setLanguage('ja');
     };
-    const languageContextValue = {
+
+    const [isRightSideBarOpen, setRightSideBar] = useState<boolean>(false);
+    const toggleRightSideBar = () => {
+        setRightSideBar((val) => !val);
+    };
+
+    const [isLeftSideBarOpen, setLeftSideBar] = useState<boolean>(false);
+    const toggleLeftSideBar = () => {
+        setLeftSideBar((val) => !val);
+    };
+
+    const AppContextValue = {
         selectedLanguage,
         toggleLanguage,
+        isRightSideBarOpen,
+        toggleRightSideBar,
+        isLeftSideBarOpen,
+        toggleLeftSideBar,
     };
 
     return (
         <ChakraProvider theme={theme}>
-            <languageContext.Provider value={languageContextValue}>
+            <AppContext.Provider value={AppContextValue}>
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>
-            </languageContext.Provider>
+            </AppContext.Provider>
         </ChakraProvider>
     );
 }

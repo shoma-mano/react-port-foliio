@@ -1,11 +1,11 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import { Dispatch, SetStateAction, useContext, useEffect, useRef } from 'react';
-import { languageContext } from '../../pages/_app';
+import { AppContext } from '../../pages/_app';
 
 export const TopBarTranslateButton = ({ imgSrc }: { imgSrc: string }) => {
     const pop_up = useRef<HTMLDivElement>(null);
     const right_bar_button = useRef<HTMLDivElement>(null);
-    const { selectedLanguage, toggleLanguage } = useContext(languageContext);
+    const { selectedLanguage, toggleLanguage } = useContext(AppContext);
 
     const onClick = () => {
         toggleLanguage();
@@ -13,12 +13,7 @@ export const TopBarTranslateButton = ({ imgSrc }: { imgSrc: string }) => {
 
     return (
         <>
-            <Box
-                onClick={onClick}
-                display={'flex'}
-                flexDirection={'column'}
-                alignItems={'center'}
-            >
+            <Box onClick={onClick} display={'flex'} flexDirection={'column'} alignItems={'center'}>
                 <Box
                     ref={right_bar_button}
                     transition={'all 200ms'}

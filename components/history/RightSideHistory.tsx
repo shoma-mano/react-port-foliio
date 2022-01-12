@@ -1,11 +1,11 @@
 import { Box, Image, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { useContext, useEffect, useRef, useState } from 'react';
-import { languageContext } from '../../pages/_app';
+import { AppContext } from '../../pages/_app';
 import { ScrollTransition } from '../animation/ScrollTransition';
 import { ScrollLeftSlideIn } from '../animation/ScrollLeftSlideIn';
 
 export const RightSideHistory = () => {
-    const { selectedLanguage } = useContext(languageContext);
+    const { selectedLanguage } = useContext(AppContext);
     const cardBg = useColorModeValue('white', '#242526');
 
     const japaneseHistories = [

@@ -1,8 +1,10 @@
-import { Box } from '@chakra-ui/react';
+import { AspectRatio, Box, useBreakpointValue } from '@chakra-ui/react';
 import styles from '/styles/Animation.module.css';
 import { useEffect } from 'react';
 
-export const CherryBlossom = ({children}: { children: React.ReactNode }) => {
+export const CherryBlossom = ({ children }: { children: React.ReactNode }) => {
+    const width = useBreakpointValue({base:"82%",sm:"630px"})
+
     useEffect(() => {
         const section = document.getElementById('cherry_container');
 
@@ -25,24 +27,26 @@ export const CherryBlossom = ({children}: { children: React.ReactNode }) => {
         };
 
         // 花びらを生成する間隔をミリ秒で指定
-        const id=setInterval(createPetal, 550);
+        const id = setInterval(createPetal, 550);
 
-        return ()=>clearInterval(id)
+        return () => clearInterval(id);
     });
 
     return (
         <>
-            <Box position={"relative"}
-                 width={"630px"}
-                 margin={"auto"}>
+            <AspectRatio position={'relative'} width={width} ratio={63/38} margin={'auto'}>
                 <Box
                     boxShadow={'md'}
                     borderRadius={'10px'}
-                    width={"630px"}
-                    id={'cherry_container'} className={styles.cherry_blossom_container} bg={'white'}>
+                    width={"100%"}
+                    h={"100%"}
+                    id={'cherry_container'}
+                    className={styles.cherry_blossom_container}
+                    bg={'white'}
+                >
                     {children}
                 </Box>
-            </Box>
+            </AspectRatio>
         </>
     );
 };

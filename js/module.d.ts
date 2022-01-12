@@ -1,4 +1,4 @@
-export declare const obj:{
-    name:string,
-    age:number
-}
+export declare const obj: {
+    name: string;
+    age: number;
+};

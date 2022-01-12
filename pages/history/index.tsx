@@ -2,24 +2,24 @@ import styles from '../../styles/Home.module.css';
 import Head from 'next/head';
 import { Box, Link, Text, Image, useColorModeValue, Input } from '@chakra-ui/react';
 import { useContext } from 'react';
-import { languageContext } from '../_app';
+import { AppContext } from '../_app';
 import { LeftSideHistory } from '../../components/history/LeftSideHistory';
 import { RightSideHistory } from '../../components/history/RightSideHistory';
 
 export const Index = () => {
-    const { selectedLanguage } = useContext(languageContext);
+    const { selectedLanguage } = useContext(AppContext);
     const bg = useColorModeValue('white', '#18191A');
     const cardBg = useColorModeValue('white', '#242526');
 
     return (
         <>
             <Box
-                minHeight={"100vh"}
-                width={{base:"100vw",sm:"calc(100vw - 100px)",md:"calc(100vw - 390px)"}}
-                display={"flex"}
-                justifyContent={"start"}
-                marginLeft={{base:"0px",sm:"0px",md:"290px"}}
-                marginTop={{base:"100px",sm:"0px",md:"0px"}}
+                minHeight={'100vh'}
+                width={{ base: '100vw', sm: 'calc(100vw - 100px)', md: 'calc(100vw - 390px)' }}
+                display={'flex'}
+                justifyContent={'start'}
+                marginLeft={{ base: '0px', sm: '0px', md: '290px' }}
+                marginTop={{ base: '100px', sm: '0px', md: '0px' }}
             >
                 <Box width={'100%'} pb={'15px'} bg={bg} overflow={'hidden'}>
                     <Box
