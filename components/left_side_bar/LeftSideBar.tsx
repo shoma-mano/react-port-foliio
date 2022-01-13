@@ -148,7 +148,6 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                 <Box
                     css={{
                         '&::-webkit-scrollbar': { width: '4px' },
-                        ok: { background: 'red' },
                     }}
                     overflowY={'scroll'}
                     height={'100%'}

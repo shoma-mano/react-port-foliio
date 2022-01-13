@@ -11,7 +11,7 @@ export const JapaneseIntroduceCard = ({
     englishName: string;
 }) => {
     const bg = useColorModeValue('white', '#242526');
-    const width = useBreakpointValue({base:"90%",sm:"630px"})
+    const width = useBreakpointValue({ base: '90%', sm: '630px' });
 
     return (
         <>
@@ -19,7 +19,7 @@ export const JapaneseIntroduceCard = ({
                 <Box
                     transition={'all 20ms'}
                     boxShadow={'lg'}
-                    w={"100%"}
+                    w={'100%'}
                     h={'100%'}
                     bg={bg}
                     display={'flex'}

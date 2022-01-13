@@ -23,7 +23,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 width={'100vw'}
                 bg={bg}
                 zIndex={10}
-                border={"none"}
+                border={'none'}
             >
                 <TopBar></TopBar>
             </Box>
@@ -38,7 +38,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 py={'5'}
                 w='290px'
                 top={0}
-                h='100%'
+                h='100vh'
                 bg={bg}
                 boxShadow='xl'
                 zIndex={'10'}
@@ -59,7 +59,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 bg={bg}
                 boxShadow='md'
                 zIndex={'10'}
-                border={"none"}
+                border={'none'}
                 // transition={'all 0.5s'}
             >
                 <RightSideBar></RightSideBar>

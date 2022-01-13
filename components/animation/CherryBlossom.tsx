@@ -3,7 +3,7 @@ import styles from '/styles/Animation.module.css';
 import { useEffect } from 'react';
 
 export const CherryBlossom = ({ children }: { children: React.ReactNode }) => {
-    const width = useBreakpointValue({base:"82%",sm:"630px"})
+    const width = useBreakpointValue({ base: '82%', sm: '630px' });
 
     useEffect(() => {
         const section = document.getElementById('cherry_container');
@@ -34,12 +34,12 @@ export const CherryBlossom = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <>
-            <AspectRatio position={'relative'} width={width} ratio={63/38} margin={'auto'}>
+            <AspectRatio position={'relative'} width={width} ratio={63 / 38} margin={'auto'}>
                 <Box
                     boxShadow={'md'}
                     borderRadius={'10px'}
-                    width={"100%"}
-                    h={"100%"}
+                    width={'100%'}
+                    h={'100%'}
                     id={'cherry_container'}
                     className={styles.cherry_blossom_container}
                     bg={'white'}

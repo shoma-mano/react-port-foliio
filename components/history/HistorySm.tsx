@@ -107,8 +107,8 @@ export const HistorySm = () => {
                                     fontSize={'39px'}
                                     fontStyle={'italic'}
                                     width={'300px'}
-                                    mx={"auto"}
-                                    mb={"15px"}
+                                    mx={'auto'}
+                                    mb={'15px'}
                                     fontFamily={"'Rubik', sans-serif;"}
                                 >
                                     {v.time}
