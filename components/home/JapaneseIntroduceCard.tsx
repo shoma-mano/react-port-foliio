@@ -25,7 +25,7 @@ export const JapaneseIntroduceCard = ({
                     display={'flex'}
                     justifyContent={'space-between'}
                 >
-                    <Box width={'280px'} height={'100%'} flexShrink={'0'} flexGrow={'1'}>
+                    <Box width={{base:'50%',sm:'280px'}} height={'100%'} flexShrink={'0'} flexGrow={'1'}>
                         <Box
                             display={'flex'}
                             mt={'10px'}
@@ -33,14 +33,14 @@ export const JapaneseIntroduceCard = ({
                             flexDirection={'column'}
                             justifyContent={'center'}
                         >
-                            <Box mb={'10px'} ml={'60px'}>
-                                <Text mb={'10px'} fontWeight={'700'} fontSize={'24px'}>
+                            <Box mb={'10px'} ml={{base:'20px',sm:'60px'}}>
+                                <Text mb={'10px'} fontWeight={'700'} fontSize={{base:'16px',sm:'24px'}}>
                                     {position}
                                 </Text>
-                                <Text fontWeight={'700'} fontSize={'48px'}>
+                                <Text fontWeight={'700'} fontSize={{base:'24px',sm:'48px'}}>
                                     {name}
                                 </Text>
-                                <Text mt={'8px'} fontSize={'26px'}>
+                                <Text mt={'8px'} fontSize={{base:'13px',sm:'26px'}}>
                                     {englishName}
                                 </Text>
                             </Box>
@@ -55,7 +55,7 @@ export const JapaneseIntroduceCard = ({
                     >
                         <img
                             width={'320px'}
-                            style={{ height: '380px', zIndex: 6, filter: 'brightness(1.2)' }}
+                            style={{minWidth:"50%", height: '380px', zIndex: 6, filter: 'brightness(1.2)' }}
                             src={'/selfie_home.png'}
                         ></img>
                     </Box>

@@ -132,7 +132,7 @@ const Home: NextPage = () => {
                     flexDirection={'column'}
                     alignItems={'center'}
                 >
-                    <div dangerouslySetInnerHTML={{ __html: highlightedCode }}></div>
+                    {/*<div dangerouslySetInnerHTML={{ __html: highlightedCode }}></div>*/}
                     {selectedLanguage === 'ja' ? (
                         <JapaneseIntroduceCard
                             position={'Webエンジニア'}

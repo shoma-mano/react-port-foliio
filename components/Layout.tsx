@@ -42,6 +42,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 bg={bg}
                 boxShadow='xl'
                 zIndex={'10'}
+                transition={"all 0.3s"}
             >
                 <LeftSideBar onClick={() => console.log('ok')}></LeftSideBar>
             </Box>
@@ -60,6 +61,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 boxShadow='md'
                 zIndex={'10'}
                 border={'none'}
+                transition={"all 0.3s"}
                 // transition={'all 0.5s'}
             >
                 <RightSideBar></RightSideBar>
