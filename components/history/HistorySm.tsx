@@ -4,11 +4,19 @@ import { AppContext } from '../../pages/_app';
 import { ScrollTransition } from '../animation/ScrollTransition';
 import { ScrollLeftSlideIn } from '../animation/ScrollLeftSlideIn';
 
-export const RightSideHistorySm = () => {
+export const HistorySm = () => {
     const { selectedLanguage } = useContext(AppContext);
     const cardBg = useColorModeValue('white', '#242526');
 
     const japaneseHistories = [
+        {
+            time: '2003-2009',
+            title: '小学校時代',
+            sentence: '全校生徒60人という学校で自然の中に囲まれてのびのびと育つ。',
+            height: 310,
+            imgSrc: 'gozenyama.png',
+            ref: 'elementary_school',
+        },
         {
             time: '2009-2012',
             title: '中学校時代',
@@ -18,12 +26,28 @@ export const RightSideHistorySm = () => {
             imgSrc: 'kawazu.png',
         },
         {
+            time: '2012-2015',
+            title: '高校時代',
+            sentence:
+                '第一志望に落ちてしまい、私立の進学校に進学。校内での携帯の使用が禁止されているにも関わらず、携帯の電源を切り忘れてお婆ちゃんから電話がかかってきてしまい反省文を書く事になる。',
+            height: 350,
+            imgSrc: 'grand_mother.png',
+        },
+        {
             time: '2015-2019',
             title: '大学時代',
             sentence:
                 'センター国語で平均点以下を叩き出すが、なんとか千葉大学電気電子工学部に入学。軽音サークルに入り、ギターを弾くという長年の念願を叶える。',
             height: 330,
             imgSrc: 'metallica.png',
+        },
+        {
+            time: '2019-2020',
+            title: '公務員時代',
+            sentence:
+                '大学で学んだ事の延長を一生やっていく覚悟が無かった為、公務員となる。特別区公務員として主に清掃工場の設備の保守点検を担当。',
+            height: 350,
+            imgSrc: 'shinkoto.png',
         },
         {
             time: '2020-2022',
@@ -71,12 +95,24 @@ export const RightSideHistorySm = () => {
     }, [selectedLanguage]);
 
     return (
-        <Box mt={'580px'}>
-            <Stack spacing='600px'>
+        <Box mt={'40px'}>
+            <Stack spacing='80px'>
                 {histories.map((v) => {
                     return (
                         <Box key={v.time}>
-                            <ScrollTransition key={v.time}>
+                            <ScrollTransition>
+                                <Text
+                                    textAlign={'center'}
+                                    fontWeight={'600'}
+                                    fontSize={'39px'}
+                                    fontStyle={'italic'}
+                                    width={'300px'}
+                                    mx={"auto"}
+                                    mb={"15px"}
+                                    fontFamily={"'Rubik', sans-serif;"}
+                                >
+                                    {v.time}
+                                </Text>
                                 <Box
                                     fontFamily={'theme'}
                                     border={'solid 1px'}
@@ -85,23 +121,10 @@ export const RightSideHistorySm = () => {
                                     width={'300px'}
                                     height={v.height ? v.height : '90px'}
                                     borderRadius={'10px'}
-                                    position={'relative'}
                                     bg={cardBg}
-                                    ml={'30px !important'}
+                                    mx={'auto'}
                                     px={'15px'}
                                 >
-                                    <Text
-                                        textAlign={'center'}
-                                        fontWeight={'600'}
-                                        // color={'#525252'}
-                                        fontSize={'39px'}
-                                        position={'absolute'}
-                                        fontStyle={'italic'}
-                                        width={'300px'}
-                                        fontFamily={"'Rubik', sans-serif;"}
-                                    >
-                                        {v.time}
-                                    </Text>
                                     <Text
                                         textAlign={'center'}
                                         fontWeight={'600'}
