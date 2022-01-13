@@ -46,7 +46,7 @@ export const RightSideBar = () => {
 
     return (
         <>
-            <Box height={'100%'} display={'flex'} flexDirection={'column'} alignItems={'center'}>
+            <Box height={'100%'} overflow={"scroll"} display={'flex'} flexDirection={'column'} alignItems={'center'}>
                 {isBase && (
                     <CloseIcon
                         onClick={toggleRightSideBar}
