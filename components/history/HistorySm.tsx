@@ -46,7 +46,7 @@ export const HistorySm = () => {
             title: '公務員時代',
             sentence:
                 '大学で学んだ事の延長を一生やっていく覚悟が無かった為、公務員となる。特別区公務員として主に清掃工場の設備の保守点検を担当。',
-            height: 350,
+            height: 360,
             imgSrc: 'shinkoto.png',
         },
         {
@@ -61,6 +61,14 @@ export const HistorySm = () => {
 
     const englishHistories = [
         {
+            time: '2003-2009',
+            title: 'Elementary school days',
+            sentence: 'I grew in a school whose number of all students are 60.',
+            height: 310,
+            imgSrc: 'gozenyama.png',
+            ref: 'elementary_school',
+        },
+        {
             time: '2009-2012',
             title: 'Junior high school days',
             sentence:
@@ -69,12 +77,28 @@ export const HistorySm = () => {
             imgSrc: 'study.png',
         },
         {
+            time: '2012-2015',
+            title: 'High school days',
+            sentence:
+                'I entered private preparatory school.It was forbidden to use cell phone in a school, but I forgot turning off my cell phone and My grandmother called me.So I was made to write apology essay.',
+            height: 320,
+            imgSrc: 'grand_mother.png',
+        },
+        {
             time: '2015-2019',
             title: 'College days',
             sentence:
                 'I passed test to enter college I wanted to go.I started playing the guitar, but I realized I liked listening than playing later.',
             height: 330,
             imgSrc: 'metallica.png',
+        },
+        {
+            time: '2019-2020',
+            title: '公務員時代',
+            sentence:
+                'I had no goals when I was a college student, so I became a civil servant because I thought it was a low risk choice.',
+            height: 360,
+            imgSrc: 'shinkoto.png',
         },
         {
             time: '2020-2022',
@@ -97,10 +121,10 @@ export const HistorySm = () => {
     return (
         <Box mt={'40px'}>
             <Stack spacing='80px'>
-                {histories.map((v) => {
+                {histories.map((v, i) => {
                     return (
                         <Box key={v.time}>
-                            <ScrollTransition>
+                            <ScrollTransition isVisible={i === 0}>
                                 <Text
                                     textAlign={'center'}
                                     fontWeight={'600'}

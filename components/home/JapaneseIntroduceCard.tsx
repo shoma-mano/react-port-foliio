@@ -25,7 +25,12 @@ export const JapaneseIntroduceCard = ({
                     display={'flex'}
                     justifyContent={'space-between'}
                 >
-                    <Box width={{base:'50%',sm:'280px'}} height={'100%'} flexShrink={'0'} flexGrow={'1'}>
+                    <Box
+                        width={{ base: '100%', sm: '280px' }}
+                        height={'100%'}
+                        flexShrink={'0'}
+                        flexGrow={'1'}
+                    >
                         <Box
                             display={'flex'}
                             mt={'10px'}
@@ -33,14 +38,32 @@ export const JapaneseIntroduceCard = ({
                             flexDirection={'column'}
                             justifyContent={'center'}
                         >
-                            <Box mb={'10px'} ml={{base:'20px',sm:'60px'}}>
-                                <Text mb={'10px'} fontWeight={'700'} fontSize={{base:'16px',sm:'24px'}}>
+                            <Box
+                                display={'flex'}
+                                flexDirection={'column'}
+                                alignItems={'center'}
+                                mb={'10px'}
+                                ml={{ base: '', sm: '60px' }}
+                            >
+                                <Text
+                                    mb={'10px'}
+                                    fontWeight={'700'}
+                                    fontSize={{ base: '6vw', sm: '24px' }}
+                                >
                                     {position}
                                 </Text>
-                                <Text fontWeight={'700'} fontSize={{base:'24px',sm:'48px'}}>
+                                <Text
+                                    fontWeight={'700'}
+                                    mt={{ base: '2vw', sm: '0px' }}
+                                    fontSize={{ base: '10vw', sm: '48px' }}
+                                >
                                     {name}
                                 </Text>
-                                <Text mt={'8px'} fontSize={{base:'13px',sm:'26px'}}>
+                                <Text
+                                    fontWeight={'700'}
+                                    mt={{ base: '3vw', sm: '8px' }}
+                                    fontSize={{ base: '6vw', sm: '26px' }}
+                                >
                                     {englishName}
                                 </Text>
                             </Box>
@@ -55,7 +78,12 @@ export const JapaneseIntroduceCard = ({
                     >
                         <img
                             width={'320px'}
-                            style={{minWidth:"50%", height: '380px', zIndex: 6, filter: 'brightness(1.2)' }}
+                            style={{
+                                minWidth: '50%',
+                                height: '380px',
+                                zIndex: 6,
+                                filter: 'brightness(1.2)',
+                            }}
                             src={'/selfie_home.png'}
                         ></img>
                     </Box>

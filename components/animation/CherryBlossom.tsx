@@ -34,7 +34,7 @@ export const CherryBlossom = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <>
-            <AspectRatio position={'relative'} width={width} ratio={63 / 38} margin={'auto'}>
+            <AspectRatio position={'relative'} width={width} maxHeight={'360px'} margin={'auto'}>
                 <Box
                     boxShadow={'md'}
                     borderRadius={'10px'}

@@ -26,10 +26,15 @@ export const RightSideBar = () => {
             link: '/history',
         },
         {
-            imgSrc: '/right_side_bar/works.png',
-            title: 'WORKS',
-            link: '/works',
+            imgSrc: '/right_side_bar/blog.png',
+            title: 'BLOG',
+            link: '/blog',
         },
+        // {
+        //     imgSrc: '/right_side_bar/works.png',
+        //     title: 'WORKS',
+        //     link: '/works',
+        // },
     ];
 
     const router = useRouter();

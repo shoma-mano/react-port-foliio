@@ -25,13 +25,16 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
 
     const [isRightSideBarOpen, setRightSideBar] = useState<boolean>(false);
+    const [isLeftSideBarOpen, setLeftSideBar] = useState<boolean>(false);
+
     const toggleRightSideBar = () => {
         setRightSideBar((val) => !val);
+        if (isLeftSideBarOpen) setLeftSideBar((val) => !val);
     };
 
-    const [isLeftSideBarOpen, setLeftSideBar] = useState<boolean>(false);
     const toggleLeftSideBar = () => {
         setLeftSideBar((val) => !val);
+        if (isRightSideBarOpen) setRightSideBar((val) => !val);
     };
 
     const AppContextValue = {

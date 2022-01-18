@@ -23,7 +23,7 @@ export const RightSideBarButton = ({
 }) => {
     const pop_up = useRef<HTMLDivElement>(null);
     const right_bar_button = useRef<HTMLDivElement>(null);
-    const { selectedLanguage } = useContext(AppContext);
+    const { isRightSideBarOpen, toggleRightSideBar } = useContext(AppContext);
     const bg = useColorModeValue('theme', '#0095ff');
 
     const onMouseEnter = () => {
@@ -43,6 +43,7 @@ export const RightSideBarButton = ({
     const onClick = () => {
         router.push(link);
         setSelectedIndex(myIndex);
+        if (isRightSideBarOpen) toggleRightSideBar();
     };
 
     useEffect(() => {

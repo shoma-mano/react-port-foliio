@@ -28,7 +28,7 @@ export const ScrollTransition = ({
 
     return (
         <>
-            <Box ref={box} opacity={0} transition={'all 1.2s'}>
+            <Box ref={box} opacity={isVisible ? 1 : 0} transition={'all 1.2s'}>
                 {children}
             </Box>
         </>
