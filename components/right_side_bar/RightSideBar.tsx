@@ -28,7 +28,7 @@ export const RightSideBar = () => {
         {
             imgSrc: '/right_side_bar/blog.png',
             title: 'BLOG',
-            link: '/blog',
+            link: '/blog/1',
         },
         // {
         //     imgSrc: '/right_side_bar/works.png',
@@ -41,9 +41,14 @@ export const RightSideBar = () => {
     const pathname = router.pathname;
 
     useEffect(() => {
+        console.log("render")
         buttonObjArray.some((v, i) => {
-            if (pathname === v.link) {
+            if (pathname.indexOf(v.title.toLowerCase()) !== -1) {
                 setSelectedIndex(i);
+                return true;
+            }
+            if(pathname==='/'){
+                setSelectedIndex(0)
                 return true;
             }
         });

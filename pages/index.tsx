@@ -16,7 +16,6 @@ import hljs from 'highlight.js';
 
 const Home: NextPage = () => {
     const highlightedCode = hljs.highlightAuto('<span>Hello World!</span>').value;
-    console.log(highlightedCode);
     const { selectedLanguage } = useContext(AppContext);
     const bg = useColorModeValue('rgb(240 240 245)', '#18191A');
     const cardBg = useColorModeValue('white', '#242526');

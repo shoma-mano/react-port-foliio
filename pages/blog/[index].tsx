@@ -99,9 +99,9 @@ export const Index = () => {
                     </Text>
                     <Box mt={'30px'} display={'grid'} gridTemplateColumns={'repeat(2,1fr)'} flexWrap={'wrap'}
                          gridRowGap={'40px'} gridColumnGap={'5%'} px={'5%'} width={'100%'}>
-                        {array.map((v) => {
+                        {array.map((v,i) => {
                             return (
-                                <Box key={v} display={'flex'} justifyContent={'center'}>
+                                <Box key={i} display={'flex'} justifyContent={'center'}>
                                     <Box cursor={'pointer'} maxWidth={'350px'} border={'1px solid'} boxShadow={'md'}
                                          _hover={{boxShadow: 'xl'}} borderRadius={'10px'} borderColor={'#00000021'}
                                          bg={bg} height={'400px'} key={v}>
@@ -139,5 +139,7 @@ export const Index = () => {
 
     return <>{content}</>;
 };
+
+
 
 export default Index;

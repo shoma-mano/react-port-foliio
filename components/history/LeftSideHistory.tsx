@@ -65,7 +65,6 @@ export const LeftSideHistory = () => {
     const [histories, setHistories] = useState<Array<any>>([]);
 
     useEffect(() => {
-        console.log('effect');
         if (selectedLanguage === 'ja') setHistories(japaneseHistories);
         else setHistories(englishHistories);
     }, [selectedLanguage]);
