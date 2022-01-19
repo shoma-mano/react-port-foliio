@@ -28,7 +28,7 @@ export const RightSideBar = () => {
         {
             imgSrc: '/right_side_bar/blog.png',
             title: 'BLOG',
-            link: '/blog/1',
+            link: '/blog',
         },
         // {
         //     imgSrc: '/right_side_bar/works.png',

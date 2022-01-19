@@ -1,5 +1,6 @@
 import styles from '../../styles/Home.module.css';
 import Head from 'next/head';
+import { getPostBySlug, getAllPosts } from '../../lib/api.js';
 import {
     Box,
     Link,
@@ -15,12 +16,16 @@ import { LeftSideHistory } from '../../components/history/LeftSideHistory';
 import { RightSideHistory } from '../../components/history/RightSideHistory';
 import { HistorySm } from '../../components/history/HistorySm';
 
-export const Index = () => {
+export const Index = ({posts}:{posts : any}) => {
     const {selectedLanguage} = useContext(AppContext);
     const bg = useColorModeValue('#f0f0f5', '#18191A');
     const cardBg = useColorModeValue('white', '#242526');
 
     const array = ['OSSのTypeScriptソースでよく見かけるDict型について', 'test', 'test', 'test', 'test', 'test'];
+
+    // const posts:any = getAllPosts(['slug']);
+    // debugger;
+
 
     const content = useBreakpointValue({
         base: (
@@ -139,6 +144,22 @@ export const Index = () => {
 
     return <>{content}</>;
 };
+
+export async function getStaticProps() {
+    const posts = getAllPosts(['slug'])
+    debugger;
+
+    return {
+        props: {
+            post: {
+                ...posts,
+            },
+        },
+    };
+}
+
+
+
 
 
 
