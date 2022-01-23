@@ -15,16 +15,18 @@ import { AppContext } from '../_app';
 import { LeftSideHistory } from '../../components/history/LeftSideHistory';
 import { RightSideHistory } from '../../components/history/RightSideHistory';
 import { HistorySm } from '../../components/history/HistorySm';
+import { useRouter } from "next/router";
 
 export const Index = ({posts}:{posts : any}) => {
     const {selectedLanguage} = useContext(AppContext);
     const bg = useColorModeValue('#f0f0f5', '#18191A');
     const cardBg = useColorModeValue('white', '#242526');
-
+    const router=useRouter()
     const array = ['OSSのTypeScriptソースでよく見かけるDict型について', 'test', 'test', 'test', 'test', 'test'];
 
-    // const posts:any = getAllPosts(['slug']);
-    // debugger;
+    debugger;
+
+
 
 
     const content = useBreakpointValue({
@@ -104,12 +106,12 @@ export const Index = ({posts}:{posts : any}) => {
                     </Text>
                     <Box mt={'30px'} display={'grid'} gridTemplateColumns={'repeat(2,1fr)'} flexWrap={'wrap'}
                          gridRowGap={'40px'} gridColumnGap={'5%'} px={'5%'} width={'100%'}>
-                        {array.map((v,i) => {
+                        {posts.map((v: any,i: any) => {
                             return (
-                                <Box key={i} display={'flex'} justifyContent={'center'}>
+                                <Box onClick={()=>router.push(`/posts/${v.slug}`)} key={i} display={'flex'} justifyContent={'center'}>
                                     <Box cursor={'pointer'} maxWidth={'350px'} border={'1px solid'} boxShadow={'md'}
                                          _hover={{boxShadow: 'xl'}} borderRadius={'10px'} borderColor={'#00000021'}
-                                         bg={bg} height={'400px'} key={v}>
+                                         bg={bg} height={'400px'} >
                                         <Image
                                             src={'/programmer.png'}
                                             width={'100%'}
@@ -123,7 +125,7 @@ export const Index = ({posts}:{posts : any}) => {
                                             height={'60%'}
                                             width={'100%'}
                                         >
-                                            <Text fontSize={'20px'} noOfLines={3} fontWeight={'700'}>{v}</Text>
+                                            <Text fontSize={'20px'} noOfLines={3} fontWeight={'700'}>{v.title}</Text>
                                             <Text maxWidth={'100%'} noOfLines={3} maxHeight={'40%'} fontSize={'15px'}
                                                   mt={'10px'}>OSSのソースなどを読んでるとこんな感じでDict型を指定してる事があります。</Text>
                                             <Box flexGrow={1} display={'flex'} flexDirection={'column'}
@@ -146,14 +148,21 @@ export const Index = ({posts}:{posts : any}) => {
 };
 
 export async function getStaticProps() {
-    const posts = getAllPosts(['slug'])
+    const posts = getAllPosts([
+        'title',
+        'date',
+        'slug',
+        'author',
+        'content',
+        'ogImage',
+        'coverImage',
+        'excerpt'
+    ])
     debugger;
 
     return {
         props: {
-            post: {
-                ...posts,
-            },
+            posts: posts
         },
     };
 }

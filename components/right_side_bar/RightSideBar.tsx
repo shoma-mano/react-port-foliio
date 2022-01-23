@@ -51,6 +51,10 @@ export const RightSideBar = () => {
                 setSelectedIndex(0)
                 return true;
             }
+            if(pathname.indexOf('posts')!==-1){
+                setSelectedIndex(2)
+                return true;
+            }
         });
     });
 

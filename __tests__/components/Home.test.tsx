@@ -5,7 +5,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Home from '../../pages';
-import {getAllPosts} from "../../lib/api.js";
+import { getAllPosts, getPostBySlug } from "../../lib/api.js";
 
 Object.defineProperty(window, 'matchMedia', {
     writable: true,
@@ -33,15 +33,37 @@ describe('Home', () => {
     });
 });
 
+
+
 describe('api test', () => {
+
     it('getAllPosts', () => {
-        const posts=getAllPosts(['slug'])
+        const posts=getAllPosts([
+            'title',
+            'date',
+            'slug',
+            'author',
+            'content',
+            'ogImage',
+            'coverImage',
+        ])
+        console.log(posts)
         expect(posts[0].hasOwnProperty('slug')).toBe(true)
     });
 
-    it('getAllPosts', () => {
-        const posts=getAllPosts(['slug'])
-        expect(posts[0].hasOwnProperty('slug')).toBe(true)
-    });
+
+    it('getPostBySlug',()=>{
+        const post = getPostBySlug('hello-world',[
+            'title',
+            'date',
+            'slug',
+            'author',
+            'content',
+            'ogImage',
+            'coverImage',
+        ])
+        expect(Object.keys(post).length===7).toBe(true)
+    })
+
 
 });
