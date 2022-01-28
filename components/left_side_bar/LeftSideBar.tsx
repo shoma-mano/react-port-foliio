@@ -106,12 +106,15 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                     />
                 )}
                 <Image
-                    borderRadius='full'
+                    borderRadius={'250px'}
                     boxSize='150px'
+                    height={'260px'}
                     margin='auto'
                     mt={'10px'}
+                    border={'1px solid'}
+                    borderColor={'#00000021'}
                     bg={'rgb(205 205 205)'}
-                    src='/selfie.png'
+                    src='/mychemical.png'
                     filter={'brightness(1.2)'}
                 ></Image>
                 <Text textAlign={'center'} fontSize={'20px'} fontWeight={'700'} mt={'32px'}>
