@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         toggleLeftSideBar,
     };
 
-    useEffect(()=> import("zenn-embed-elements"),[])
+    useEffect(()=> {import("zenn-embed-elements")},[])
 
     return (
         <>

@@ -5,10 +5,12 @@ import { SkillSetComponent } from './SkillSetComponent';
 import { SpanWrapper } from '../ui_parts/SpanWrapper';
 import { AppContext } from '../../pages/_app';
 import { CloseIcon } from '@chakra-ui/icons';
+import { useRouter } from "next/router";
 
 export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
     const { selectedLanguage, toggleLeftSideBar } = useContext(AppContext);
     const iconListBg = useColorModeValue('theme', '#0095ff');
+    const router=useRouter()
 
     const isBase = useBreakpointValue({ base: true, sm: false, md: false, lg: false });
 
@@ -63,14 +65,17 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
         {
             padding: '6px',
             src: '/sns_icon/twitter.svg',
+            link:'https://twitter.com/ms2geki_m',
         },
         {
             padding: '6px',
             src: '/sns_icon/github.svg',
+            link:'https://github.com/shoma-mano',
         },
         {
             padding: '2px',
             src: '/sns_icon/qiita.png',
+            link: 'https://qiita.com/ms2geki',
             bg: 'none',
         },
     ];
@@ -135,6 +140,8 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                     {IconList.map((v) => (
                         <Image
                             key={v.src}
+                            cursor={'pointer'}
+                            onClick={()=>router.push(v.link)}
                             border={'none'}
                             padding={v.padding}
                             bg={v.bg ? v.bg : iconListBg}
