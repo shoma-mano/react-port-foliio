@@ -1,8 +1,10 @@
 import '../styles/globals.css';
+import '../styles/zenn.css';
 import type { AppProps } from 'next/app';
+import initTwitterScriptInner from 'zenn-embed-elements/lib/init-twitter-script-inner';
 
 import { ChakraProvider, extendTheme, ThemeConfig } from '@chakra-ui/react';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { Layout } from '../components/Layout';
 
 import theme from '../theme';
@@ -46,7 +48,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         toggleLeftSideBar,
     };
 
+    useEffect(()=> import("zenn-embed-elements"),[])
+
     return (
+        <>
+        <script
+            dangerouslySetInnerHTML={{
+                __html: initTwitterScriptInner
+            }}
+        />
         <ChakraProvider theme={theme}>
             <AppContext.Provider value={AppContextValue}>
                 <Layout>
@@ -54,6 +64,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 </Layout>
             </AppContext.Provider>
         </ChakraProvider>
+        </>
     );
 }
 

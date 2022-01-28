@@ -17,15 +17,21 @@ import { RightSideHistory } from '../../components/history/RightSideHistory';
 import { HistorySm } from '../../components/history/HistorySm';
 import { useRouter } from "next/router";
 
-export const Index = ({posts}:{posts : any}) => {
+export const Index = ({posts}: {
+    posts: Array<{
+        title: string;
+        date: Date;
+        slug: string;
+        author: string;
+        content: string;
+        excerpt: string;
+        coverImage: string;
+    }>
+}) => {
     const {selectedLanguage} = useContext(AppContext);
     const bg = useColorModeValue('#f0f0f5', '#18191A');
     const cardBg = useColorModeValue('white', '#242526');
-    const router=useRouter()
-    const array = ['OSSのTypeScriptソースでよく見かけるDict型について', 'test', 'test', 'test', 'test', 'test'];
-
-    debugger;
-
+    const router = useRouter()
 
 
 
@@ -81,6 +87,7 @@ export const Index = ({posts}:{posts : any}) => {
                 </Box>
             </>
         ),
+
         sm: (
             <>
                 <Box
@@ -105,15 +112,16 @@ export const Index = ({posts}:{posts : any}) => {
                         TECH BLOG
                     </Text>
                     <Box mt={'30px'} display={'grid'} gridTemplateColumns={'repeat(2,1fr)'} flexWrap={'wrap'}
-                         gridRowGap={'40px'} gridColumnGap={'5%'} px={'5%'} width={'100%'}>
-                        {posts.map((v: any,i: any) => {
+                         gridRowGap={'40px'} gridColumnGap={'5%'} pb={'50px'} px={'5%'} width={'100%'}>
+                        {posts.map((post, i: any) => {
                             return (
-                                <Box onClick={()=>router.push(`/posts/${v.slug}`)} key={i} display={'flex'} justifyContent={'center'}>
+                                <Box onClick={() => router.push(`/posts/${post.slug}`)} key={i} display={'flex'}
+                                     justifyContent={'center'}>
                                     <Box cursor={'pointer'} maxWidth={'350px'} border={'1px solid'} boxShadow={'md'}
                                          _hover={{boxShadow: 'xl'}} borderRadius={'10px'} borderColor={'#00000021'}
-                                         bg={bg} height={'400px'} >
+                                         bg={bg} height={'400px'}>
                                         <Image
-                                            src={'/programmer.png'}
+                                            src={post.coverImage}
                                             width={'100%'}
                                             height={'40%'}
                                             borderRadius={'10px 10px 0 0'}
@@ -125,9 +133,9 @@ export const Index = ({posts}:{posts : any}) => {
                                             height={'60%'}
                                             width={'100%'}
                                         >
-                                            <Text fontSize={'20px'} noOfLines={3} fontWeight={'700'}>{v.title}</Text>
-                                            <Text maxWidth={'100%'} noOfLines={3} maxHeight={'40%'} fontSize={'15px'}
-                                                  mt={'10px'}>OSSのソースなどを読んでるとこんな感じでDict型を指定してる事があります。</Text>
+                                            <Text fontSize={`${350/post.title.length+10}px`} noOfLines={3} fontWeight={'700'}>{post.title}</Text>
+                                            <Text fontFamily={'monospace'} maxWidth={'100%'} noOfLines={3} maxHeight={'40%'} fontSize={'15px'}
+                                                  mt={'10px'}>{post.excerpt}</Text>
                                             <Box flexGrow={1} display={'flex'} flexDirection={'column'}
                                                  justifyContent={'flex-end'}>
                                                 <Text mr={'5px'} fontSize={'15px'} textAlign={'end'}
@@ -158,7 +166,6 @@ export async function getStaticProps() {
         'coverImage',
         'excerpt'
     ])
-    debugger;
 
     return {
         props: {
@@ -166,10 +173,6 @@ export async function getStaticProps() {
         },
     };
 }
-
-
-
-
 
 
 export default Index;
