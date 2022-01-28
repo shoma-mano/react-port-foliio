@@ -21,14 +21,14 @@ export const RightSideBar = () => {
             link: '/',
         },
         {
-            imgSrc: '/right_side_bar/education.png',
-            title: 'HISTORY',
-            link: '/history',
-        },
-        {
             imgSrc: '/right_side_bar/blog.png',
             title: 'BLOG',
             link: '/blog',
+        },
+        {
+            imgSrc: '/right_side_bar/education.png',
+            title: 'HISTORY',
+            link: '/history',
         },
         // {
         //     imgSrc: '/right_side_bar/works.png',

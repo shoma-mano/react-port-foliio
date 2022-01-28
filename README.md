@@ -1,11 +1,21 @@
+This is my portfolio.
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 
-## how to set up prettier
-https://fwywd.com/tech/next-eslint-prettier
 
-## How to add google font
 
-see /pages/_document/tsx
+[//]: # (## how to set up prettier)
 
-https://discord.gg/6ATv9MxR
+[//]: # (https://fwywd.com/tech/next-eslint-prettier)
+
+[//]: # ()
+[//]: # (## How to add google font)
+
+[//]: # ()
+[//]: # (see /pages/_document/tsx)
+
+[//]: # ()
+[//]: # (https://discord.gg/6ATv9MxR)

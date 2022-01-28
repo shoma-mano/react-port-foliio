@@ -2,7 +2,7 @@ import { extendTheme, ThemeConfig } from '@chakra-ui/react';
 import { createBreakpoints } from '@chakra-ui/theme-tools';
 
 const config = {
-    initialColorMode: 'dark',
+    initialColorMode: 'light',
     useSystemColorMode: false,
 } as ThemeConfig;
 
