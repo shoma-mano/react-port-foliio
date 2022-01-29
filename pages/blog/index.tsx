@@ -15,9 +15,11 @@ import { AppContext } from '../_app';
 import { LeftSideHistory } from '../../components/history/LeftSideHistory';
 import { RightSideHistory } from '../../components/history/RightSideHistory';
 import { HistorySm } from '../../components/history/HistorySm';
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
-export const Index = ({posts}: {
+export const Index = ({
+    posts,
+}: {
     posts: Array<{
         title: string;
         date: Date;
@@ -26,13 +28,12 @@ export const Index = ({posts}: {
         content: string;
         excerpt: string;
         coverImage: string;
-    }>
+    }>;
 }) => {
-    const {selectedLanguage} = useContext(AppContext);
+    const { selectedLanguage } = useContext(AppContext);
     const bg = useColorModeValue('#f0f0f5', '#18191A');
-    const cardBg = useColorModeValue('white', '#242526');
-    const router = useRouter()
-
+    const router = useRouter();
+    const cardBg = useColorModeValue('white', 'rgb(36, 37, 38)');
 
 
     const content = useBreakpointValue({
@@ -40,12 +41,12 @@ export const Index = ({posts}: {
             <>
                 <Box
                     minHeight={'100vh'}
-                    width={{base: '100vw', sm: 'calc(100vw - 100px)', md: 'calc(100vw - 390px)'}}
+                    width={{ base: '100vw', sm: 'calc(100vw - 100px)', md: 'calc(100vw - 390px)' }}
                     display={'flex'}
                     flexDirection={'column'}
                     justifyContent={'center'}
-                    marginLeft={{base: '0px', sm: '0px', md: '290px'}}
-                    marginTop={{base: '60px', sm: '0px', md: '0px'}}
+                    marginLeft={{ base: '0px', sm: '0px', md: '290px' }}
+                    marginTop={{ base: '60px', sm: '0px', md: '0px' }}
                 >
                     <Box
                         mt={'20px'}
@@ -92,13 +93,13 @@ export const Index = ({posts}: {
             <>
                 <Box
                     minHeight={'100vh'}
-                    width={{base: '100vw', sm: 'calc(100vw - 100px)', md: 'calc(100vw - 390px)'}}
+                    width={{ base: '100vw', sm: 'calc(100vw - 100px)', md: 'calc(100vw - 390px)' }}
                     display={'flex'}
                     justifyContent={'start'}
                     bg={bg}
                     flexDirection={'column'}
-                    marginLeft={{base: '0px', sm: '0px', md: '290px'}}
-                    marginTop={{base: '60px', sm: '0px', md: '0px'}}
+                    marginLeft={{ base: '0px', sm: '0px', md: '290px' }}
+                    marginTop={{ base: '60px', sm: '0px', md: '0px' }}
                     alignItems={'center'}
                 >
                     <Text
@@ -111,15 +112,35 @@ export const Index = ({posts}: {
                     >
                         TECH BLOG
                     </Text>
-                    <Box mt={'30px'} display={'grid'} gridTemplateColumns={'repeat(2,1fr)'} flexWrap={'wrap'}
-                         gridRowGap={'40px'} gridColumnGap={'5%'} pb={'50px'} px={'5%'} width={'100%'}>
+                    <Box
+                        mt={'30px'}
+                        display={'grid'}
+                        gridTemplateColumns={'repeat(2,1fr)'}
+                        gridRowGap={'40px'}
+                        gridColumnGap={'5%'}
+                        pb={'50px'}
+                        px={'5%'}
+                        width={'100%'}
+                    >
                         {posts.map((post, i: any) => {
                             return (
-                                <Box onClick={() => router.push(`/posts/${post.slug}`)} key={i} display={'flex'}
-                                     justifyContent={'center'}>
-                                    <Box cursor={'pointer'} maxWidth={'350px'} border={'1px solid'} boxShadow={'md'}
-                                         _hover={{boxShadow: 'xl'}} borderRadius={'10px'} borderColor={'#00000021'}
-                                         bg={bg} height={'400px'}>
+                                <Box
+                                    onClick={() => router.push(`/posts/${post.slug}`)}
+                                    key={i}
+                                    display={'flex'}
+                                    justifyContent={'center'}
+                                >
+                                    <Box
+                                        cursor={'pointer'}
+                                        maxWidth={'340px'}
+                                        border={'1px solid'}
+                                        boxShadow={'md'}
+                                        _hover={{ boxShadow: 'xl' }}
+                                        borderRadius={'10px'}
+                                        borderColor={'#00000021'}
+                                        bg={cardBg}
+                                        height={'400px'}
+                                    >
                                         <Image
                                             src={post.coverImage}
                                             width={'100%'}
@@ -133,13 +154,37 @@ export const Index = ({posts}: {
                                             height={'60%'}
                                             width={'100%'}
                                         >
-                                            <Text fontSize={`${350/post.title.length+10}px`} noOfLines={3} fontWeight={'700'}>{post.title}</Text>
-                                            <Text fontFamily={'monospace'} maxWidth={'100%'} noOfLines={3} maxHeight={'40%'} fontSize={'15px'}
-                                                  mt={'10px'}>{post.excerpt}</Text>
-                                            <Box flexGrow={1} display={'flex'} flexDirection={'column'}
-                                                 justifyContent={'flex-end'}>
-                                                <Text mr={'5px'} fontSize={'15px'} textAlign={'end'}
-                                                      justifySelf={'self-end'}>2022.01.17に投稿</Text>
+                                            <Text
+                                                fontSize={`${350 / post.title.length + 10}px`}
+                                                noOfLines={3}
+                                                fontWeight={'700'}
+                                            >
+                                                {post.title}
+                                            </Text>
+                                            <Text
+                                                fontFamily={'monospace'}
+                                                maxWidth={'100%'}
+                                                noOfLines={3}
+                                                maxHeight={'40%'}
+                                                fontSize={'15px'}
+                                                mt={'10px'}
+                                            >
+                                                {post.excerpt}
+                                            </Text>
+                                            <Box
+                                                flexGrow={1}
+                                                display={'flex'}
+                                                flexDirection={'column'}
+                                                justifyContent={'flex-end'}
+                                            >
+                                                <Text
+                                                    mr={'5px'}
+                                                    fontSize={'15px'}
+                                                    textAlign={'end'}
+                                                    justifySelf={'self-end'}
+                                                >
+                                                    2022.01.17に投稿
+                                                </Text>
                                             </Box>
                                         </Box>
                                     </Box>
@@ -164,15 +209,14 @@ export async function getStaticProps() {
         'content',
         'ogImage',
         'coverImage',
-        'excerpt'
-    ])
+        'excerpt',
+    ]);
 
     return {
         props: {
-            posts: posts
+            posts: posts,
         },
     };
 }
-
 
 export default Index;

@@ -48,22 +48,24 @@ function MyApp({ Component, pageProps }: AppProps) {
         toggleLeftSideBar,
     };
 
-    useEffect(()=> {import("zenn-embed-elements")},[])
+    useEffect(() => {
+        import('zenn-embed-elements');
+    }, []);
 
     return (
         <>
-        <script
-            dangerouslySetInnerHTML={{
-                __html: initTwitterScriptInner
-            }}
-        />
-        <ChakraProvider theme={theme}>
-            <AppContext.Provider value={AppContextValue}>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
-            </AppContext.Provider>
-        </ChakraProvider>
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: initTwitterScriptInner,
+                }}
+            />
+            <ChakraProvider theme={theme}>
+                <AppContext.Provider value={AppContextValue}>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+                </AppContext.Provider>
+            </ChakraProvider>
         </>
     );
 }

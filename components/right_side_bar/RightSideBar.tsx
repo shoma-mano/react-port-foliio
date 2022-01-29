@@ -41,18 +41,18 @@ export const RightSideBar = () => {
     const pathname = router.pathname;
 
     useEffect(() => {
-        console.log("render")
+        console.log('render');
         buttonObjArray.some((v, i) => {
             if (pathname.indexOf(v.title.toLowerCase()) !== -1) {
                 setSelectedIndex(i);
                 return true;
             }
-            if(pathname==='/'){
-                setSelectedIndex(0)
+            if (pathname === '/') {
+                setSelectedIndex(0);
                 return true;
             }
-            if(pathname.indexOf('posts')!==-1){
-                setSelectedIndex(2)
+            if (pathname.indexOf('posts') !== -1) {
+                setSelectedIndex(1);
                 return true;
             }
         });

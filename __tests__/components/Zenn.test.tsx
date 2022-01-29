@@ -8,16 +8,10 @@ import Home from '../../pages';
 import markdownHtml from 'zenn-markdown-html';
 import 'zenn-content-css';
 
-
-
-
 describe('ZennEditor', () => {
     it('markdownHtml', () => {
-        const markdown='# title'
+        const markdown = '# title';
         const html = markdownHtml(markdown);
-        console.log(html)
+        console.log(html);
     });
 });
-
-
-

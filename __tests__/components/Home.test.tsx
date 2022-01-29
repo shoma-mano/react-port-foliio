@@ -5,11 +5,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Home from '../../pages';
-import { getAllPosts, getPostBySlug } from "../../lib/api.js";
+import { getAllPosts, getPostBySlug } from '../../lib/api.js';
 
 Object.defineProperty(window, 'matchMedia', {
     writable: true,
-    value: jest.fn().mockImplementation(query => ({
+    value: jest.fn().mockImplementation((query) => ({
         matches: false,
         media: query,
         onchange: null,
@@ -33,12 +33,9 @@ describe('Home', () => {
     });
 });
 
-
-
 describe('api test', () => {
-
     it('getAllPosts', () => {
-        const posts=getAllPosts([
+        const posts = getAllPosts([
             'title',
             'date',
             'slug',
@@ -46,14 +43,13 @@ describe('api test', () => {
             'content',
             'ogImage',
             'coverImage',
-        ])
-        console.log(posts)
-        expect(posts[0].hasOwnProperty('slug')).toBe(true)
+        ]);
+        console.log(posts);
+        expect(posts[0].hasOwnProperty('slug')).toBe(true);
     });
 
-
-    it('getPostBySlug',()=>{
-        const post = getPostBySlug('hello-world',[
+    it('getPostBySlug', () => {
+        const post = getPostBySlug('hello-world', [
             'title',
             'date',
             'slug',
@@ -61,9 +57,7 @@ describe('api test', () => {
             'content',
             'ogImage',
             'coverImage',
-        ])
-        expect(Object.keys(post).length===7).toBe(true)
-    })
-
-
+        ]);
+        expect(Object.keys(post).length === 7).toBe(true);
+    });
 });
