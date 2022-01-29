@@ -5,14 +5,14 @@ import { useRouter } from 'next/router';
 import { options } from 'colorette';
 
 export const RightSideBarButton = ({
-    selectedIndex,
-    myIndex,
-    setSelectedIndex,
-    imgSrc,
-    title,
-    link,
-    marginTop,
-}: {
+                                       selectedIndex,
+                                       myIndex,
+                                       setSelectedIndex,
+                                       imgSrc,
+                                       title,
+                                       link,
+                                       marginTop,
+                                   }: {
     selectedIndex: number;
     myIndex: number;
     setSelectedIndex: Dispatch<SetStateAction<number | undefined>>;
@@ -23,7 +23,7 @@ export const RightSideBarButton = ({
 }) => {
     const pop_up = useRef<HTMLDivElement>(null);
     const right_bar_button = useRef<HTMLDivElement>(null);
-    const { isRightSideBarOpen, toggleRightSideBar } = useContext(AppContext);
+    const {isRightSideBarOpen, toggleRightSideBar} = useContext(AppContext);
     const bg = useColorModeValue('theme', '#0095ff');
 
     const onMouseEnter = () => {
@@ -69,7 +69,7 @@ export const RightSideBarButton = ({
                     h={'40px'}
                     w={'40px'}
                     ref={right_bar_button}
-                    _hover={{ bg: bg }}
+                    _hover={{bg: bg}}
                     transition={'all 300ms'}
                     cursor={'pointer'}
                     p={'10px'}
