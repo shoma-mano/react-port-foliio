@@ -3,7 +3,7 @@ title: '【祝公式化！🌸】PiniaがVue.js公式の推奨ライブラリと
 excerpt: 'Vuejsの推奨状態管理ライブラリがPiniaになりました。早速Piniaを試してみたいと思います。npm init vue@nextで作成されるフォイルを覗いてみましょう'
 coverImage: '/blog/pinia.png'
 icon: '/blog/piniaicon.png'
-date: '2020-03-16T05:35:07.322Z'
+date: '2021-012-16T05:35:07.322Z'
 
 
 

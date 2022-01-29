@@ -4,7 +4,7 @@ excerpt: 'OSSのソースなどを読んでるとこんな感じでDict型を指
 これはjavascriptだとエラー起きないのですがtypescriptだとエラーが起きるので、...にする必要があります。ここでRecordを使うとより簡潔に'
 coverImage: '/blog/typescript.png'
 icon: '/blog/tsicon.png'
-date: '2020-03-16T05:35:07.322Z'
+date: '2022-01-08'
 
 english: '
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.

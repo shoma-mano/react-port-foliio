@@ -3,8 +3,8 @@ title: 'FARGATEのコンテナにdocker execする【既にECSを使用してい
 excerpt: '既にECSを使用していてdocker execしたいコンテナがある方向けの記事です。まず、AWSCLIのバージョンが１の方は更新が必要です。'
 coverImage: '/blog/aws.png'
 icon: '/blog/awsicon.png'
-date: '2021-03-16'
-refresh: '2021-03-16'
+date: '2021-09-16'
+refresh: '2021-09-16'
 author:
   name: Joe Haddad
   picture: '/assets/blog/authors/joe.jpeg'

@@ -3,7 +3,7 @@ title: '【TypeScript基礎】既存のオブジェクトの値を利用して�
 excerpt: '-問題-この状況でHuman型のオブジェクトを利用して、ProfileCard型のオブジェクトを生成したいときはどうするべきか？'
 coverImage: 'blog/typescript.png'
 icon: '/blog/tsicon.png'
-date: '2020-03-16T05:35:07.322Z'
+date: '2021-12-15'
 ---
 # 問題
 この状況でHuman型のオブジェクトを利用して、ProfileCard型のオブジェクトを生成したいときはどうするべきか？
