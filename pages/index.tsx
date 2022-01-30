@@ -24,7 +24,9 @@ const Home: NextPage = () => {
         selectedLanguage === 'ja' ? (
             <Text width={'180px'} mt={'15px'} mx={'auto'} fontWeight={'600'} fontSize={'14px'}>
                 ポートフォリオのソースコードは
-                <Link href={'https://github.com/shoma-mano/reactPortFolio'} fontWeight={'900'}>こちら。</Link>
+                <Link href={'https://github.com/shoma-mano/reactPortFolio'} fontWeight={'900'}>
+                    こちら。
+                </Link>
             </Text>
         ) : (
             <Text

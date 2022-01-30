@@ -35,7 +35,6 @@ export const Index = ({
     const router = useRouter();
     const cardBg = useColorModeValue('white', 'rgb(36, 37, 38)');
 
-
     const content = useBreakpointValue({
         base: (
             <>

@@ -1,5 +1,5 @@
-import { Box,  useBreakpointValue } from '@chakra-ui/react';
-import { useContext, useEffect,  useState } from 'react';
+import { Box, useBreakpointValue } from '@chakra-ui/react';
+import { useContext, useEffect, useState } from 'react';
 import { RightSideBarButton } from './RightSideBarButton';
 import { RightSideBarTranslateButton } from './RightSideBarTranslateButton';
 import { useRouter } from 'next/router';
@@ -90,18 +90,16 @@ export const RightSideBar = () => {
                     {selectedIndex !== undefined &&
                         buttonObjArray.map((v, i) => {
                             return (
-
-                                    <RightSideBarButton
-                                        key={i}
-                                        imgSrc={v.imgSrc}
-                                        title={v.title}
-                                        selectedIndex={selectedIndex!}
-                                        myIndex={i}
-                                        setSelectedIndex={setSelectedIndex}
-                                        link={v.link}
-                                        marginTop={'40px'}
-                                    ></RightSideBarButton>
-
+                                <RightSideBarButton
+                                    key={i}
+                                    imgSrc={v.imgSrc}
+                                    title={v.title}
+                                    selectedIndex={selectedIndex!}
+                                    myIndex={i}
+                                    setSelectedIndex={setSelectedIndex}
+                                    link={v.link}
+                                    marginTop={'40px'}
+                                ></RightSideBarButton>
                             );
                         })}
                 </Box>

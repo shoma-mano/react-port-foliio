@@ -42,11 +42,11 @@ export default function Post({ post }: { post: any }) {
                     <path
                         fill='currentColor'
                         d='M18.2.7c-.8 0-1.4.5-1.4 1.3v3.1c0 .7.7 1.3 1.4 1.3s1.4-.5 1.4-1.3V2c0-.7-.7-1.3-1.4-1.3zM5.8.7C5 .7 4.4 1.3 4.4 2v3.1c0 .7.7 1.3 1.4 1.3s1.4-.5 1.4-1.3V2C7.3 1.3 6.6.7 5.8.7z'
-                    ></path>
+                    />
                     <path
                         fill='currentColor'
                         d='M21.7 3.6H2.3c-1.1 0-2 .9-2 2v15.7c0 1.1.9 2 2 2h19.4c1.1 0 2-.9 2-2V5.5c-.1-1-.9-1.9-2-1.9zm-.3 16.2c0 .6-.5 1.1-1.1 1.1H3.4c-.5 0-.9-.4-.9-.9V9.7h19v10.1z'
-                    ></path>
+                    />
                 </Icon>
                 {`${date}に投稿`}
                 <Icon verticalAlign={'bottom'} ml={'15px'} mr={'5px'}>
@@ -57,7 +57,7 @@ export default function Post({ post }: { post: any }) {
                 {`${date}に更新`}
             </Text>
             <Box mt={'40px'} borderRadius={'10px'} px={'25px'} py={'25px'} width={'90%'} bg={bg}>
-                <div className={`znc`} dangerouslySetInnerHTML={{ __html: post.content }}></div>
+                <div className={`znc`} dangerouslySetInnerHTML={{__html: post.content}}/>
             </Box>
         </Box>
     );
