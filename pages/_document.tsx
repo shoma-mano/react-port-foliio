@@ -11,6 +11,7 @@ class MyDocument extends NextDocument {
                         href='https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Rubik&display=swap'
                         rel='stylesheet'
                     />
+                    <title>shoma-portfolio</title>
                 </Head>
                 <body>
                     <ColorModeScript initialColorMode={theme.config.initialColorMode} />
