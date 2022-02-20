@@ -152,7 +152,7 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                             src={v.src}
                             width={6}
                             height={6}
-                        ></Image>
+                        />
                     ))}
                 </Box>
                 <Box
