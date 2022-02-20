@@ -114,11 +114,11 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                     border={'1px solid'}
                     borderColor={'#00000021'}
                     bg={'rgb(205 205 205)'}
-                    src='/mychemical.png'
+                    src='/lofi.png'
                     filter={'brightness(1.2)'}
                 ></Image>
                 <Text textAlign={'center'} fontSize={'20px'} fontWeight={'700'} mt={'32px'}>
-                    {selectedLanguage === 'ja' ? '真野 笑馬' : 'Shoma Mano'}
+                    {selectedLanguage === 'ja' ? 'マノ ショウマ' : 'Shoma Mano'}
                 </Text>
                 <Text textAlign={'center'} mt={'10px'} fontSize={'13px'} fontWeight={'200'}>
                     {selectedLanguage === 'ja' ? (

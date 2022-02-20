@@ -23,6 +23,7 @@ export const JapaneseWorkCard = ({
                 w={'100%'}
                 h={'100%'}
                 bg={bg}
+                borderRadius={'4px'}
                 display={'flex'}
                 justifyContent={'space-between'}
             >
@@ -31,10 +32,10 @@ export const JapaneseWorkCard = ({
                     display={'flex'}
                     justifyContent={'end'}
                     flexDirection={'column'}
-                    width={'45%'}
+                    width={'50%'}
                     py={'30px'}
                 >
-                    <Box border={'solid 1px #00000021'} borderRadius={'4px'} ml={'15px'}>
+                    <Box border={'solid 1px #00000021'} borderRadius={'4px'} ml={'20px'}>
                         <img
                             style={{
                                 width: '100%',

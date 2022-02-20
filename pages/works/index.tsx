@@ -20,11 +20,50 @@ export const Index = () => {
                 minHeight={'100vh'}
                 width={{ base: '100vw', sm: 'calc(100vw - 100px)', md: 'calc(100vw - 390px)' }}
                 display={'flex'}
+                alignItems={'center'}
                 justifyContent={'start'}
                 marginLeft={{ base: '0px', sm: '0px', md: '290px' }}
                 marginTop={{ base: '50px', sm: '0px', md: '0px' }}
+                py={'10px'}
+                flexDirection={'column'}
             >
+                <Text
+                    fontFamily={"'Rubik', sans-serif;"}
+                    textAlign={'center'}
+                    fontSize={'30px'}
+                    fontWeight={'700'}
+                    mt={'20px'}
+                    width={'100%'}
+                >
+                    WORKS
+                </Text>
+                <Box mt={'30px'} display={'flex'} width={'80%'} justifyContent={'space-evenly'}>
+                    <Box
+                        p={'10px'}
+                        bg={'white'}
+                        width={'150px'}
+                        fontFamily={"'Rubik', sans-serif;"}
+                        borderRadius={'5px'}
+                        border={'#00000059 1px solid'}
+                        fontWeight={'bold'}
+                        boxShadow={'md'}
+                    >
+                        <Text>Company Project</Text>
+                    </Box>
+                    <Box
+                        justifyContent={'center'}
+                        boxShadow={'md'}
+                        p={'10px'}
+                        width={'150px'}
+                        fontFamily={"'Rubik', sans-serif;"}
+                        borderRadius={'5px'}
+                        border={'1px solid'}
+                    >
+                        <Text textAlign={'center'}>Private Project</Text>
+                    </Box>
+                </Box>
                 <Box
+                    mt={'25px'}
                     bg={bg}
                     ml={{ base: '0px', sm: '0px' }}
                     width={'100%'}
@@ -34,7 +73,7 @@ export const Index = () => {
                     alignItems={'center'}
                 >
                     {selectedLanguage === 'ja' ? (
-                        <Box width={'90%'} maxWidth={'750px'}>
+                        <Box width={'92%'} maxWidth={'830px'}>
                             <JapaneseWorkCard
                                 imgSrc={'works/wedding.png'}
                                 position={'Webエンジニア'}
@@ -45,41 +84,7 @@ export const Index = () => {
                     ) : (
                         <EnglishIntroduceCard></EnglishIntroduceCard>
                     )}
-                    <Box
-                        mt={'50px'}
-                        fontFamily={'theme'}
-                        borderColor={'rgba(0, 0, 0, 0.15)'}
-                        width={'320px'}
-                        height={'100px'}
-                        borderRadius={'10px'}
-                        position={'relative'}
-                        bg={cardBg}
-                        ml={'20px'}
-                        mx={'auto'}
-                        px={'10px'}
-                    >
-                        <Text
-                            fontFamily={"'Rubik', sans-serif;"}
-                            textAlign={'center'}
-                            fontWeight={'600'}
-                            fontSize={'28px'}
-                            marginTop={'2px'}
-                        >
-                            {selectedLanguage === 'ja' ? 'スキル' : 'Skill'}
-                        </Text>
-                        <Text
-                            textAlign={'center'}
-                            fontSize={selectedLanguage === 'ja' ? '14px' : ''}
-                            fontFamily={
-                                selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"
-                            }
-                            mt={'3px'}
-                        >
-                            {selectedLanguage === 'ja'
-                                ? 'フロントからバックエンド、インフラまでの経験あり(現在はフロントが中心）'
-                                : 'I have experience in Frontend,Backend, and Infrastructure'}
-                        </Text>
-                    </Box>
+
                     <Box
                         width={'70%'}
                         gridGap={'30px'}
