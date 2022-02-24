@@ -66,21 +66,6 @@ export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: str
                     </Box>
                     <Box display={'flex'} alignItems={'center'}>
                         <Text>{stackText}</Text>
-                        {/*<Box d={'flex'} w={'70%'} alignItems={'center'}>*/}
-                        {/*    {stack.map((v, i) => (*/}
-                        {/*        <>*/}
-                        {/*            <Text fontSize={'0.8em'} fontFamily={'inherit'}>*/}
-                        {/*                {v}{' '}*/}
-                        {/*                {i !== stack.length - 1 && / }*/}
-                        {/*            </Text>*/}
-                        {/*            /!*{i !== stack.length - 1 && (*!/*/}
-                        {/*            /!*    <Text ml={'3px'} mr={'6px'}>*!/*/}
-                        {/*            /!*        /*!/*/}
-                        {/*            /!*    </Text>*!/*/}
-                        {/*            /!*)}*!/*/}
-                        {/*        </>*/}
-                        {/*    ))}*/}
-                        {/*</Box>*/}
                         <Image ml={'10px'} boxSize={'20px'} src={'/github.svg'}></Image>
                         <Text ml={'3px'} fontFamily={"'Rubik', sans-serif;"}>
                             GitHub
