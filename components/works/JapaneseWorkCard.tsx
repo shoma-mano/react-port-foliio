@@ -11,7 +11,6 @@ import { CherryBlossom } from '../animation/CherryBlossom';
 
 export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: string[] }) => {
     const bg = useColorModeValue('white', '#242526');
-    const width = useBreakpointValue({ base: '90%', sm: '630px' });
     let stackText = '';
     stack.forEach((v, i) => {
         stackText = stackText + v + (i!==stack.length-1 ? ' / ' :'')
