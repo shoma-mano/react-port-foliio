@@ -1,19 +1,21 @@
-import { Box, Text, useBreakpointValue, useColorModeValue } from '@chakra-ui/react';
+import {
+    Badge,
+    Box,
+    Icon,
+    Image,
+    Text,
+    useBreakpointValue,
+    useColorModeValue,
+} from '@chakra-ui/react';
 import { CherryBlossom } from '../animation/CherryBlossom';
 
-export const JapaneseWorkCard = ({
-    position,
-    name,
-    englishName,
-    imgSrc,
-}: {
-    position: string;
-    name: string;
-    englishName: string;
-    imgSrc: string;
-}) => {
+export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: string[] }) => {
     const bg = useColorModeValue('white', '#242526');
     const width = useBreakpointValue({ base: '90%', sm: '630px' });
+    let stackText = '';
+    stack.forEach((v, i) => {
+        stackText = stackText + v + (i!==stack.length-1 ? ' / ' :'')
+    });
 
     return (
         <>
@@ -23,6 +25,8 @@ export const JapaneseWorkCard = ({
                 w={'100%'}
                 h={'100%'}
                 bg={bg}
+                py={'20px'}
+                px={'15px'}
                 borderRadius={'4px'}
                 display={'flex'}
                 justifyContent={'space-between'}
@@ -33,16 +37,55 @@ export const JapaneseWorkCard = ({
                     justifyContent={'end'}
                     flexDirection={'column'}
                     width={'50%'}
-                    py={'30px'}
                 >
-                    <Box border={'solid 1px #00000021'} borderRadius={'4px'} ml={'20px'}>
-                        <img
-                            style={{
-                                width: '100%',
-                                zIndex: 6,
-                            }}
-                            src={imgSrc}
-                        />
+                    <Image
+                        style={{
+                            width: '100%',
+                            zIndex: 6,
+                        }}
+                        src={imgSrc}
+                    />
+                </Box>
+                <Box
+                    marginRight={'10px'}
+                    display={'flex'}
+                    flexDirection={'column'}
+                    width={'50%'}
+                    pl={'10px'}
+                >
+                    <Box display={'flex'} alignItems={'center'}>
+                        <Text
+                            fontSize={'1.5em'}
+                            fontWeight={'700'}
+                            fontFamily={"'Rubik', sans-serif;"}
+                        >
+                            WEDDING APP
+                        </Text>
+                        <Badge ml={'10px'} h={'20px'}>
+                            Private
+                        </Badge>
+                    </Box>
+                    <Box display={'flex'} alignItems={'center'}>
+                        <Text>{stackText}</Text>
+                        {/*<Box d={'flex'} w={'70%'} alignItems={'center'}>*/}
+                        {/*    {stack.map((v, i) => (*/}
+                        {/*        <>*/}
+                        {/*            <Text fontSize={'0.8em'} fontFamily={'inherit'}>*/}
+                        {/*                {v}{' '}*/}
+                        {/*                {i !== stack.length - 1 && / }*/}
+                        {/*            </Text>*/}
+                        {/*            /!*{i !== stack.length - 1 && (*!/*/}
+                        {/*            /!*    <Text ml={'3px'} mr={'6px'}>*!/*/}
+                        {/*            /!*        /*!/*/}
+                        {/*            /!*    </Text>*!/*/}
+                        {/*            /!*)}*!/*/}
+                        {/*        </>*/}
+                        {/*    ))}*/}
+                        {/*</Box>*/}
+                        <Image ml={'10px'} boxSize={'20px'} src={'/github.svg'}></Image>
+                        <Text ml={'3px'} fontFamily={"'Rubik', sans-serif;"}>
+                            GitHub
+                        </Text>
                     </Box>
                 </Box>
             </Box>

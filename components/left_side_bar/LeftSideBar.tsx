@@ -116,7 +116,7 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                     bg={'rgb(205 205 205)'}
                     src='/lofi.png'
                     filter={'brightness(1.2)'}
-                ></Image>
+                />
                 <Text textAlign={'center'} fontSize={'20px'} fontWeight={'700'} mt={'32px'}>
                     {selectedLanguage === 'ja' ? 'マノ ショウマ' : 'Shoma Mano'}
                 </Text>
@@ -152,7 +152,7 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                             src={v.src}
                             width={6}
                             height={6}
-                        ></Image>
+                        />
                     ))}
                 </Box>
                 <Box
@@ -165,7 +165,7 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                     <Box mt={'25px'}>
                         <ProfileComponent
                             profileArray={profileArray.map((v) => v[selectedLanguage])}
-                        ></ProfileComponent>
+                        />
                     </Box>
                     <Box mt={'25px'}>
                         <SkillSetComponent
@@ -173,11 +173,11 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                             title={
                                 selectedLanguage === 'ja' ? '関心のある技術' : 'My Favorite Stack'
                             }
-                        ></SkillSetComponent>
+                        />
                     </Box>
                 </Box>
             </Box>
-            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={'#e5e5e5'}></Box>
+            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={'#e5e5e5'} />
 
             {/*<Button m="auto" display={"block"} onClick={onClick}>Home</Button>*/}
         </>

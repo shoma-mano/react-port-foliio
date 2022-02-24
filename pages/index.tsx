@@ -13,6 +13,7 @@ import { ScrollTransition } from '../components/animation/ScrollTransition';
 import { obj } from '../js/module';
 import * as React from 'react';
 import hljs from 'highlight.js';
+import { Border } from '../components/ui_parts/Border';
 
 const Home: NextPage = () => {
     const highlightedCode = hljs.highlightAuto('<span>Hello World!</span>').value;
@@ -105,6 +106,21 @@ const Home: NextPage = () => {
         },
     ];
 
+    const otherPages = [
+        {
+            title: 'BLOG',
+            sentence: 'フロントエンドからインフラまで全般的に取り扱った技術記事',
+        },
+        {
+            title: 'HISTORY',
+            sentence: 'フロントエンドからインフラまで全般的に取り扱った技術記事',
+        },
+        {
+            title: 'WORKS',
+            sentence: 'フロントエンドからインフラまで全般的に取り扱った技術記事',
+        },
+    ];
+
     return (
         <div className={styles.container}>
             <Head>
@@ -129,6 +145,7 @@ const Home: NextPage = () => {
                     ml={{ base: '0px', sm: '0px' }}
                     width={'100%'}
                     py={'20px'}
+                    pb={'70px'}
                     display={'flex'}
                     flexDirection={'column'}
                     alignItems={'center'}
@@ -163,7 +180,7 @@ const Home: NextPage = () => {
                             fontSize={'28px'}
                             marginTop={'2px'}
                         >
-                            {selectedLanguage === 'ja' ? 'スキル' : 'Skill'}
+                            {'Skill'}
                         </Text>
                         <Text
                             textAlign={'center'}
@@ -223,6 +240,43 @@ const Home: NextPage = () => {
                                     </Text>
                                     {v.content}
                                 </Box>
+                            </Box>
+                        ))}
+                    </Box>
+                    <Border mt={'60px'} width={'80%'} />
+                    <Text
+                        mt={'30px'}
+                        textAlign={'center'}
+                        fontWeight={'600'}
+                        fontSize={'30px'}
+
+                        fontFamily={"'Rubik', sans-serif;"}
+                    >
+                        Other Pages
+                    </Text>
+                    <Box
+                        px={'10px'}
+                        mt={'30px'}
+                        display={'grid'}
+                        width={'80%'}
+                        justifyContent={'space-evenly'}
+                        gridTemplateColumns={'repeat(auto-fit,minmax(200px,1fr))'}
+                        gridGap={'20px'}
+                    >
+                        {otherPages.map((page, i) => (
+                            <Box
+                                p={'20px'}
+                                alignSelf={'center'}
+                                borderRadius={'10px'}
+                                key={i}
+                                boxShadow={'md'}
+                                bg={'white'}
+                                width={'100%'}
+                            >
+                                <Text  mb={'10px'} color={'black'} fontSize={'25px'} fontWeight={'bold'}>
+                                    {page.title}
+                                </Text>
+                                <Text>{page.sentence}</Text>
                             </Box>
                         ))}
                     </Box>
