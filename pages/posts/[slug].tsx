@@ -2,9 +2,6 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 
 import { getPostBySlug, getAllPosts } from '../../lib/api.js';
-import Head from 'next/head';
-import { CMS_NAME } from '../../lib/constants';
-import markdownToHtml from '../../lib/markdownToHtml';
 import { Box, Text, Image, Icon, useColorModeValue } from '@chakra-ui/react';
 import markdownHtml from 'zenn-markdown-html';
 

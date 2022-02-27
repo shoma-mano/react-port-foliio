@@ -1,34 +1,55 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { Box, Button, Link, Text, Image, Input, useColorModeValue } from '@chakra-ui/react';
+import {
+    Box,
+    Button,
+    Link,
+    Text,
+    Image,
+    Input,
+    useColorModeValue,
+    Badge,
+    Icon, useColorMode,
+} from '@chakra-ui/react';
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from './_app';
 import { JapaneseIntroduceCard } from '../components/home/JapaneseIntroduceCard';
 import { RoundIcon } from '../components/ui_parts/RoundIcon';
 import { EnglishIntroduceCard } from '../components/home/EnglishIntroduceCard';
-import { WaveText } from '../components/animation/WaveText';
-import { CherryBlossom } from '../components/animation/CherryBlossom';
-import { ScrollTransition } from '../components/animation/ScrollTransition';
-import { obj } from '../js/module';
 import * as React from 'react';
-import hljs from 'highlight.js';
 import { Border } from '../components/ui_parts/Border';
+import { GitHubIcon } from "../components/ui_parts/icon/GitHubIcon";
+import { SkillHeading } from "../components/home/SkillHeading";
 
 const Home: NextPage = () => {
-    const highlightedCode = hljs.highlightAuto('<span>Hello World!</span>').value;
     const { selectedLanguage } = useContext(AppContext);
-    const bg = useColorModeValue('rgb(240 240 245)', '#18191A');
+    const { colorMode, toggleColorMode } = useColorMode()
+    const bg = useColorModeValue('#fafafa', '#18191A');
     const cardBg = useColorModeValue('white', '#242526');
+
 
     const reactContent = () =>
         selectedLanguage === 'ja' ? (
-            <Text width={'180px'} mt={'15px'} mx={'auto'} fontWeight={'600'} fontSize={'14px'}>
-                ポートフォリオのソースコードは
-                <Link href={'https://github.com/shoma-mano/reactPortFolio'} fontWeight={'900'}>
-                    こちら。
-                </Link>
-            </Text>
+            <>
+                <Text width={'180px'} mt={'15px'} mx={'auto'} fontWeight={'600'} fontSize={'14px'}>
+                    ポートフォリオのソースコードはこちらです。
+                </Text>
+                <Button
+                    width={'fit-content'}
+                    d={'flex'}
+                    mx={'auto'}
+                    mt={'10px'}
+                    py={'0px'}
+                    justifyContent={'center'}
+                    onClick={()=>{location.href='https://github.com/shoma-mano/reactPortFolio'}}
+                >
+                    <GitHubIcon/>
+                    <Text ml={'3px'} fontFamily={"'Rubik', sans-serif;"}>
+                        GitHub
+                    </Text>
+                </Button>
+            </>
         ) : (
             <Text
                 width={'180px'}
@@ -59,7 +80,7 @@ const Home: NextPage = () => {
             padding: 15,
             sentence:
                 selectedLanguage === 'ja'
-                    ? 'TypeScript,CompositionAPI,Piniaを用いての実務経験あり。'
+                    ? 'TypeScript,CompositionAPI,Piniaを用いての実務経験があります。'
                     : 'I used Vue3 with TypeScript, CompositionAPI, and Pinia.',
         },
         {
@@ -68,7 +89,7 @@ const Home: NextPage = () => {
             padding: 15,
             sentence:
                 selectedLanguage === 'ja'
-                    ? '実務経験あり。JSフレームワークの基礎はAngularで学びました。'
+                    ? '実務経験があります。JSフレームワークの基礎はAngularで学びました。'
                     : 'I learned basic of JS framework by Angular.',
         },
         {
@@ -77,7 +98,7 @@ const Home: NextPage = () => {
             padding: 15,
             sentence:
                 selectedLanguage === 'ja'
-                    ? '個人開発でのTypeORM,GraphQL実装経験あり。'
+                    ? '実務でPrismaを用いてREST API,GraphQLを実装した経験があります。'
                     : 'I have used TypeORM and GraphQL in NestJS.',
         },
         {
@@ -150,51 +171,16 @@ const Home: NextPage = () => {
                     flexDirection={'column'}
                     alignItems={'center'}
                 >
-                    {/*<div dangerouslySetInnerHTML={{ __html: highlightedCode }}></div>*/}
                     {selectedLanguage === 'ja' ? (
                         <JapaneseIntroduceCard
                             position={'Webエンジニア'}
                             name={'真野 笑馬'}
                             englishName={'Shoma Mano'}
-                        ></JapaneseIntroduceCard>
+                        />
                     ) : (
-                        <EnglishIntroduceCard></EnglishIntroduceCard>
+                        <EnglishIntroduceCard />
                     )}
-                    <Box
-                        mt={'50px'}
-                        fontFamily={'theme'}
-                        borderColor={'rgba(0, 0, 0, 0.15)'}
-                        width={'320px'}
-                        height={'100px'}
-                        borderRadius={'10px'}
-                        position={'relative'}
-                        bg={cardBg}
-                        ml={'20px'}
-                        mx={'auto'}
-                        px={'10px'}
-                    >
-                        <Text
-                            fontFamily={"'Rubik', sans-serif;"}
-                            textAlign={'center'}
-                            fontWeight={'600'}
-                            fontSize={'28px'}
-                            marginTop={'2px'}
-                        >
-                            {'Skill'}
-                        </Text>
-                        <Text
-                            textAlign={'center'}
-                            fontSize={selectedLanguage === 'ja' ? '14px' : ''}
-                            fontFamily={
-                                selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"
-                            }
-                            mt={'3px'}
-                        >
-                            {selectedLanguage === 'ja'
-                                ? 'フロントからバックエンド、インフラまでの経験あり(現在はフロントが中心）'
-                                : 'I have experience in Frontend,Backend, and Infrastructure'}
-                        </Text>
-                    </Box>
+                    <SkillHeading/>
                     <Box
                         width={'70%'}
                         gridGap={'30px'}
@@ -223,7 +209,7 @@ const Home: NextPage = () => {
                                 >
                                     {v.title}
                                 </Text>
-                                <RoundIcon imgSrc={v.imgSrc} padding={v.padding}></RoundIcon>
+                                <RoundIcon imgSrc={v.imgSrc} padding={v.padding} />
                                 <Box m={'auto'} width={'100%'}>
                                     <Text
                                         width={selectedLanguage === 'ja' ? '180px' : '200px'}
@@ -249,7 +235,6 @@ const Home: NextPage = () => {
                         textAlign={'center'}
                         fontWeight={'600'}
                         fontSize={'30px'}
-
                         fontFamily={"'Rubik', sans-serif;"}
                     >
                         Other Pages
@@ -273,7 +258,12 @@ const Home: NextPage = () => {
                                 bg={'white'}
                                 width={'100%'}
                             >
-                                <Text  mb={'10px'} color={'black'} fontSize={'25px'} fontWeight={'bold'}>
+                                <Text
+                                    mb={'10px'}
+                                    color={'black'}
+                                    fontSize={'25px'}
+                                    fontWeight={'bold'}
+                                >
                                     {page.title}
                                 </Text>
                                 <Text>{page.sentence}</Text>

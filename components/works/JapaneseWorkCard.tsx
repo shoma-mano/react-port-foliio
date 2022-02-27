@@ -13,7 +13,7 @@ export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: str
     const bg = useColorModeValue('white', '#242526');
     let stackText = '';
     stack.forEach((v, i) => {
-        stackText = stackText + v + (i!==stack.length-1 ? ' / ' :'')
+        stackText = stackText + v + (i !== stack.length - 1 ? ' / ' : '');
     });
 
     return (
@@ -64,13 +64,16 @@ export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: str
                             Private
                         </Badge>
                     </Box>
-                    <Box display={'flex'} alignItems={'center'}>
-                        <Text>{stackText}</Text>
+                    <Box mt={'2px'} display={'flex'} alignItems={'center'}>
+                        <Text noOfLines={1}>{stackText}</Text>
                         <Image ml={'10px'} boxSize={'20px'} src={'/github.svg'}></Image>
                         <Text ml={'3px'} fontFamily={"'Rubik', sans-serif;"}>
                             GitHub
                         </Text>
                     </Box>
+                    <Text>
+                        親族の
+                    </Text>
                 </Box>
             </Box>
         </>
