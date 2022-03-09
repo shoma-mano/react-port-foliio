@@ -24,7 +24,7 @@ export default function Post({ post }: { post: any }) {
             marginLeft={{ base: '0px', sm: '0px', md: '290px' }}
             py={{ base: '80px', sm: '60px', md: '60px' }}
         >
-            <Image boxSize={'90px'} borderRadius={'300px'} src={post.icon}/>
+            <Image boxSize={'90px'} borderRadius={'300px'} src={post.icon} />
             <Text
                 fontWeight={'700'}
                 mt={'20px'}

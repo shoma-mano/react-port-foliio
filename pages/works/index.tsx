@@ -25,14 +25,11 @@ export const Index = () => {
     const { selectedLanguage } = useContext(AppContext);
     const bg = useColorModeValue('#fafafa', '#18191A');
     const cardBg = useColorModeValue('white', '#242526');
-    const [tabIndex, setTabIndex] = useState<number>(0)
+    const [tabIndex, setTabIndex] = useState<number>(0);
 
-    const tabs=['All','Company Project','Private Project']
+    const tabs = ['All', 'Company Project', 'Private Project'];
 
-    const content=[{
-
-    }]
-
+    const content = [{}];
 
     return (
         <>
@@ -61,19 +58,26 @@ export const Index = () => {
                 <Tabs width={'90%'} align={'start'}>
                     <TabList
                         mt={'5px'}
-                        _focus={{ outline: 'none' ,background:'none'}}
+                        _focus={{ outline: 'none', background: 'none' }}
                         fontWeight={'700'}
                         fontSize={'20px'}
                         fontFamily={"'Rubik', sans-serif;"}
                         onChange={(index) => setTabIndex(Number(index))}
                     >
-                        {tabs.map((v)=>
-                            (
-                                <Tab key={v} color={'#9e9e9e'} borderBottom={'solid 3px'} Width={'2px'}  fontWeight={'700'} fontSize={'20px'} _active={{background:'none'}} _focus={{ outline: 'none'}}>
-                                    {v}
-                                </Tab>
-                            )
-                        )}
+                        {tabs.map((v) => (
+                            <Tab
+                                key={v}
+                                color={'#9e9e9e'}
+                                borderBottom={'solid 3px'}
+                                Width={'2px'}
+                                fontWeight={'700'}
+                                fontSize={'20px'}
+                                _active={{ background: 'none' }}
+                                _focus={{ outline: 'none' }}
+                            >
+                                {v}
+                            </Tab>
+                        ))}
                     </TabList>
                 </Tabs>
                 <Box
@@ -90,7 +94,7 @@ export const Index = () => {
                         <Box width={'92%'} maxWidth={'830px'}>
                             <JapaneseWorkCard
                                 imgSrc={'works/wedding.png'}
-                                stack={['NextJS','Chakra UI','Jotai','Hasura']}
+                                stack={['NextJS', 'Chakra UI', 'Jotai', 'Hasura']}
                             />
                         </Box>
                     ) : (

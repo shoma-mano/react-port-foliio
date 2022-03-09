@@ -16,8 +16,8 @@ import { LeftSideHistory } from '../../components/history/LeftSideHistory';
 import { RightSideHistory } from '../../components/history/RightSideHistory';
 import { HistorySm } from '../../components/history/HistorySm';
 import { useRouter } from 'next/router';
-import { BlogBaseContent } from "../../components/blog/BlogBaseContent";
-import { BlogSmContent } from "../../components/blog/BlogSmContent";
+import { BlogBaseContent } from '../../components/blog/BlogBaseContent';
+import { BlogSmContent } from '../../components/blog/BlogSmContent';
 
 export const Index = ({
     posts,
@@ -33,12 +33,8 @@ export const Index = ({
     }>;
 }) => {
     const content = useBreakpointValue({
-        base: (
-            <BlogBaseContent posts={posts} />
-        ),
-        sm: (
-            <BlogSmContent posts={posts}/>
-        ),
+        base: <BlogBaseContent posts={posts} />,
+        sm: <BlogSmContent posts={posts} />,
     });
 
     return <>{content}</>;

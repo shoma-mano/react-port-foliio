@@ -123,7 +123,7 @@ export const Index = () => {
                                 borderRadius={'10px'}
                                 height={'2850px'}
                             />
-                            <RightSideHistory/>
+                            <RightSideHistory />
                         </Box>
                     </Box>
                 </Box>

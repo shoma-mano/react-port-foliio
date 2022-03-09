@@ -1,7 +1,7 @@
-import { Box, Text, useColorModeValue } from "@chakra-ui/react";
-import * as React from "react";
-import { useContext } from "react";
-import { AppContext } from "../../pages/_app";
+import { Box, Text, useColorModeValue } from '@chakra-ui/react';
+import * as React from 'react';
+import { useContext } from 'react';
+import { AppContext } from '../../pages/_app';
 
 export const SkillHeading = () => {
     const cardBg = useColorModeValue('white', '#242526');
@@ -33,9 +33,7 @@ export const SkillHeading = () => {
             <Text
                 textAlign={'center'}
                 fontSize={selectedLanguage === 'ja' ? '14px' : ''}
-                fontFamily={
-                    selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"
-                }
+                fontFamily={selectedLanguage === 'ja' ? 'monospace' : "'Rubik', sans-serif;"}
                 mt={'3px'}
             >
                 {selectedLanguage === 'ja'
@@ -43,5 +41,5 @@ export const SkillHeading = () => {
                     : 'I have experience in Frontend,Backend, and Infrastructure'}
             </Text>
         </Box>
-    )
-}
+    );
+};

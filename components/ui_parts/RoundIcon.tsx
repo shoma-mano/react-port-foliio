@@ -1,5 +1,5 @@
 import { Box, Image } from '@chakra-ui/react';
-import { MouseEvent, useRef, useState } from 'react';
+import { MouseEvent, useRef } from 'react';
 
 export const RoundIcon = ({
     imgSrc,
@@ -27,6 +27,7 @@ export const RoundIcon = ({
                 boxSize={'150px'}
             >
                 <Image
+                    alt={'icon'}
                     transition={'all 0.5s'}
                     bg={color ? color : 'white'}
                     src={imgSrc}
@@ -36,7 +37,7 @@ export const RoundIcon = ({
                     boxShadow={'md'}
                     p={padding + 'px'}
                     ref={icon}
-                ></Image>
+                />
             </Box>
         </>
     );

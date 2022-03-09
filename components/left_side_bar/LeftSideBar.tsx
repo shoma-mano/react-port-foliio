@@ -1,4 +1,12 @@
-import { Box, Button, Image, Text, useBreakpointValue, useColorModeValue } from '@chakra-ui/react';
+import {
+    Box,
+    Button,
+    Icon,
+    Image,
+    Text,
+    useBreakpointValue,
+    useColorModeValue,
+} from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import { ProfileComponent } from './ProfileComponent';
 import { SkillSetComponent } from './SkillSetComponent';
@@ -6,6 +14,8 @@ import { SpanWrapper } from '../ui_parts/SpanWrapper';
 import { AppContext } from '../../pages/_app';
 import { CloseIcon } from '@chakra-ui/icons';
 import { useRouter } from 'next/router';
+import { GitHubIcon } from '../ui_parts/icon/GitHubIcon';
+import { TwitterIcon } from '../ui_parts/icon/TwitterIcon';
 
 export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
     const { selectedLanguage, toggleLeftSideBar } = useContext(AppContext);
@@ -63,14 +73,16 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
 
     const IconList = [
         {
-            padding: '6px',
+            padding: '2px',
             src: '/sns_icon/twitter.svg',
             link: 'https://twitter.com/ms2geki_m',
+            bg: 'none',
         },
         {
-            padding: '6px',
-            src: '/sns_icon/github.svg',
+            padding: '2px',
+            src: '/github.svg',
             link: 'https://github.com/shoma-mano',
+            bg: 'none',
         },
         {
             padding: '2px',
@@ -140,20 +152,24 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                     mt={'10px'}
                     color={'gray500'}
                 >
-                    {IconList.map((v) => (
-                        <Image
-                            key={v.src}
-                            cursor={'pointer'}
-                            onClick={() => router.push(v.link)}
-                            border={'none'}
-                            padding={v.padding}
-                            bg={v.bg ? v.bg : iconListBg}
-                            borderRadius={'20px'}
-                            src={v.src}
-                            width={6}
-                            height={6}
-                        />
-                    ))}
+                    <GitHubIcon
+                        cursor={'pointer'}
+                        onClick={() => (window.location.href = 'https://github.com/shoma-mano')}
+                        borderRadius={'20px'}
+                        w={'22px'}
+                        h={'22px'}
+                    />
+                    <TwitterIcon
+                        cursor={'pointer'}
+                        onClick={() => (window.location.href = 'https://twitter.com/ms2geki_m')}
+                    />
+                    <Image
+                        cursor={'pointer'}
+                        onClick={() => (window.location.href = 'https://qiita.com/ms2geki')}
+                        boxSize={'22px'}
+                        borderRadius={'20px'}
+                        src={'/sns_icon/qiita.png'}
+                    />
                 </Box>
                 <Box
                     css={{
@@ -177,9 +193,7 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                     </Box>
                 </Box>
             </Box>
-            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={'#e5e5e5'} />
-
-            {/*<Button m="auto" display={"block"} onClick={onClick}>Home</Button>*/}
+            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={'black'} />
         </>
     );
 };

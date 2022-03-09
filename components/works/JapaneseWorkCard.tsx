@@ -38,6 +38,7 @@ export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: str
                     width={'50%'}
                 >
                     <Image
+                        alt={'work'}
                         style={{
                             width: '100%',
                             zIndex: 6,
@@ -66,14 +67,12 @@ export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: str
                     </Box>
                     <Box mt={'2px'} display={'flex'} alignItems={'center'}>
                         <Text noOfLines={1}>{stackText}</Text>
-                        <Image ml={'10px'} boxSize={'20px'} src={'/github.svg'}></Image>
+                        <Image alt={'github'} ml={'10px'} boxSize={'20px'} src={'/github.svg'} />
                         <Text ml={'3px'} fontFamily={"'Rubik', sans-serif;"}>
                             GitHub
                         </Text>
                     </Box>
-                    <Text>
-                        親族の
-                    </Text>
+                    <Text>親族の</Text>
                 </Box>
             </Box>
         </>

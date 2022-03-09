@@ -1,5 +1,5 @@
 import { Box, Stack, Text, VStack, Image, useColorModeValue } from '@chakra-ui/react';
-import { MutableRefObject, useContext, useEffect, useRef, useState } from 'react';
+import { MutableRefObject, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { AppContext } from '../../pages/_app';
 import { ScrollTransition } from '../animation/ScrollTransition';
 import { ScrollRightSlideIn } from '../animation/ScrollRightSlideIn';
@@ -8,66 +8,130 @@ export const LeftSideHistory = () => {
     const { selectedLanguage } = useContext(AppContext);
     const cardBg = useColorModeValue('white', '#242526');
 
-    const japaneseHistories = [
-        {
-            time: '2003-2009',
-            title: '小学校時代',
-            sentence: '全校生徒60人という学校で自然の中に囲まれてのびのびと育つ。',
-            height: 310,
-            imgSrc: 'gozenyama.png',
-            ref: 'elementary_school',
-        },
-        {
-            time: '2012-2015',
-            title: '高校時代',
-            sentence:
-                '第一志望に落ちてしまい、私立の進学校に進学。校内での携帯の使用が禁止されているにも関わらず、携帯の電源を切り忘れてお婆ちゃんから電話がかかってきてしまい反省文を書く事になる。',
-            height: 320,
-            imgSrc: 'grand_mother.png',
-        },
-        {
-            time: '2019-2020',
-            title: '公務員時代',
-            sentence:
-                '大学で学んだ事の延長を一生やっていく覚悟が無かった為、公務員となる。特別区公務員として主に清掃工場の設備の保守点検を担当。',
-            height: 350,
-            imgSrc: 'shinkoto.png',
-        },
-    ];
+    const japaneseHistories = useMemo(
+        () => [
+            {
+                time: '2003-2009',
+                title: '小学校時代',
+                sentence: '全校生徒60人という学校で自然の中に囲まれてのびのびと育つ。',
+                height: 310,
+                imgSrc: 'gozenyama.png',
+                ref: 'elementary_school',
+            },
+            {
+                time: '2012-2015',
+                title: '高校時代',
+                sentence:
+                    '第一志望に落ちてしまい、私立の進学校に進学。校内での携帯の使用が禁止されているにも関わらず、携帯の電源を切り忘れてお婆ちゃんから電話がかかってきてしまい反省文を書く事になる。',
+                height: 320,
+                imgSrc: 'grand_mother.png',
+            },
+            {
+                time: '2019-2020',
+                title: '公務員時代',
+                sentence:
+                    '大学で学んだ事の延長を一生やっていく覚悟が無かった為、公務員となる。特別区公務員として主に清掃工場の設備の保守点検を担当。',
+                height: 350,
+                imgSrc: 'shinkoto.png',
+            },
+        ],
+        []
+    );
 
-    const englishHistories = [
-        {
-            time: '2003-2009',
-            title: 'Elementary school days',
-            sentence: 'I grew in a school whose number of all students are 60.',
-            height: 310,
-            imgSrc: 'gozenyama.png',
-            ref: 'elementary_school',
-        },
-        {
-            time: '2012-2015',
-            title: 'High school days',
-            sentence:
-                'I entered private preparatory school.It was forbidden to use cell phone in a school, but I forgot turning off my cell phone and My grandmother called me.So I was made to write apology essay.',
-            height: 320,
-            imgSrc: 'grand_mother.png',
-        },
-        {
-            time: '2019-2020',
-            title: '公務員時代',
-            sentence:
-                '大学で学んだ事の延長を一生やっていく覚悟が無かった為、公務員となる。特別区公務員として主に清掃工場の設備の保守点検を担当。',
-            height: 350,
-            imgSrc: 'shinkoto.png',
-        },
-    ];
+    const englishHistories = useMemo(
+        () => [
+            {
+                time: '2003-2009',
+                title: 'Elementary school days',
+                sentence: 'I grew in a school whose number of all students are 60.',
+                height: 310,
+                imgSrc: 'gozenyama.png',
+                ref: 'elementary_school',
+            },
+            {
+                time: '2012-2015',
+                title: 'High school days',
+                sentence:
+                    'I entered private preparatory school.It was forbidden to use cell phone in a school, but I forgot turning off my cell phone and My grandmother called me.So I was made to write apology essay.',
+                height: 320,
+                imgSrc: 'grand_mother.png',
+            },
+            {
+                time: '2019-2020',
+                title: '公務員時代',
+                sentence:
+                    '大学で学んだ事の延長を一生やっていく覚悟が無かった為、公務員となる。特別区公務員として主に清掃工場の設備の保守点検を担当。',
+                height: 350,
+                imgSrc: 'shinkoto.png',
+            },
+        ],
+        []
+    );
+    //
+    // const englishHistories = [
+    //     {
+    //         time: '2003-2009',
+    //         title: 'Elementary school days',
+    //         sentence: 'I grew in a school whose number of all students are 60.',
+    //         height: 310,
+    //         imgSrc: 'gozenyama.png',
+    //         ref: 'elementary_school',
+    //     },
+    //     {
+    //         time: '2012-2015',
+    //         title: 'High school days',
+    //         sentence:
+    //             'I entered private preparatory school.It was forbidden to use cell phone in a school, but I forgot turning off my cell phone and My grandmother called me.So I was made to write apology essay.',
+    //         height: 320,
+    //         imgSrc: 'grand_mother.png',
+    //     },
+    //     {
+    //         time: '2019-2020',
+    //         title: '公務員時代',
+    //         sentence:
+    //             '大学で学んだ事の延長を一生やっていく覚悟が無かった為、公務員となる。特別区公務員として主に清掃工場の設備の保守点検を担当。',
+    //         height: 350,
+    //         imgSrc: 'shinkoto.png',
+    //     },
+    // ];
 
     const [histories, setHistories] = useState<Array<any>>([]);
 
+    // if (selectedLanguage === 'ja') setHistories(japaneseHistories);
+    // else setHistories(englishHistories);
+
     useEffect(() => {
+        // const englishHistories = [
+        //     {
+        //         time: '2003-2009',
+        //         title: 'Elementary school days',
+        //         sentence: 'I grew in a school whose number of all students are 60.',
+        //         height: 310,
+        //         imgSrc: 'gozenyama.png',
+        //         ref: 'elementary_school',
+        //     },
+        //     {
+        //         time: '2012-2015',
+        //         title: 'High school days',
+        //         sentence:
+        //             'I entered private preparatory school.It was forbidden to use cell phone in a school, but I forgot turning off my cell phone and My grandmother called me.So I was made to write apology essay.',
+        //         height: 320,
+        //         imgSrc: 'grand_mother.png',
+        //     },
+        //     {
+        //         time: '2019-2020',
+        //         title: '公務員時代',
+        //         sentence:
+        //             '大学で学んだ事の延長を一生やっていく覚悟が無かった為、公務員となる。特別区公務員として主に清掃工場の設備の保守点検を担当。',
+        //         height: 350,
+        //         imgSrc: 'shinkoto.png',
+        //     },
+        // ];
+
         if (selectedLanguage === 'ja') setHistories(japaneseHistories);
         else setHistories(englishHistories);
-    }, [selectedLanguage]);
+        console.log('render');
+    }, [selectedLanguage, japaneseHistories, englishHistories]);
 
     return (
         <Box mt={'120px'}>

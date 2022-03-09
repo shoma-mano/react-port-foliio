@@ -1,5 +1,5 @@
-import { Box, Image, Text } from '@chakra-ui/react';
-import { Dispatch, SetStateAction, useContext, useEffect, useRef } from 'react';
+import { Box, Image } from '@chakra-ui/react';
+import { useContext, useRef } from 'react';
 import { AppContext } from '../../pages/_app';
 
 export const TopBarTranslateButton = ({ imgSrc }: { imgSrc: string }) => {
@@ -28,7 +28,7 @@ export const TopBarTranslateButton = ({ imgSrc }: { imgSrc: string }) => {
                     }
                     borderRadius={'30px'}
                 >
-                    <Image src={imgSrc}></Image>
+                    <Image alt={'img'} src={imgSrc} />
                 </Box>
             </Box>
         </>

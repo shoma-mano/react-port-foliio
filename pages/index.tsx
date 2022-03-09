@@ -10,7 +10,8 @@ import {
     Input,
     useColorModeValue,
     Badge,
-    Icon, useColorMode,
+    Icon,
+    useColorMode,
 } from '@chakra-ui/react';
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from './_app';
@@ -19,15 +20,14 @@ import { RoundIcon } from '../components/ui_parts/RoundIcon';
 import { EnglishIntroduceCard } from '../components/home/EnglishIntroduceCard';
 import * as React from 'react';
 import { Border } from '../components/ui_parts/Border';
-import { GitHubIcon } from "../components/ui_parts/icon/GitHubIcon";
-import { SkillHeading } from "../components/home/SkillHeading";
+import { GitHubIcon } from '../components/ui_parts/icon/GitHubIcon';
+import { SkillHeading } from '../components/home/SkillHeading';
 
 const Home: NextPage = () => {
     const { selectedLanguage } = useContext(AppContext);
-    const { colorMode, toggleColorMode } = useColorMode()
+    const { colorMode, toggleColorMode } = useColorMode();
     const bg = useColorModeValue('#fafafa', '#18191A');
     const cardBg = useColorModeValue('white', '#242526');
-
 
     const reactContent = () =>
         selectedLanguage === 'ja' ? (
@@ -42,9 +42,11 @@ const Home: NextPage = () => {
                     mt={'10px'}
                     py={'0px'}
                     justifyContent={'center'}
-                    onClick={()=>{location.href='https://github.com/shoma-mano/reactPortFolio'}}
+                    onClick={() => {
+                        location.href = 'https://github.com/shoma-mano/reactPortFolio';
+                    }}
                 >
-                    <GitHubIcon/>
+                    <GitHubIcon />
                     <Text ml={'3px'} fontFamily={"'Rubik', sans-serif;"}>
                         GitHub
                     </Text>
@@ -89,7 +91,7 @@ const Home: NextPage = () => {
             padding: 15,
             sentence:
                 selectedLanguage === 'ja'
-                    ? '実務経験があります。JSフレームワークの基礎はAngularで学びました。'
+                    ? '個人開発を通してJSフレームワークの基礎をAngularで学びました。'
                     : 'I learned basic of JS framework by Angular.',
         },
         {
@@ -105,7 +107,8 @@ const Home: NextPage = () => {
             title: 'Rails',
             imgSrc: 'skill/rails.png',
             padding: 15,
-            sentence: selectedLanguage === 'ja' ? 'Rails6の実務経験あり。' : 'I have used Rails6.',
+            sentence:
+                selectedLanguage === 'ja' ? 'Rails6の実務経験があります。' : 'I have used Rails6.',
         },
         {
             title: 'Terraform',
@@ -113,7 +116,7 @@ const Home: NextPage = () => {
             padding: 15,
             sentence:
                 selectedLanguage === 'ja'
-                    ? '実務でのECSコード化経験あり'
+                    ? '実務でのAWSのコード化経験があります'
                     : 'I have deployed ECS using Terraform.',
         },
         {
@@ -180,7 +183,7 @@ const Home: NextPage = () => {
                     ) : (
                         <EnglishIntroduceCard />
                     )}
-                    <SkillHeading/>
+                    <SkillHeading />
                     <Box
                         width={'70%'}
                         gridGap={'30px'}
