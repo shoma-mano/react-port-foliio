@@ -8,6 +8,7 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react';
 import { CherryBlossom } from '../animation/CherryBlossom';
+import { GitHubIcon } from '../ui_parts/icon/GitHubIcon';
 
 export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: string[] }) => {
     const bg = useColorModeValue('white', '#242526');
@@ -67,12 +68,13 @@ export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: str
                     </Box>
                     <Box mt={'2px'} display={'flex'} alignItems={'center'}>
                         <Text noOfLines={1}>{stackText}</Text>
-                        <Image alt={'github'} ml={'10px'} boxSize={'20px'} src={'/github.svg'} />
+                        <GitHubIcon/>
+                        {/*<Image alt={'github'} ml={'10px'} boxSize={'20px'} src={'/github.svg'} />*/}
                         <Text ml={'3px'} fontFamily={"'Rubik', sans-serif;"}>
                             GitHub
                         </Text>
                     </Box>
-                    <Text>親族の</Text>
+                    <Text>叔母の結婚式のサイトを三日間ほどで作成しました。</Text>
                 </Box>
             </Box>
         </>
