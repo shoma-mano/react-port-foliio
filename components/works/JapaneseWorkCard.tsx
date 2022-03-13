@@ -68,13 +68,34 @@ export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: str
                     </Box>
                     <Box mt={'2px'} display={'flex'} alignItems={'center'}>
                         <Text noOfLines={1}>{stackText}</Text>
-                        <GitHubIcon/>
-                        {/*<Image alt={'github'} ml={'10px'} boxSize={'20px'} src={'/github.svg'} />*/}
-                        <Text ml={'3px'} fontFamily={"'Rubik', sans-serif;"}>
-                            GitHub
-                        </Text>
+                        <Box
+                            d={'flex'}
+                            cursor={'pointer'}
+                            alignItems={'center'}
+                            onClick={() =>
+                                (location.href = 'https://github.com/shoma-mano/wedding_app')
+                            }
+                        >
+                            <GitHubIcon ml={'13px'} />
+                            {/*<Image alt={'github'} ml={'10px'} boxSize={'20px'} src={'/github.svg'} />*/}
+                            <Text ml={'3px'} fontFamily={"'Rubik', sans-serif;"}>
+                                GitHub
+                            </Text>
+                        </Box>
                     </Box>
-                    <Text>叔母の結婚式のサイトを三日間ほどで作成しました。</Text>
+                    <Text
+                        noOfLines={8}
+                        wordBreak={'break-all'}
+                        fontSize={'15px'}
+                        mt={'12px'}
+                        color={'#000000ad'}
+                    >
+                        叔母の結婚式の為の寄せ書き＆写真共有アプリを作成しました。
+                        <br />
+                        フロントエンドの技術にNextJS+ChakraUIを選定しているのに加え、メッセージ投稿時や写真投稿時の通知メッセージを管理するのに状態管理ライブラリであるJotaiを使用しました。
+                        <br />
+                        バックエンドの技術として、メッセージの保存にはHasuraCloudを使用し、写真の保存にはCloudinaryというサービスを使用しました。
+                    </Text>
                 </Box>
             </Box>
         </>

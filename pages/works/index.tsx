@@ -93,8 +93,8 @@ export const Index = () => {
                     {selectedLanguage === 'ja' ? (
                         <Box width={'92%'} maxWidth={'830px'}>
                             <JapaneseWorkCard
-                                imgSrc={'works/wedding.png'}
-                                stack={['NextJS', 'Chakra UI', 'Jotai', 'Hasura']}
+                                imgSrc={'https://i.gyazo.com/9d414c9cd0984b434c7a039c2543322f.jpg'}
+                                stack={['NextJS', 'Chakra UI', 'Jotai', 'Hasura','Cloudinary']}
                             />
                         </Box>
                     ) : (
