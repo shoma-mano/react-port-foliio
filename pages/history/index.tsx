@@ -14,10 +14,11 @@ import { AppContext } from '../_app';
 import { LeftSideHistory } from '../../components/history/LeftSideHistory';
 import { RightSideHistory } from '../../components/history/RightSideHistory';
 import { HistorySm } from '../../components/history/HistorySm';
+import * as React from 'react';
 
 export const Index = () => {
     const { selectedLanguage } = useContext(AppContext);
-    const bg = useColorModeValue('#f0f0f5', '#18191A');
+    const bg = useColorModeValue('#fafafa', '#18191A');
     const cardBg = useColorModeValue('white', '#242526');
 
     const content = useBreakpointValue({
@@ -48,15 +49,6 @@ export const Index = () => {
                         <Text
                             textAlign={'center'}
                             fontWeight={'600'}
-                            // color={'#000000d4'}
-                            fontSize={'23px'}
-                            marginTop={'5px'}
-                        >
-                            {selectedLanguage === 'ja' ? '経歴' : 'History'}
-                        </Text>
-                        <Text
-                            textAlign={'center'}
-                            fontWeight={'600'}
                             // color={'#000000a8'}
                             marginTop={'10px'}
                             fontFamily={"'Rubik', sans-serif;"}
@@ -83,6 +75,15 @@ export const Index = () => {
                     marginTop={{ base: '60px', sm: '0px', md: '0px' }}
                 >
                     <Box width={'100%'} pb={'15px'} bg={bg} overflow={'hidden'}>
+                        <Text
+                            fontFamily={"'Rubik', sans-serif;"}
+                            textAlign={'center'}
+                            fontSize={'38px'}
+                            fontWeight={'700'}
+                            mt={'15px'}
+                        >
+                            HISTORY
+                        </Text>
                         <Box
                             mt={'20px'}
                             fontFamily={'theme'}
@@ -90,7 +91,6 @@ export const Index = () => {
                             boxShadow={'md'}
                             borderColor={'rgba(0, 0, 0, 0.15)'}
                             width={'260px'}
-                            height={'140px'}
                             borderRadius={'10px'}
                             position={'relative'}
                             px={'10px'}
@@ -101,16 +101,6 @@ export const Index = () => {
                             <Text
                                 textAlign={'center'}
                                 fontWeight={'600'}
-                                // color={'#000000d4'}
-                                fontSize={'23px'}
-                                marginTop={'5px'}
-                            >
-                                {selectedLanguage === 'ja' ? '経歴' : 'History'}
-                            </Text>
-                            <Text
-                                textAlign={'center'}
-                                fontWeight={'600'}
-                                // color={'#000000a8'}
                                 marginTop={'10px'}
                                 fontFamily={"'Rubik', sans-serif;"}
                                 mt={'5px'}
@@ -121,20 +111,19 @@ export const Index = () => {
                                     : 'Born in tokyo in 1996, but I was already in a remote village when I understood what was going on around myself.'}
                             </Text>
                         </Box>
-                        {/*history_content*/}
                         <Box
                             width={'100%'}
                             marginTop={'10px'}
                             justifyContent={'center'}
                             display={'flex'}
                         >
-                            <LeftSideHistory></LeftSideHistory>
+                            <LeftSideHistory />
                             <Box
                                 border={'solid #9e9e9e 3px'}
                                 borderRadius={'10px'}
                                 height={'2850px'}
-                            ></Box>
-                            <RightSideHistory></RightSideHistory>
+                            />
+                            <RightSideHistory />
                         </Box>
                     </Box>
                 </Box>

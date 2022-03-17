@@ -30,11 +30,11 @@ export const RightSideBar = () => {
             title: 'HISTORY',
             link: '/history',
         },
-        // {
-        //     imgSrc: '/right_side_bar/works.png',
-        //     title: 'WORKS',
-        //     link: '/works',
-        // },
+        {
+            imgSrc: '/right_side_bar/works.png',
+            title: 'WORKS',
+            link: '/works',
+        },
     ];
 
     const router = useRouter();
@@ -86,7 +86,7 @@ export const RightSideBar = () => {
                 <Box marginTop={'55px'} flexBasis={'auto'}>
                     <ColorModeButton p={'13px'} imgSrc={'/translate.png'}></ColorModeButton>
                 </Box>
-                <Box marginTop={'65px'}>
+                <Box marginTop={'45px'}>
                     {selectedIndex !== undefined &&
                         buttonObjArray.map((v, i) => {
                             return (

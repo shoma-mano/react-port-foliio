@@ -15,7 +15,7 @@ export const RightSideHistory = () => {
             sentence:
                 '地元の進学校に入学。クラスの平均点以下を取ることが普通になり、自分が井の中の蛙だった事に気づく。',
             height: 310,
-            imgSrc: 'kawazu.png',
+            imgSrc: 'history/kawazu.png',
         },
         {
             time: '2015-2019',
@@ -23,7 +23,7 @@ export const RightSideHistory = () => {
             sentence:
                 'センター国語で平均点以下を叩き出すが、なんとか千葉大学電気電子工学部に入学。軽音サークルに入り、ギターを弾くという長年の念願を叶える。',
             height: 330,
-            imgSrc: 'metallica.png',
+            imgSrc: 'history/metallica.png',
         },
         {
             time: '2020-2022',
@@ -50,7 +50,7 @@ export const RightSideHistory = () => {
             sentence:
                 'I passed test to enter college I wanted to go.I started playing the guitar, but I realized I liked listening than playing later.',
             height: 330,
-            imgSrc: 'metallica.png',
+            imgSrc: 'history/metallica.png',
         },
         {
             time: '2020-2022',

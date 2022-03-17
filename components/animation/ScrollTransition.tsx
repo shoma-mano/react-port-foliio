@@ -24,7 +24,7 @@ export const ScrollTransition = ({
                 setTimeout(() => (box.current!.style.opacity = '1'), 400);
             }
         });
-    }, []);
+    }, [isVisible]);
 
     return (
         <>

@@ -35,7 +35,7 @@ export const SkillSetComponent = ({ skillSetObj, title }: { skillSetObj: any; ti
                     </Box>
                 );
             })}
-            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={bg}></Box>
+            {/*<Box mt={'25px'} opacity='0.7' height={'2px'} bg={bg}></Box>*/}
         </>
     );
 };

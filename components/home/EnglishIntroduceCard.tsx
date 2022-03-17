@@ -1,4 +1,11 @@
-import { AspectRatio, Box, Text, useBreakpointValue, useColorModeValue } from '@chakra-ui/react';
+import {
+    AspectRatio,
+    Box,
+    Image,
+    Text,
+    useBreakpointValue,
+    useColorModeValue,
+} from '@chakra-ui/react';
 import { WaveText } from '../animation/WaveText';
 
 export const EnglishIntroduceCard = () => {
@@ -68,7 +75,7 @@ export const EnglishIntroduceCard = () => {
                                     fontSize={waveTextFontSize}
                                     text={'Welcome To My Portforio'}
                                     color={'#262f62'}
-                                ></WaveText>
+                                />
                             </Box>
                         </Box>
                         <Box
@@ -76,7 +83,7 @@ export const EnglishIntroduceCard = () => {
                             height={'30%'}
                             flexDirection={'column'}
                             justifyContent={'start'}
-                        ></Box>
+                        />
                     </Box>
                     <Box
                         marginRight={'10px'}
@@ -85,11 +92,11 @@ export const EnglishIntroduceCard = () => {
                         justifyContent={'end'}
                         flexDirection={'column'}
                     >
-                        <img
+                        <Image
                             width={'320px'}
                             style={{ height: '380px', minWidth: '50%', filter: 'brightness(1.2)' }}
                             src={'/selfie_home.png'}
-                        ></img>
+                        />
                     </Box>
                 </Box>
             </AspectRatio>
