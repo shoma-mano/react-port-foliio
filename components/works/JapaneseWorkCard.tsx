@@ -10,7 +10,15 @@ import {
 import { CherryBlossom } from '../animation/CherryBlossom';
 import { GitHubIcon } from '../ui_parts/icon/GitHubIcon';
 
-export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: string[] }) => {
+export const JapaneseWorkCard = ({
+    imgSrc,
+    stack,
+    pageLink,
+}: {
+    imgSrc: string;
+    stack: string[];
+    pageLink: string;
+}) => {
     const bg = useColorModeValue('white', '#242526');
     let stackText = '';
     stack.forEach((v, i) => {
@@ -32,6 +40,8 @@ export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: str
                 justifyContent={'space-between'}
             >
                 <Box
+                    onClick={() => (window.location.href = pageLink)}
+                    cursor={'pointer'}
                     marginRight={'10px'}
                     display={'flex'}
                     justifyContent={'end'}
@@ -55,13 +65,22 @@ export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: str
                     pl={'10px'}
                 >
                     <Box display={'flex'} alignItems={'center'}>
-                        <Text
-                            fontSize={'1.5em'}
-                            fontWeight={'700'}
-                            fontFamily={"'Rubik', sans-serif;"}
+                        <Box
+                            _hover={{ borderBottom: '1px solid' }}
+                            boxSizing={'border-box'}
+                            height={'35px'}
                         >
-                            WEDDING APP
-                        </Text>
+                            <Text
+                                fontSize={'1.5em'}
+                                fontWeight={'700'}
+                                fontFamily={"'Rubik', sans-serif;"}
+                                cursor={'pointer'}
+                                display={'block'}
+                                onClick={() => (window.location.href = pageLink)}
+                            >
+                                WEDDING APP
+                            </Text>
+                        </Box>
                         <Badge ml={'10px'} h={'20px'}>
                             Private
                         </Badge>
@@ -73,7 +92,7 @@ export const JapaneseWorkCard = ({ imgSrc, stack }: { imgSrc: string; stack: str
                             cursor={'pointer'}
                             alignItems={'center'}
                             onClick={() =>
-                                (location.href = 'https://github.com/shoma-mano/wedding_app')
+                                (location.href = 'https://github.com/shoma-mano/wedding')
                             }
                         >
                             <GitHubIcon ml={'13px'} />

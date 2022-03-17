@@ -22,14 +22,14 @@ import * as React from 'react';
 import { Border } from '../components/ui_parts/Border';
 import { GitHubIcon } from '../components/ui_parts/icon/GitHubIcon';
 import { SkillHeading } from '../components/home/SkillHeading';
-import { router } from 'next/client';
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
     const { selectedLanguage } = useContext(AppContext);
     const { colorMode, toggleColorMode } = useColorMode();
     const bg = useColorModeValue('#fafafa', '#18191A');
     const cardBg = useColorModeValue('white', '#242526');
+    const router = useRouter();
 
     const reactContent = () =>
         selectedLanguage === 'ja' ? (
@@ -135,17 +135,17 @@ const Home: NextPage = () => {
     const otherPages = [
         {
             title: 'BLOG',
-            sentence: 'フロントエンドからインフラまで全般的に取り扱った技術記事',
+            sentence: 'フロントエンドからインフラまで全般的に取り扱った技術記事です。',
             link: '/blog',
         },
         {
             title: 'HISTORY',
-            sentence: 'フロントエンドからインフラまで全般的に取り扱った技術記事',
+            sentence: '自分の半生を振り返ったページです。',
             link: '/history',
         },
         {
             title: 'WORKS',
-            sentence: 'フロントエンドからインフラまで全般的に取り扱った技術記事',
+            sentence: '今まで制作してきたプロダクト集です。',
             link: '/works',
         },
     ];
@@ -265,6 +265,7 @@ const Home: NextPage = () => {
                                 boxShadow={'md'}
                                 bg={'white'}
                                 width={'100%'}
+                                minHeight={'160px'}
                                 cursor={'pointer'}
                                 onClick={() => {
                                     router.push(page.link);
