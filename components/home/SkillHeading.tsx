@@ -37,7 +37,7 @@ export const SkillHeading = () => {
                 mt={'3px'}
             >
                 {selectedLanguage === 'ja'
-                    ? 'フロントからバックエンド、インフラまでの経験があります。(現在はフロントの割合が多いです。）'
+                    ? 'フロントからバックエンド、インフラまでのフルスタックな経験があります。'
                     : 'I have experience in Frontend,Backend, and Infrastructure'}
             </Text>
         </Box>
