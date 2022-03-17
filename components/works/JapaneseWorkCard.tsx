@@ -44,9 +44,11 @@ export const JapaneseWorkCard = ({
                     cursor={'pointer'}
                     marginRight={'10px'}
                     display={'flex'}
-                    justifyContent={'end'}
+                    justifyContent={'center'}
                     flexDirection={'column'}
+                    alignItems={'center'}
                     width={'50%'}
+                    minWidth={'300px'}
                 >
                     <Image
                         alt={'work'}
@@ -111,9 +113,7 @@ export const JapaneseWorkCard = ({
                     >
                         叔母の結婚式の為の寄せ書き＆写真共有アプリを作成しました。
                         <br />
-                        フロントエンドの技術にNextJS+ChakraUIを選定しているのに加え、メッセージ投稿時や写真投稿時の通知メッセージを管理するのに状態管理ライブラリであるJotaiを使用しました。
-                        <br />
-                        バックエンドの技術として、メッセージの保存にはHasuraCloudを使用し、写真の保存にはCloudinaryというサービスを使用しました。
+                        HasuraCloudなど、開発スピードを最重視した技術選定をしました。
                     </Text>
                 </Box>
             </Box>

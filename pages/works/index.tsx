@@ -39,7 +39,7 @@ export const Index = () => {
 
     const getFilteredContents = () => {
         const switchObj: any = {
-            'All': contents,
+            All: contents,
             'Company Project': contents.filter((content) => content.type === 'company'),
             'Private Project': contents.filter((content) => content.type === 'private'),
         };
