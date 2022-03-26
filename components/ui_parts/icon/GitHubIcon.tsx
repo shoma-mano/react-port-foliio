@@ -16,7 +16,7 @@ import { IconProps } from '@chakra-ui/icon/dist/declarations/src/icon';
 //     );
 // };
 
-export const GitHubIcon = forwardRef<IconProps, 'div'>((props: IconProps) => {
+export const GitHubIcon = forwardRef<IconProps, 'svg'>((props: IconProps) => {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
         <Icon

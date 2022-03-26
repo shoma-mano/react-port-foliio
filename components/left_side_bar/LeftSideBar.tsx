@@ -16,6 +16,7 @@ import { CloseIcon } from '@chakra-ui/icons';
 import { useRouter } from 'next/router';
 import { GitHubIcon } from '../ui_parts/icon/GitHubIcon';
 import { TwitterIcon } from '../ui_parts/icon/TwitterIcon';
+import { ZennIcon } from '../ui_parts/icon/ZennIcon';
 
 export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
     const { selectedLanguage, toggleLeftSideBar } = useContext(AppContext);
@@ -162,6 +163,13 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                     <TwitterIcon
                         cursor={'pointer'}
                         onClick={() => (window.location.href = 'https://twitter.com/ms2geki_m')}
+                    />
+                    <ZennIcon
+                        cursor={'pointer'}
+                        w={'22px'}
+                        h={'22px'}
+                        fill={'black'}
+                        onClick={() => (window.location.href = 'https://zenn.dev/mano_r')}
                     />
                     <Image
                         cursor={'pointer'}
