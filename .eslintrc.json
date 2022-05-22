@@ -1,6 +1,7 @@
 {
-    "extends": ["next/core-web-vitals", "eslint-config-prettier"],
+    "extends": ["next/core-web-vitals"],
     "rules": {
-        "jsx-a11y/alt-text": "off"
+        "jsx-a11y/alt-text": "off",
+        "no-unused-vars": "warn"
     }
 }
