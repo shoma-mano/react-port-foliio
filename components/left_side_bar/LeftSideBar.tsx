@@ -12,27 +12,32 @@ export const LeftSideBar = () => {
     const { selectedLanguage, toggleLeftSideBar } = useContext(AppContext);
     const isBase = useBreakpointValue({ base: true, sm: false, md: false, lg: false });
 
+    const currentDate = new Date().getTime();
+    const myBirthDay = new Date('1996-05-09').getTime();
+    const myAge= ((currentDate-myBirthDay)/1000/3600/24/365).toString().split(".")[0]
+
+
     const profileArray = [
         {
             ja: {
                 label: '年齢',
-                value: '25',
+                value: myAge,
                 unit: '歳',
             },
             en: {
                 label: 'age',
-                value: '25',
+                value: myAge,
                 unit: 'Years old',
             },
         },
         {
             ja: {
                 label: '会社',
-                value: 'R-UNIT',
+                value: 'VISIONARY',
             },
             en: {
                 label: 'Company',
-                value: 'R-UNIT',
+                value: 'VISIONARY',
             },
         },
         {
