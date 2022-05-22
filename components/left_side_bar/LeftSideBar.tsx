@@ -1,28 +1,15 @@
-import {
-    Box,
-    Button,
-    Icon,
-    Image,
-    Text,
-    useBreakpointValue,
-    useColorModeValue,
-} from '@chakra-ui/react';
+import { AspectRatio, Box, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import { ProfileComponent } from './ProfileComponent';
 import { SkillSetComponent } from './SkillSetComponent';
-import { SpanWrapper } from '../ui_parts/SpanWrapper';
 import { AppContext } from '../../pages/_app';
 import { CloseIcon } from '@chakra-ui/icons';
-import { useRouter } from 'next/router';
 import { GitHubIcon } from '../ui_parts/icon/GitHubIcon';
 import { TwitterIcon } from '../ui_parts/icon/TwitterIcon';
 import { ZennIcon } from '../ui_parts/icon/ZennIcon';
 
-export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
+export const LeftSideBar = () => {
     const { selectedLanguage, toggleLeftSideBar } = useContext(AppContext);
-    const iconListBg = useColorModeValue('theme', '#0095ff');
-    const router = useRouter();
-
     const isBase = useBreakpointValue({ base: true, sm: false, md: false, lg: false });
 
     const profileArray = [
@@ -72,27 +59,6 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
         },
     ];
 
-    const IconList = [
-        {
-            padding: '2px',
-            src: '/sns_icon/twitter.svg',
-            link: 'https://twitter.com/ms2geki_m',
-            bg: 'none',
-        },
-        {
-            padding: '2px',
-            src: '/github.svg',
-            link: 'https://github.com/shoma-mano',
-            bg: 'none',
-        },
-        {
-            padding: '2px',
-            src: '/sns_icon/qiita.png',
-            link: 'https://qiita.com/ms2geki',
-            bg: 'none',
-        },
-    ];
-
     const skillSet = {
         React: 90,
         TypeScript: 90,
@@ -118,18 +84,24 @@ export const LeftSideBar = ({ onClick }: { onClick: () => void }) => {
                         _hover={{ color: 'black' }}
                     />
                 )}
-                <Image
-                    borderRadius={'250px'}
-                    boxSize='150px'
-                    height={'260px'}
-                    margin='auto'
-                    mt={'10px'}
-                    border={'1px solid'}
-                    borderColor={'#00000021'}
-                    bg={'rgb(205 205 205)'}
-                    src='/lofi.png'
-                    filter={'brightness(1.2)'}
-                />
+                <AspectRatio
+                    ratio={1}
+                    maxHeight={'160px'}
+                    display={'flex'}
+                    justifyContent={'center'}
+                >
+                    <Image
+                        borderRadius={'250px'}
+                        maxHeight={'160px'}
+                        maxWidth={'160px'}
+                        margin='auto'
+                        border={'1px solid'}
+                        borderColor={'#00000021'}
+                        bg={'rgb(205 205 205)'}
+                        src='/lofi.png'
+                        filter={'brightness(1.2)'}
+                    />
+                </AspectRatio>
                 <Text textAlign={'center'} fontSize={'20px'} fontWeight={'700'} mt={'32px'}>
                     {selectedLanguage === 'ja' ? 'マノ ショウマ' : 'Shoma Mano'}
                 </Text>

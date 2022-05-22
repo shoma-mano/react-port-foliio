@@ -1,17 +1,21 @@
-import { Box, Text, Image, Icon } from '@chakra-ui/react';
+import { Box, Icon, forwardRef, BoxProps } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { ColorModeButton } from '../right_side_bar/ColorModeButton';
-import { RightSideBarTranslateButton } from '../right_side_bar/RightSideBarTranslateButton';
-import { TopBarTranslateButton } from './TopBarTranslateButton';
 import { useContext } from 'react';
 import { AppContext } from '../../pages/_app';
 
-export const TopBar = () => {
-    const { isRightSideBarOpen, toggleRightSideBar, isLeftSideBarOpen, toggleLeftSideBar } =
-        useContext(AppContext);
+export const TopBar = forwardRef<BoxProps, 'div'>((props, ref) => {
+    const { toggleRightSideBar, toggleLeftSideBar } = useContext(AppContext);
+    console.log(props)
 
     return (
-        <Box display={'flex'} justifyContent={'space-between'} height={'100%'}>
+        <Box
+            {...props}
+            ref={ref}
+            display={'flex'}
+            justifyContent={'space-between'}
+            height={'100%'}
+        >
             <HamburgerIcon
                 position={'relative'}
                 onClick={toggleLeftSideBar}
@@ -58,4 +62,4 @@ export const TopBar = () => {
             </Icon>
         </Box>
     );
-};
+});

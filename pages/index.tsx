@@ -26,7 +26,6 @@ import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
     const { selectedLanguage } = useContext(AppContext);
-    const { colorMode, toggleColorMode } = useColorMode();
     const bg = useColorModeValue('#fafafa', '#18191A');
     const cardBg = useColorModeValue('white', '#242526');
     const router = useRouter();

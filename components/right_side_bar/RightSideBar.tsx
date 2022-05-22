@@ -99,7 +99,7 @@ export const RightSideBar = () => {
                                     setSelectedIndex={setSelectedIndex}
                                     link={v.link}
                                     marginTop={'40px'}
-                                ></RightSideBarButton>
+                                />
                             );
                         })}
                 </Box>

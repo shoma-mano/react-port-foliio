@@ -1,5 +1,5 @@
-import { ReactChildren, ReactElement, useContext } from 'react';
-import { Box, useColorModeValue, Text } from '@chakra-ui/react';
+import { ReactElement, useContext } from 'react';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 import { LeftSideBar } from './left_side_bar/LeftSideBar';
 import { RightSideBar } from './right_side_bar/RightSideBar';
 import { TopBar } from './top_bar/TopBar';
@@ -25,7 +25,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 zIndex={10}
                 border={'none'}
             >
-                <TopBar></TopBar>
+                <TopBar />
             </Box>
             <Box
                 position='fixed'
@@ -44,7 +44,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 zIndex={'10'}
                 transition={'all 0.3s'}
             >
-                <LeftSideBar onClick={() => console.log('ok')}></LeftSideBar>
+                <LeftSideBar/>
             </Box>
             <Box
                 position='fixed'
@@ -62,9 +62,8 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 zIndex={'10'}
                 border={'none'}
                 transition={'all 0.3s'}
-                // transition={'all 0.5s'}
             >
-                <RightSideBar></RightSideBar>
+                <RightSideBar/>
             </Box>
             {children}
         </>
