@@ -7,7 +7,6 @@ import { ScrollLeftSlideIn } from '../animation/ScrollLeftSlideIn';
 export const HistorySm = () => {
     const { selectedLanguage } = useContext(AppContext);
     const cardBg = useColorModeValue('white', '#242526');
-
     const japaneseHistories = [
         {
             time: '2003-2009',
