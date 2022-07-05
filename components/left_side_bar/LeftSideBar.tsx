@@ -7,6 +7,7 @@ import { CloseIcon } from '@chakra-ui/icons';
 import { GitHubIcon } from '../ui_parts/icon/GitHubIcon';
 import { TwitterIcon } from '../ui_parts/icon/TwitterIcon';
 import { ZennIcon } from '../ui_parts/icon/ZennIcon';
+import {ChakraNextImage} from "../ui_parts/ChakraNextImage";
 
 export const LeftSideBar = () => {
     const { selectedLanguage, toggleLeftSideBar } = useContext(AppContext);
@@ -84,24 +85,31 @@ export const LeftSideBar = () => {
                         _hover={{ color: 'black' }}
                     />
                 )}
-                <AspectRatio
-                    ratio={1}
-                    maxHeight={'160px'}
+                {/*<AspectRatio*/}
+                {/*    ratio={1}*/}
+                {/*    maxHeight={'160px'}*/}
+                {/*    display={'flex'}*/}
+                {/*    justifyContent={'center'}*/}
+                {/*>*/}
+                {/*    <Image*/}
+                {/*        borderRadius={'250px'}*/}
+                {/*        maxHeight={'160px'}*/}
+                {/*        maxWidth={'160px'}*/}
+                {/*        margin='auto'*/}
+                {/*        border={'1px solid'}*/}
+                {/*        borderColor={'#00000021'}*/}
+                {/*        bg={'rgb(205 205 205)'}*/}
+                {/*        src='/lofi.png'*/}
+                {/*        filter={'brightness(1.2)'}*/}
+                {/*    />*/}
+                {/*</AspectRatio>*/}
+                <ChakraNextImage
                     display={'flex'}
                     justifyContent={'center'}
-                >
-                    <Image
-                        borderRadius={'250px'}
-                        maxHeight={'160px'}
-                        maxWidth={'160px'}
-                        margin='auto'
-                        border={'1px solid'}
-                        borderColor={'#00000021'}
-                        bg={'rgb(205 205 205)'}
-                        src='/lofi.png'
-                        filter={'brightness(1.2)'}
-                    />
-                </AspectRatio>
+                    height={'160px'}
+                    width={'160px'}
+                    src={'/lofi.png'}>
+                </ChakraNextImage>
                 <Text textAlign={'center'} fontSize={'20px'} fontWeight={'700'} mt={'32px'}>
                     {selectedLanguage === 'ja' ? 'マノ ショウマ' : 'Shoma Mano'}
                 </Text>
