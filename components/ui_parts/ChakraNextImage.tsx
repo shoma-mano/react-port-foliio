@@ -18,6 +18,7 @@ const ChakraNextUnwrappedImage = chakra(NextImage, {
 
 interface ImageProps extends imgProps {
     display?: string;
+    borderRadius?: string;
     justifyContent?: string;
 }
 
@@ -56,6 +57,7 @@ export const ChakraNextImage = (props: ImageProps) => {
                 width={width}
                 quality={quality}
                 height={height}
+                borderRadius={props.borderRadius}
                 placeholder="blur"
                 blurDataURL={`data:image/svg+xml;base64,${toBase64(
                     shimmer(700, 475),

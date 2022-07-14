@@ -108,6 +108,7 @@ export const LeftSideBar = () => {
                     justifyContent={'center'}
                     height={'160px'}
                     width={'160px'}
+                    borderRadius={'250px'}
                     src={'/lofi.png'}>
                 </ChakraNextImage>
                 <Text textAlign={'center'} fontSize={'20px'} fontWeight={'700'} mt={'32px'}>
