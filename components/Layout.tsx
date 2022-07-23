@@ -44,7 +44,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 zIndex={'10'}
                 transition={'all 0.3s'}
             >
-                <LeftSideBar/>
+                <LeftSideBar />
             </Box>
             <Box
                 position='fixed'
@@ -63,7 +63,7 @@ export const Layout = ({ children }: { children: ReactElement }) => {
                 border={'none'}
                 transition={'all 0.3s'}
             >
-                <RightSideBar/>
+                <RightSideBar />
             </Box>
             {children}
         </>

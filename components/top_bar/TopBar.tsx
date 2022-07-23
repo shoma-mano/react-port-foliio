@@ -6,16 +6,10 @@ import { AppContext } from '../../pages/_app';
 
 export const TopBar = forwardRef<BoxProps, 'div'>((props, ref) => {
     const { toggleRightSideBar, toggleLeftSideBar } = useContext(AppContext);
-    console.log(props)
+    console.log(props);
 
     return (
-        <Box
-            {...props}
-            ref={ref}
-            display={'flex'}
-            justifyContent={'space-between'}
-            height={'100%'}
-        >
+        <Box {...props} ref={ref} display={'flex'} justifyContent={'space-between'} height={'100%'}>
             <HamburgerIcon
                 position={'relative'}
                 onClick={toggleLeftSideBar}

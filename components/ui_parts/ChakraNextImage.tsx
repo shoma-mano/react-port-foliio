@@ -1,18 +1,18 @@
-import { Box, chakra } from "@chakra-ui/react";
-import NextImage, { ImageProps as imgProps, ImageLoaderProps } from "next/image";
+import { Box, chakra } from '@chakra-ui/react';
+import NextImage, { ImageProps as imgProps, ImageLoaderProps } from 'next/image';
 
 const ChakraNextUnwrappedImage = chakra(NextImage, {
     shouldForwardProp: (prop) =>
         [
-            "width",
-            "height",
-            "src",
-            "alt",
-            "quality",
-            "placeholder",
-            "blurDataURL",
-            "loader ",
-            "display",
+            'width',
+            'height',
+            'src',
+            'alt',
+            'quality',
+            'placeholder',
+            'blurDataURL',
+            'loader ',
+            'display',
         ].includes(prop),
 });
 
@@ -20,8 +20,10 @@ interface ImageProps extends imgProps {
     display?: string;
     borderRadius?: string;
     justifyContent?: string;
+    minWidth?: string;
+    minHeight?: string;
+    filter?: string;
 }
-
 
 const myLoader = (resolverProps: ImageLoaderProps): string => {
     return `${resolverProps.src}?w=${resolverProps.width}&q=${resolverProps.quality}`;
@@ -42,29 +44,25 @@ const shimmer = (w: number, h: number) => `
 </svg>`;
 
 const toBase64 = (str: string) =>
-    typeof window === "undefined"
-        ? Buffer.from(str).toString("base64")
-        : window.btoa(str);
+    typeof window === 'undefined' ? Buffer.from(str).toString('base64') : window.btoa(str);
 
 export const ChakraNextImage = (props: ImageProps) => {
     const { src, alt, width, quality, height, ...rest } = props;
     return (
-        <Box pos="relative" cursor="pointer" className="group" {...rest}>
+        <Box pos='relative' cursor='pointer' className='group' {...rest}>
             <ChakraNextUnwrappedImage
-                w="auto"
-                h="auto"
+                w='100%'
+                h='100%'
                 loader={myLoader}
                 width={width}
                 quality={quality}
                 height={height}
                 borderRadius={props.borderRadius}
-                placeholder="blur"
-                blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                    shimmer(700, 475),
-                )}`}
+                placeholder='blur'
+                blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
                 src={src}
                 alt={alt}
-                transition="all 0.2s"
+                transition='all 0.2s'
             />
         </Box>
     );

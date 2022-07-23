@@ -7,7 +7,7 @@ import { CloseIcon } from '@chakra-ui/icons';
 import { GitHubIcon } from '../ui_parts/icon/GitHubIcon';
 import { TwitterIcon } from '../ui_parts/icon/TwitterIcon';
 import { ZennIcon } from '../ui_parts/icon/ZennIcon';
-import {ChakraNextImage} from "../ui_parts/ChakraNextImage";
+import { ChakraNextImage } from '../ui_parts/ChakraNextImage';
 
 export const LeftSideBar = () => {
     const { selectedLanguage, toggleLeftSideBar } = useContext(AppContext);
@@ -109,8 +109,8 @@ export const LeftSideBar = () => {
                     height={'160px'}
                     width={'160px'}
                     borderRadius={'250px'}
-                    src={'/lofi.png'}>
-                </ChakraNextImage>
+                    src={'/lofi.png'}
+                ></ChakraNextImage>
                 <Text textAlign={'center'} fontSize={'20px'} fontWeight={'700'} mt={'32px'}>
                     {selectedLanguage === 'ja' ? 'マノ ショウマ' : 'Shoma Mano'}
                 </Text>
