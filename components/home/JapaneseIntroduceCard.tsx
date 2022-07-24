@@ -1,19 +1,19 @@
-import {Box, Text, useBreakpointValue, useColorModeValue} from '@chakra-ui/react';
-import {CherryBlossom} from '../animation/CherryBlossom';
-import {ChakraNextImage} from '../ui_parts/ChakraNextImage';
-import React from "react";
+import { Box, Text, useBreakpointValue, useColorModeValue } from '@chakra-ui/react';
+import { CherryBlossom } from '../animation/CherryBlossom';
+import { ChakraNextImage } from '../ui_parts/ChakraNextImage';
+import React from 'react';
 
 export const JapaneseIntroduceCard = ({
-                                          position,
-                                          name,
-                                          englishName,
-                                      }: {
+    position,
+    name,
+    englishName,
+}: {
     position: string;
     name: string;
     englishName: string;
 }) => {
     const bg = useColorModeValue('white', '#242526');
-    const width = useBreakpointValue({base: '90%', sm: '630px'});
+    const width = useBreakpointValue({ base: '90%', sm: '630px' });
 
     return (
         <>
@@ -28,7 +28,7 @@ export const JapaneseIntroduceCard = ({
                     justifyContent={'space-between'}
                 >
                     <Box
-                        width={{base: '100%', sm: '280px'}}
+                        width={{ base: '100%', sm: '280px' }}
                         height={'100%'}
                         flexShrink={'0'}
                         flexGrow={'1'}
@@ -45,26 +45,26 @@ export const JapaneseIntroduceCard = ({
                                 flexDirection={'column'}
                                 alignItems={'center'}
                                 mb={'10px'}
-                                ml={{base: '', sm: '60px'}}
+                                ml={{ base: '', sm: '60px' }}
                             >
                                 <Text
                                     mb={'10px'}
                                     fontWeight={'700'}
-                                    fontSize={{base: '6vw', sm: '24px'}}
+                                    fontSize={{ base: '6vw', sm: '24px' }}
                                 >
                                     {position}
                                 </Text>
                                 <Text
                                     fontWeight={'700'}
-                                    mt={{base: '2vw', sm: '0px'}}
-                                    fontSize={{base: '10vw', sm: '48px'}}
+                                    mt={{ base: '2vw', sm: '0px' }}
+                                    fontSize={{ base: '10vw', sm: '48px' }}
                                 >
                                     {name}
                                 </Text>
                                 <Text
                                     fontWeight={'700'}
-                                    mt={{base: '3vw', sm: '8px'}}
-                                    fontSize={{base: '6vw', sm: '26px'}}
+                                    mt={{ base: '3vw', sm: '8px' }}
+                                    fontSize={{ base: '6vw', sm: '26px' }}
                                 >
                                     {englishName}
                                 </Text>
@@ -83,7 +83,7 @@ export const JapaneseIntroduceCard = ({
                             justifyContent={'center'}
                             height={'360px'}
                             minWidth={'50%'}
-                            width={'220px'}
+                            width={'240px'}
                             src={'/selfie_home.png'}
                             filter={'brightness(1.2)'}
                         ></ChakraNextImage>

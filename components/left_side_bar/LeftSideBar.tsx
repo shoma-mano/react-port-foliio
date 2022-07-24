@@ -1,17 +1,17 @@
-import { AspectRatio, Box, Image, Text, useBreakpointValue } from '@chakra-ui/react';
-import React, { useContext } from 'react';
-import { ProfileComponent } from './ProfileComponent';
-import { SkillSetComponent } from './SkillSetComponent';
-import { AppContext } from '../../pages/_app';
-import { CloseIcon } from '@chakra-ui/icons';
-import { GitHubIcon } from '../ui_parts/icon/GitHubIcon';
-import { TwitterIcon } from '../ui_parts/icon/TwitterIcon';
-import { ZennIcon } from '../ui_parts/icon/ZennIcon';
-import { ChakraNextImage } from '../ui_parts/ChakraNextImage';
+import {AspectRatio, Box, Image, Text, useBreakpointValue} from '@chakra-ui/react';
+import React, {useContext} from 'react';
+import {ProfileComponent} from './ProfileComponent';
+import {SkillSetComponent} from './SkillSetComponent';
+import {AppContext} from '../../pages/_app';
+import {CloseIcon} from '@chakra-ui/icons';
+import {GitHubIcon} from '../ui_parts/icon/GitHubIcon';
+import {TwitterIcon} from '../ui_parts/icon/TwitterIcon';
+import {ZennIcon} from '../ui_parts/icon/ZennIcon';
+import {ChakraNextImage} from '../ui_parts/ChakraNextImage';
 
 export const LeftSideBar = () => {
-    const { selectedLanguage, toggleLeftSideBar } = useContext(AppContext);
-    const isBase = useBreakpointValue({ base: true, sm: false, md: false, lg: false });
+    const {selectedLanguage, toggleLeftSideBar} = useContext(AppContext);
+    const isBase = useBreakpointValue({base: true, sm: false, md: false, lg: false});
 
     const profileArray = [
         {
@@ -82,7 +82,7 @@ export const LeftSideBar = () => {
                         onClick={toggleLeftSideBar}
                         cursor={'pointer'}
                         color={'rgb(118, 118, 118)'}
-                        _hover={{ color: 'black' }}
+                        _hover={{color: 'black'}}
                     />
                 )}
                 {/*<AspectRatio*/}
@@ -162,7 +162,7 @@ export const LeftSideBar = () => {
                 </Box>
                 <Box
                     css={{
-                        '&::-webkit-scrollbar': { width: '4px' },
+                        '&::-webkit-scrollbar': {width: '4px'},
                     }}
                     overflowY={'scroll'}
                     height={'100%'}
@@ -182,7 +182,7 @@ export const LeftSideBar = () => {
                     </Box>
                 </Box>
             </Box>
-            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={'black'} />
+            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={'black'}/>
         </>
     );
 };
