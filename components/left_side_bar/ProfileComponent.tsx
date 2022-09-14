@@ -6,13 +6,10 @@ import { AppContext } from '../../pages/_app';
 
 export const ProfileComponent = ({ profileArray }: { profileArray: Array<any> }) => {
     const { selectedLanguage } = useContext(AppContext);
-    const profileBg = useColorModeValue('white', '#3a3636');
 
     return (
         <>
-            <LabelWithUnderLine
-                label={selectedLanguage === 'ja' ? 'プロフィール' : 'Profile'}
-            ></LabelWithUnderLine>
+            <LabelWithUnderLine label={selectedLanguage === 'ja' ? 'プロフィール' : 'Profile'} />
             <Box
                 mt={'10px'}
                 sx={{ rowGap: '10px' }}
@@ -28,7 +25,7 @@ export const ProfileComponent = ({ profileArray }: { profileArray: Array<any> })
                         value={v.value}
                         fontSize={v.fontSize}
                         unit={v.unit}
-                    ></KeyValueCard>
+                    />
                 ))}
             </Box>
         </>
