@@ -45,7 +45,7 @@ export const JapaneseIntroduceCard = ({
                                 flexDirection={'column'}
                                 alignItems={'center'}
                                 mb={'10px'}
-                                ml={{ base: '', sm: '60px' }}
+                                ml={{ base: '', sm: '40px' }}
                             >
                                 <Text
                                     mb={'10px'}
@@ -81,9 +81,9 @@ export const JapaneseIntroduceCard = ({
                         <ChakraNextImage
                             display={'flex'}
                             justifyContent={'center'}
-                            height={'360px'}
+                            height={'380px'}
                             minWidth={'50%'}
-                            width={'240px'}
+                            width={'320px'}
                             src={'/selfie_home.png'}
                             filter={'brightness(1.2)'}
                         ></ChakraNextImage>

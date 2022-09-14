@@ -6,14 +6,9 @@ import {
     Button,
     Link,
     Text,
-    Image,
-    Input,
     useColorModeValue,
-    Badge,
-    Icon,
-    useColorMode,
 } from '@chakra-ui/react';
-import { useContext, useEffect, useState } from 'react';
+import { useContext} from 'react';
 import { AppContext } from './_app';
 import { JapaneseIntroduceCard } from '../components/home/JapaneseIntroduceCard';
 import { RoundIcon } from '../components/ui_parts/RoundIcon';
