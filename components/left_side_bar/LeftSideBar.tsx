@@ -1,16 +1,17 @@
-import { AspectRatio, Box, Image, Text, useBreakpointValue } from '@chakra-ui/react';
-import React, { useContext } from 'react';
-import { ProfileComponent } from './ProfileComponent';
-import { SkillSetComponent } from './SkillSetComponent';
-import { AppContext } from '../../pages/_app';
-import { CloseIcon } from '@chakra-ui/icons';
-import { GitHubIcon } from '../ui_parts/icon/GitHubIcon';
-import { TwitterIcon } from '../ui_parts/icon/TwitterIcon';
-import { ZennIcon } from '../ui_parts/icon/ZennIcon';
+import {AspectRatio, Box, Image, Text, useBreakpointValue} from '@chakra-ui/react';
+import React, {useContext} from 'react';
+import {ProfileComponent} from './ProfileComponent';
+import {SkillSetComponent} from './SkillSetComponent';
+import {AppContext} from '../../pages/_app';
+import {CloseIcon} from '@chakra-ui/icons';
+import {GitHubIcon} from '../ui_parts/icon/GitHubIcon';
+import {TwitterIcon} from '../ui_parts/icon/TwitterIcon';
+import {ZennIcon} from '../ui_parts/icon/ZennIcon';
+import {ChakraNextImage} from '../ui_parts/ChakraNextImage';
 
 export const LeftSideBar = () => {
-    const { selectedLanguage, toggleLeftSideBar } = useContext(AppContext);
-    const isBase = useBreakpointValue({ base: true, sm: false, md: false, lg: false });
+    const {selectedLanguage, toggleLeftSideBar} = useContext(AppContext);
+    const isBase = useBreakpointValue({base: true, sm: false, md: false, lg: false});
 
     const currentDate = new Date().getTime();
     const myBirthDay = new Date('1996-05-09').getTime();
@@ -86,27 +87,35 @@ export const LeftSideBar = () => {
                         onClick={toggleLeftSideBar}
                         cursor={'pointer'}
                         color={'rgb(118, 118, 118)'}
-                        _hover={{ color: 'black' }}
+                        _hover={{color: 'black'}}
                     />
                 )}
-                <AspectRatio
-                    ratio={1}
-                    maxHeight={'160px'}
+                {/*<AspectRatio*/}
+                {/*    ratio={1}*/}
+                {/*    maxHeight={'160px'}*/}
+                {/*    display={'flex'}*/}
+                {/*    justifyContent={'center'}*/}
+                {/*>*/}
+                {/*    <Image*/}
+                {/*        borderRadius={'250px'}*/}
+                {/*        maxHeight={'160px'}*/}
+                {/*        maxWidth={'160px'}*/}
+                {/*        margin='auto'*/}
+                {/*        border={'1px solid'}*/}
+                {/*        borderColor={'#00000021'}*/}
+                {/*        bg={'rgb(205 205 205)'}*/}
+                {/*        src='/lofi.png'*/}
+                {/*        filter={'brightness(1.2)'}*/}
+                {/*    />*/}
+                {/*</AspectRatio>*/}
+                <ChakraNextImage
                     display={'flex'}
                     justifyContent={'center'}
-                >
-                    <Image
-                        borderRadius={'250px'}
-                        maxHeight={'160px'}
-                        maxWidth={'160px'}
-                        margin='auto'
-                        border={'1px solid'}
-                        borderColor={'#00000021'}
-                        bg={'rgb(205 205 205)'}
-                        src='/lofi.png'
-                        filter={'brightness(1.2)'}
-                    />
-                </AspectRatio>
+                    height={'160px'}
+                    width={'160px'}
+                    borderRadius={'250px'}
+                    src={'/lofi.png'}
+                ></ChakraNextImage>
                 <Text textAlign={'center'} fontSize={'20px'} fontWeight={'700'} mt={'32px'}>
                     {selectedLanguage === 'ja' ? 'マノ ショウマ' : 'Shoma Mano'}
                 </Text>
@@ -158,7 +167,7 @@ export const LeftSideBar = () => {
                 </Box>
                 <Box
                     css={{
-                        '&::-webkit-scrollbar': { width: '4px' },
+                        '&::-webkit-scrollbar': {width: '4px'},
                     }}
                     overflowY={'scroll'}
                     height={'100%'}
@@ -178,7 +187,7 @@ export const LeftSideBar = () => {
                     </Box>
                 </Box>
             </Box>
-            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={'black'} />
+            <Box mt={'25px'} opacity='0.7' height={'2px'} bg={'black'}/>
         </>
     );
 };

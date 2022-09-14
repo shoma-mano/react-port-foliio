@@ -11,6 +11,7 @@ export const CherryBlossom = ({ children }: { children: React.ReactNode }) => {
         // 花びらを生成する関数
         const createPetal = () => {
             const petalEl = document.createElement('span');
+            petalEl.classList.add(styles.blossom);
 
             const minSize = 10;
             const maxSize = 15;

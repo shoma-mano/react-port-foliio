@@ -1,5 +1,7 @@
 import { Box, Text, useBreakpointValue, useColorModeValue } from '@chakra-ui/react';
 import { CherryBlossom } from '../animation/CherryBlossom';
+import { ChakraNextImage } from '../ui_parts/ChakraNextImage';
+import React from 'react';
 
 export const JapaneseIntroduceCard = ({
     position,
@@ -71,21 +73,30 @@ export const JapaneseIntroduceCard = ({
                     </Box>
                     <Box
                         marginRight={'10px'}
-                        height={'380px'}
+                        height={'360px'}
                         display={'flex'}
-                        justifyContent={'end'}
+                        justifyContent={'center'}
                         flexDirection={'column'}
                     >
-                        <img
-                            width={'320px'}
-                            style={{
-                                minWidth: '50%',
-                                height: '380px',
-                                zIndex: 6,
-                                filter: 'brightness(1.2)',
-                            }}
+                        <ChakraNextImage
+                            display={'flex'}
+                            justifyContent={'center'}
+                            height={'360px'}
+                            minWidth={'50%'}
+                            width={'240px'}
                             src={'/selfie_home.png'}
-                        ></img>
+                            filter={'brightness(1.2)'}
+                        ></ChakraNextImage>
+                        {/*<img*/}
+                        {/*    width={'320px'}*/}
+                        {/*    style={{*/}
+                        {/*        minWidth: '50%',*/}
+                        {/*        height: '380px',*/}
+                        {/*        zIndex: 6,*/}
+                        {/*        filter: 'brightness(1.2)',*/}
+                        {/*    }}*/}
+                        {/*    src={'/selfie_home.png'}*/}
+                        {/*></img>*/}
                     </Box>
                 </Box>
             </CherryBlossom>
