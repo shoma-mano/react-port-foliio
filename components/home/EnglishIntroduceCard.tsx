@@ -85,19 +85,19 @@ export const EnglishIntroduceCard = () => {
                             justifyContent={'start'}
                         />
                     </Box>
-                    <Box
-                        marginRight={'10px'}
-                        height={'380px'}
-                        display={'flex'}
-                        justifyContent={'end'}
-                        flexDirection={'column'}
-                    >
-                        <Image
-                            width={'320px'}
-                            style={{ height: '380px', minWidth: '50%', filter: 'brightness(1.2)' }}
-                            src={'/selfie_home.png'}
-                        />
-                    </Box>
+                    {/*<Box*/}
+                    {/*    marginRight={'10px'}*/}
+                    {/*    height={'380px'}*/}
+                    {/*    display={'flex'}*/}
+                    {/*    justifyContent={'end'}*/}
+                    {/*    flexDirection={'column'}*/}
+                    {/*>*/}
+                    {/*    <Image*/}
+                    {/*        width={'320px'}*/}
+                    {/*        style={{ height: '380px', minWidth: '50%', filter: 'brightness(1.2)' }}*/}
+                    {/*        src={'/selfie_home.png'}*/}
+                    {/*    />*/}
+                    {/*</Box>*/}
                 </Box>
             </AspectRatio>
         </>

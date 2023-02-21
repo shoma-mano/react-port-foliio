@@ -71,33 +71,23 @@ export const JapaneseIntroduceCard = ({
                             </Box>
                         </Box>
                     </Box>
-                    <Box
-                        marginRight={'10px'}
-                        height={'360px'}
-                        display={'flex'}
-                        justifyContent={'center'}
-                        flexDirection={'column'}
-                    >
-                        <ChakraNextImage
-                            display={'flex'}
-                            justifyContent={'center'}
-                            height={'380px'}
-                            minWidth={'50%'}
-                            width={'320px'}
-                            src={'/selfie_home.png'}
-                            filter={'brightness(1.2)'}
-                        ></ChakraNextImage>
-                        {/*<img*/}
-                        {/*    width={'320px'}*/}
-                        {/*    style={{*/}
-                        {/*        minWidth: '50%',*/}
-                        {/*        height: '380px',*/}
-                        {/*        zIndex: 6,*/}
-                        {/*        filter: 'brightness(1.2)',*/}
-                        {/*    }}*/}
-                        {/*    src={'/selfie_home.png'}*/}
-                        {/*></img>*/}
-                    </Box>
+                    {/*<Box*/}
+                    {/*    marginRight={'10px'}*/}
+                    {/*    height={'360px'}*/}
+                    {/*    display={'flex'}*/}
+                    {/*    justifyContent={'center'}*/}
+                    {/*    flexDirection={'column'}*/}
+                    {/*>*/}
+                    {/*    <ChakraNextImage*/}
+                    {/*        display={'flex'}*/}
+                    {/*        justifyContent={'center'}*/}
+                    {/*        height={'380px'}*/}
+                    {/*        minWidth={'50%'}*/}
+                    {/*        width={'320px'}*/}
+                    {/*        src={'/selfie_home.png'}*/}
+                    {/*        filter={'brightness(1.2)'}*/}
+                    {/*    ></ChakraNextImage>*/}
+                    {/*</Box>*/}
                 </Box>
             </CherryBlossom>
         </>
