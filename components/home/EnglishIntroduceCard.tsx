@@ -42,7 +42,7 @@ export const EnglishIntroduceCard = () => {
                             height={'100%'}
                             flexDirection={'column'}
                             width={'100%'}
-                            marginLeft={{ base: '0', sm: '40px' }}
+                            marginLeft={{ base: '0', sm: '0px' }}
                             mt={{ base: '0', sm: '0%' }}
                             fontFamily={"'Rubik', sans-serif;"}
                             textAlign={'center'}

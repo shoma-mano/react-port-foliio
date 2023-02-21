@@ -45,7 +45,7 @@ export const JapaneseIntroduceCard = ({
                                 flexDirection={'column'}
                                 alignItems={'center'}
                                 mb={'10px'}
-                                ml={{ base: '', sm: '40px' }}
+                                ml={{ base: '', sm: '0px' }}
                             >
                                 <Text
                                     mb={'10px'}
